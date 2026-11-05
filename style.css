@@ -1,33 +1,28 @@
 
-/* =========================================
+/* ==========================================
    DUCES CONSULTANCY SERVICES
-   CORPORATE WEBSITE DESIGN SYSTEM
-========================================= */
+   PREMIUM CORPORATE DESIGN SYSTEM
+========================================== */
 
 :root {
-  /* Main Brand Palette */
   --royal: #123B70;
-  --sea-green: #48C9B0;
+  --navy: #0B2850;
   --corporate-blue: #1976B9;
+  --gold: #D9AD55;
   --charcoal: #263445;
   --white: #FFFFFF;
+
   --light-bg: #F5F7FA;
-  --silver: #E5EBF1;
-  --gold: #F4B942;
-
-  /* Soft Information Palette */
-  --beige: #FAF7F0;
-  --lavender: #F3F0F8;
-  --peach: #FFF2E9;
-  --mint: #EFF7F4;
   --powder-blue: #EDF4FA;
+  --beige: #FAF7F0;
   --ivory: #FBF9F4;
+  --silver: #E5EBF1;
 
-  /* Supporting */
   --secondary-text: #64748B;
-  --shadow: 0 12px 35px rgba(18, 59, 112, 0.08);
-  --radius: 14px;
-  --transition: all 0.3s ease;
+  --shadow: 0 12px 35px rgba(18, 59, 112, 0.09);
+
+  --radius: 12px;
+  --transition: all 0.25s ease;
 }
 
 /* RESET */
@@ -40,6 +35,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -74,46 +70,68 @@ button, a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* HEADER */
+/* ==========================================
+   HEADER AND NAVIGATION
+========================================== */
 
 .site-header {
-  min-height: 88px;
-  padding: 12px 6%;
+  min-height: 86px;
+  padding: 12px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 22px;
   background: var(--white);
   border-bottom: 1px solid var(--silver);
-  position: relative;
-  z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.brand {
+/* Supports both brand and logo classes */
+
+.brand,
+.logo {
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
 
-.brand img {
-  width: 185px;
-  max-height: 65px;
+.brand img,
+.logo img {
+  width: 175px;
+  max-height: 62px;
   object-fit: contain;
+}
+
+/* Supports pages using header-inner wrapper */
+
+.site-header .header-inner {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
-  height: 100%;
+  justify-content: center;
+  gap: 24px;
 }
 
 .main-nav > a,
-.nav-dropdown > a {
+.nav-dropdown > a,
+.dropdown > a {
+  display: inline-block;
   color: var(--charcoal);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 650;
   padding: 12px 0;
+  white-space: nowrap;
   transition: var(--transition);
 }
 
@@ -122,66 +140,84 @@ button, a {
   color: var(--corporate-blue);
 }
 
-.nav-dropdown {
+.nav-dropdown,
+.dropdown {
   position: relative;
 }
 
-.dropdown-content {
+/* Both dropdown class structures supported */
+
+.dropdown-content,
+.dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: -18px;
-  min-width: 220px;
+  left: -16px;
+  min-width: 235px;
   padding: 10px;
   background: var(--white);
   border: 1px solid var(--silver);
-  border-radius: 10px;
+  border-radius: 9px;
   box-shadow: var(--shadow);
+  z-index: 1100;
 }
 
-.dropdown-content a {
+.dropdown-content a,
+.dropdown-menu a {
   display: block;
   padding: 11px 13px;
   color: var(--charcoal);
   font-size: 13px;
-  border-radius: 6px;
+  line-height: 1.5;
+  border-radius: 5px;
+  white-space: normal;
+  transition: var(--transition);
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover,
+.dropdown-menu a:hover {
   background: var(--powder-blue);
   color: var(--corporate-blue);
 }
 
+/* Desktop hover and keyboard support */
+
 .nav-dropdown:hover .dropdown-content,
-.nav-dropdown:focus-within .dropdown-content {
+.nav-dropdown:focus-within .dropdown-content,
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
   display: block;
 }
 
 .header-contact {
   background: var(--royal);
   color: var(--white);
-  padding: 12px 19px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 650;
   white-space: nowrap;
   transition: var(--transition);
+  flex-shrink: 0;
 }
 
 .header-contact:hover {
   background: var(--corporate-blue);
+  color: var(--white);
 }
 
-/* BUTTONS */
+/* ==========================================
+   BUTTONS
+========================================== */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 13px 23px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 650;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
   transition: var(--transition);
   cursor: pointer;
 }
@@ -189,11 +225,14 @@ button, a {
 .btn-primary {
   background: var(--royal);
   color: var(--white);
+  border: 1px solid var(--royal);
 }
 
 .btn-primary:hover {
   background: var(--corporate-blue);
+  border-color: var(--corporate-blue);
   transform: translateY(-2px);
+  color: var(--white);
 }
 
 .btn-outline {
@@ -210,17 +249,41 @@ button, a {
 .btn-light {
   color: var(--royal);
   background: var(--white);
+  border: 1px solid var(--white);
 }
 
 .btn-light:hover {
-  background: var(--sea-green);
-  color: var(--charcoal);
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
 }
 
-/* HERO */
+/* ==========================================
+   COMMON TYPOGRAPHY
+========================================== */
+
+.eyebrow {
+  display: inline-block;
+  color: var(--corporate-blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HOMEPAGE HERO
+========================================== */
 
 .hero {
-  padding: 65px 6%;
+  padding: 75px 6%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
@@ -232,19 +295,9 @@ button, a {
   max-width: 650px;
 }
 
-.eyebrow {
-  display: inline-block;
-  color: var(--corporate-blue);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 17px;
-  text-transform: uppercase;
-}
-
 .hero h1 {
   font-size: clamp(36px, 4.2vw, 58px);
-  letter-spacing: -1.7px;
+  letter-spacing: -1.5px;
   color: var(--royal);
   margin-bottom: 22px;
 }
@@ -255,7 +308,7 @@ button, a {
 
 .hero-content > p {
   font-size: 16px;
-  max-width: 520px;
+  max-width: 530px;
   line-height: 1.9;
   margin-bottom: 28px;
 }
@@ -267,7 +320,7 @@ button, a {
 }
 
 .hero-note {
-  margin-top: 30px;
+  margin-top: 28px;
   color: var(--secondary-text);
   font-size: 12px;
   font-weight: 600;
@@ -282,16 +335,16 @@ button, a {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .visual-caption {
   position: absolute;
   bottom: 22px;
-  left: -25px;
+  left: -20px;
   background: var(--white);
   padding: 20px 24px;
-  border-radius: 8px;
+  border-radius: 7px;
   box-shadow: var(--shadow);
   min-width: 220px;
 }
@@ -311,32 +364,37 @@ button, a {
   margin: 4px 0;
 }
 
-/* GENERAL SECTIONS */
+/* ==========================================
+   GENERAL SECTIONS
+========================================== */
 
 .intro-section,
 .services-section,
 .process-section {
-  padding: 90px 6%;
+  padding: 85px 6%;
 }
 
 .section-heading {
-  max-width: 690px;
-  margin-bottom: 42px;
+  max-width: 700px;
+  margin-bottom: 40px;
 }
 
 .section-heading h2 {
   color: var(--royal);
   font-size: clamp(29px, 3vw, 40px);
-  letter-spacing: -0.8px;
+  letter-spacing: -0.7px;
   margin-bottom: 15px;
 }
 
 .section-heading p {
   font-size: 15px;
-  max-width: 600px;
+  max-width: 620px;
+  line-height: 1.8;
 }
 
-/* INTRODUCTION */
+/* ==========================================
+   INTRODUCTION
+========================================== */
 
 .intro-section {
   background: var(--beige);
@@ -354,7 +412,7 @@ button, a {
 }
 
 .intro-block:nth-child(2) {
-  border-top-color: var(--sea-green);
+  border-top-color: var(--corporate-blue);
 }
 
 .intro-block:nth-child(3) {
@@ -378,7 +436,9 @@ button, a {
   max-width: 320px;
 }
 
-/* SERVICES */
+/* ==========================================
+   SERVICE CARDS
+========================================== */
 
 .services-section {
   background: var(--white);
@@ -392,7 +452,7 @@ button, a {
 
 .service-card {
   padding: 30px;
-  border: 1px solid transparent;
+  border: 1px solid var(--silver);
   border-radius: var(--radius);
   min-height: 270px;
   display: flex;
@@ -402,9 +462,9 @@ button, a {
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow);
-  border-color: var(--silver);
+  border-color: #C9D8E8;
 }
 
 .service-card.beige {
@@ -416,15 +476,15 @@ button, a {
 }
 
 .service-card.lavender {
-  background: var(--lavender);
+  background: #F3F0F8;
 }
 
 .service-card.peach {
-  background: var(--peach);
+  background: #FFF2E9;
 }
 
 .service-card.mint {
-  background: var(--mint);
+  background: #F5F7FA;
 }
 
 .service-card.ivory {
@@ -442,13 +502,13 @@ button, a {
   width: 43px;
   height: 43px;
   margin: 20px 0 16px;
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--white);
   color: var(--corporate-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 23px;
 }
 
 .service-card h3 {
@@ -470,7 +530,9 @@ button, a {
   margin-top: auto;
 }
 
-/* JURISDICTION */
+/* ==========================================
+   JURISDICTION SECTION
+========================================== */
 
 .jurisdiction-section {
   padding: 85px 6%;
@@ -510,7 +572,7 @@ button, a {
 }
 
 .jurisdiction-item > span {
-  color: var(--sea-green);
+  color: var(--gold);
   font-weight: 800;
   font-size: 16px;
 }
@@ -525,26 +587,29 @@ button, a {
   font-size: 13px;
 }
 
-/* PROCESS */
+/* ==========================================
+   HOMEPAGE PROCESS
+========================================== */
 
 .process-section {
-  background: var(--lavender);
+  background: var(--light-bg);
 }
 
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 22px;
 }
 
 .process-grid > div {
   padding: 25px;
   background: var(--white);
-  border-radius: 10px;
+  border: 1px solid var(--silver);
+  border-radius: 9px;
 }
 
 .process-grid strong {
-  color: var(--corporate-blue);
+  color: var(--gold);
   font-size: 23px;
 }
 
@@ -558,7 +623,9 @@ button, a {
   font-size: 13px;
 }
 
-/* CALL TO ACTION */
+/* ==========================================
+   CALL TO ACTION
+========================================== */
 
 .cta-section {
   padding: 75px 6%;
@@ -567,7 +634,7 @@ button, a {
 }
 
 .cta-section .eyebrow {
-  color: var(--sea-green);
+  color: var(--gold);
 }
 
 .cta-section h2 {
@@ -581,11 +648,13 @@ button, a {
   margin-bottom: 25px;
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+========================================== */
 
 .site-footer {
   padding: 55px 6% 20px;
-  background: var(--charcoal);
+  background: var(--navy);
   color: var(--white);
 }
 
@@ -614,7 +683,7 @@ button, a {
 }
 
 .footer-links a:hover {
-  color: var(--sea-green);
+  color: var(--gold);
 }
 
 .footer-bottom {
@@ -627,20 +696,142 @@ button, a {
   font-size: 11px;
 }
 
-/* TABLET */
+/* ==========================================
+   ABOUT PAGE SUPPORT
+========================================== */
 
-@media (max-width: 1000px) {
+.about-hero,
+.about-section {
+  padding: 75px 6%;
+}
+
+.about-hero {
+  background: var(--powder-blue);
+}
+
+.about-hero h1 {
+  color: var(--royal);
+  font-size: clamp(36px, 4vw, 52px);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.about-card {
+  padding: 28px;
+  border: 1px solid var(--silver);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.about-card h3 {
+  color: var(--royal);
+  margin-bottom: 12px;
+}
+
+/* ==========================================
+   CONTACT PAGE SUPPORT
+========================================== */
+
+.contact-hero {
+  padding: 70px 6%;
+  background: var(--powder-blue);
+}
+
+.contact-hero h1 {
+  color: var(--royal);
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.contact-section {
+  padding: 70px 6%;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.contact-card {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: 10px;
+}
+
+.contact-card h2,
+.contact-card h3 {
+  color: var(--royal);
+  margin-bottom: 15px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--silver);
+  border-radius: 5px;
+  font: inherit;
+  color: var(--charcoal);
+  background: var(--white);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(25, 118, 185, 0.2);
+  border-color: var(--corporate-blue);
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* ==========================================
+   GENERAL RESPONSIVE TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+
   .site-header {
-    padding: 15px 4%;
+    gap: 15px;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .site-header .header-inner {
     gap: 15px;
   }
 
-  .brand img {
-    width: 150px;
+  .brand img,
+  .logo img {
+    width: 145px;
   }
 
   .main-nav {
     gap: 15px;
+  }
+
+  .main-nav > a,
+  .nav-dropdown > a,
+  .dropdown > a {
+    font-size: 12px;
+  }
+
+  .header-contact {
+    padding: 10px 12px;
+    font-size: 11px;
   }
 
   .hero {
@@ -651,39 +842,47 @@ button, a {
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-/* MOBILE */
+/* ==========================================
+   MOBILE
+========================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
+
   body {
     font-size: 14px;
   }
 
   .site-header {
-    padding: 12px 5%;
+    padding: 10px 5%;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    position: sticky;
+    top: 0;
   }
 
-  .brand img {
-    width: 145px;
-    max-height: 55px;
+  .site-header .header-inner {
+    display: contents;
+  }
+
+  .brand img,
+  .logo img {
+    width: 130px;
+    max-height: 50px;
   }
 
   .header-contact {
     margin-left: auto;
-    padding: 10px 12px;
-    font-size: 11px;
+    padding: 9px 11px;
+    font-size: 10px;
   }
 
   .main-nav {
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
     overflow-x: auto;
     gap: 22px;
     order: 3;
@@ -697,17 +896,25 @@ button, a {
   }
 
   .main-nav > a,
-  .nav-dropdown > a {
+  .nav-dropdown > a,
+  .dropdown > a {
     font-size: 12px;
+    padding: 7px 0;
   }
 
-  .dropdown-content {
+  /* Mobile dropdown */
+
+  .dropdown-content,
+  .dropdown-menu {
     position: fixed;
     top: auto;
     left: 5%;
     right: 5%;
     min-width: 0;
-    z-index: 200;
+    max-height: 65vh;
+    overflow-y: auto;
+    z-index: 1200;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
   }
 
   .hero {
@@ -768,7 +975,7 @@ button, a {
   }
 
   .service-card {
-    min-height: 235px;
+    min-height: 230px;
     padding: 25px;
   }
 
@@ -791,6 +998,18 @@ button, a {
     padding: 18px;
   }
 
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero,
+  .about-section,
+  .contact-hero,
+  .contact-section {
+    padding: 50px 6%;
+  }
+
   .cta-section {
     padding: 60px 6%;
   }
@@ -803,18 +1022,26 @@ button, a {
     flex-direction: column;
     gap: 8px;
   }
+
+  .footer-links {
+    gap: 15px;
+  }
 }
 
-/* SMALL MOBILE */
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
 @media (max-width: 380px) {
-  .brand img {
-    width: 120px;
+
+  .brand img,
+  .logo img {
+    width: 112px;
   }
 
   .header-contact {
-    font-size: 10px;
-    padding: 9px;
+    font-size: 9px;
+    padding: 8px;
   }
 
   .hero h1 {
