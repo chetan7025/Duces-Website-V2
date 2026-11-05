@@ -4,1045 +4,771 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Independent UAE banking and finance consultancy. DUCES helps businesses and individuals compare banking, business finance and mortgage options.">
-  <title>Banking & Finance Services | DUCES Consultancy Services</title>
+  <meta name="description" content="Explore UAE banking options, business bank accounts, business finance and mortgage guidance with DUCES Consultancy Services.">
+  <title>Banking & Finance | DUCES Consultancy Services</title>
   <link rel="stylesheet" href="style.css">
 
   <style>
-    :root {
-      --royal: #123B70;
-      --sea: #48C9B0;
-      --blue: #1976B9;
-      --charcoal: #263445;
-      --gold: #F4B942;
-      --light: #F5F7FA;
-      --silver: #E5EBF1;
-      --beige: #FAF7F0;
-      --powder: #EDF4FA;
-      --white: #FFFFFF;
+    .banking-hero {
+      background: linear-gradient(120deg, #123B70 0%, #0B2850 100%);
+      color: #fff;
+      padding: 85px 20px;
+      text-align: center;
     }
 
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--charcoal);
-      background: var(--white);
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-    }
-
-    a { text-decoration: none; }
-
-    .bank-page {
-      overflow: hidden;
-    }
-
-    .bank-container {
-      width: min(1160px, 92%);
-      margin: auto;
-    }
-
-    /* HEADER */
-
-    .bank-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--silver);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .bank-nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .bank-logo img {
-      width: 145px;
-      max-height: 65px;
-      object-fit: contain;
-    }
-
-    .bank-menu {
-      display: flex;
-      align-items: center;
-      gap: 23px;
-      flex-wrap: wrap;
-    }
-
-    .bank-menu > a,
-    .bank-dropdown-label {
-      color: var(--charcoal);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .bank-menu a:hover,
-    .bank-dropdown-label:hover {
-      color: var(--blue);
-    }
-
-    .bank-dropdown {
-      position: relative;
-      padding: 15px 0;
-    }
-
-    .bank-dropdown-label {
-      cursor: pointer;
-    }
-
-    .bank-dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 235px;
-      background: var(--white);
-      border: 1px solid var(--silver);
-      border-radius: 9px;
-      box-shadow: 0 12px 30px rgba(18,59,112,.12);
-      padding: 9px;
-    }
-
-    .bank-dropdown:hover .bank-dropdown-content,
-    .bank-dropdown:focus-within .bank-dropdown-content {
-      display: block;
-    }
-
-    .bank-dropdown-content a {
-      display: block;
-      padding: 10px 12px;
-      color: var(--charcoal);
-      font-size: 13px;
-      border-radius: 5px;
-    }
-
-    .bank-dropdown-content a:hover {
-      background: var(--powder);
-      color: var(--royal);
-    }
-
-    .bank-nav-cta {
-      background: var(--royal);
-      color: var(--white) !important;
-      padding: 11px 17px;
-      border-radius: 5px;
-      white-space: nowrap;
-    }
-
-    /* HERO */
-
-    .bank-hero {
-      background: var(--royal);
-      color: var(--white);
-      padding: 85px 0;
-      position: relative;
-    }
-
-    .bank-hero-content {
-      max-width: 790px;
-    }
-
-    .bank-eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
+    .banking-hero .eyebrow {
+      color: #D9AD55;
+      font-weight: 700;
       letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .bank-hero h1 {
-      font-size: clamp(34px, 5vw, 55px);
-      line-height: 1.15;
-      margin: 17px 0;
-      letter-spacing: -.8px;
-    }
-
-    .bank-hero p {
-      color: #E6EDF5;
-      font-size: 17px;
-      max-width: 700px;
-    }
-
-    .bank-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 28px;
-    }
-
-    .bank-btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .bank-btn-gold {
-      background: var(--gold);
-      color: var(--royal);
-    }
-
-    .bank-btn-outline {
-      border: 1px solid rgba(255,255,255,.65);
-      color: var(--white);
-    }
-
-    /* COMMON SECTIONS */
-
-    .bank-section {
-      padding: 72px 0;
-      scroll-margin-top: 100px;
-    }
-
-    .bank-section-heading {
-      max-width: 750px;
-      margin-bottom: 35px;
-    }
-
-    .bank-section-heading span {
-      color: var(--blue);
-      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1.7px;
+      font-size: 13px;
+    }
+
+    .banking-hero h1 {
+      max-width: 850px;
+      margin: 18px auto;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.15;
+    }
+
+    .banking-hero p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: #E6EDF6;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .banking-section {
+      padding: 75px 20px;
+    }
+
+    .banking-section.alt {
+      background: #F5F7FA;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      color: #1976B9;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
       font-weight: 700;
     }
 
-    .bank-section-heading h2 {
-      color: var(--royal);
+    .section-heading h2 {
+      color: #123B70;
       font-size: clamp(27px, 4vw, 38px);
-      line-height: 1.25;
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
-    .bank-section-heading p {
+    .section-heading p {
       color: #64748B;
-      margin: 0;
-    }
-
-    /* INDEPENDENT ADVISORY */
-
-    .bank-advisory {
-      background: var(--beige);
-    }
-
-    .bank-advisory-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .bank-advisory h2 {
-      color: var(--royal);
-      font-size: 32px;
-      line-height: 1.3;
-    }
-
-    .bank-advisory p {
-      color: #536273;
-    }
-
-    .bank-advisory-panel {
-      background: var(--white);
-      border-left: 5px solid var(--gold);
-      padding: 27px;
-      border-radius: 7px;
-      box-shadow: 0 8px 25px rgba(38,52,69,.06);
-    }
-
-    .bank-advisory-panel strong {
-      color: var(--royal);
-    }
-
-    .bank-check-list {
-      padding-left: 20px;
-      margin-bottom: 0;
-    }
-
-    .bank-check-list li {
-      margin: 9px 0;
-    }
-
-    /* BANK OPTIONS */
-
-    .bank-options {
-      background: var(--white);
+      line-height: 1.8;
     }
 
     .bank-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .bank-tile {
-      min-height: 130px;
-      border: 1px solid var(--silver);
-      border-radius: 8px;
-      padding: 22px 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .bank-card {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 12px;
+      padding: 25px 16px;
       text-align: center;
-      background: var(--white);
-      transition: .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .bank-tile:hover {
-      border-color: var(--blue);
-      transform: translateY(-3px);
-      box-shadow: 0 9px 22px rgba(18,59,112,.08);
+    .bank-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(18, 59, 112, .09);
     }
 
-    .bank-monogram {
-      width: 47px;
-      height: 47px;
-      border-radius: 50%;
-      background: var(--powder);
-      color: var(--royal);
+    .bank-mark {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      font-size: 15px;
+      background: #EDF4FA;
+      color: #123B70;
+      font-size: 19px;
       font-weight: 800;
-      margin-bottom: 10px;
     }
 
-    .bank-tile strong {
-      color: var(--royal);
+    .bank-card h3 {
+      color: #263445;
+      font-size: 16px;
+      margin: 0 0 7px;
+    }
+
+    .bank-card p {
+      color: #64748B;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .independent-note {
+      max-width: 1050px;
+      margin: 35px auto 0;
+      padding: 20px 24px;
+      background: #FBF9F4;
+      border-left: 4px solid #D9AD55;
+      border-radius: 7px;
+      color: #445166;
+      line-height: 1.75;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 13px;
+      padding: 28px;
+    }
+
+    .service-number {
+      color: #D9AD55;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .service-card h3 {
+      color: #123B70;
+      margin: 14px 0 12px;
+      font-size: 21px;
+    }
+
+    .service-card p,
+    .service-card li {
+      color: #64748B;
+      line-height: 1.75;
       font-size: 14px;
     }
 
-    .bank-tile small {
-      color: #64748B;
-      font-size: 11px;
-      margin-top: 3px;
+    .service-card ul {
+      padding-left: 18px;
+      margin: 15px 0 0;
     }
 
-    .bank-note {
-      background: var(--powder);
-      border-radius: 7px;
-      padding: 18px 20px;
-      margin-top: 25px;
-      color: var(--charcoal);
-      font-size: 13px;
-    }
-
-    /* SERVICE SECTIONS */
-
-    .bank-service {
-      background: var(--powder);
-    }
-
-    .bank-service:nth-of-type(even) {
-      background: var(--white);
-    }
-
-    .bank-service-grid {
+    .detail-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 38px;
+      gap: 45px;
       align-items: start;
+      max-width: 1050px;
+      margin: auto;
     }
 
-    .bank-service h2 {
-      color: var(--royal);
-      font-size: 32px;
-      line-height: 1.25;
-      margin-top: 8px;
-    }
-
-    .bank-service p {
-      color: #596879;
-    }
-
-    .bank-info-box {
-      background: var(--white);
-      border: 1px solid var(--silver);
-      border-radius: 8px;
-      padding: 25px;
-    }
-
-    .bank-info-box h3 {
-      color: var(--royal);
+    .detail-layout h3 {
+      color: #123B70;
+      font-size: 23px;
       margin-top: 0;
     }
 
-    .bank-info-box ul {
-      padding-left: 20px;
+    .detail-layout p,
+    .detail-layout li {
+      color: #64748B;
+      line-height: 1.8;
     }
 
-    .bank-info-box li {
-      margin: 8px 0;
+    .detail-panel {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 12px;
+      padding: 25px;
     }
 
-    .bank-service-tag {
-      display: inline-block;
-      background: #DDF4EF;
-      color: var(--royal);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 6px 11px;
-      border-radius: 20px;
+    .detail-panel h4 {
+      color: #123B70;
+      margin: 0 0 14px;
     }
 
-    /* PROCESS */
-
-    .bank-process {
-      background: var(--beige);
-    }
-
-    .bank-process-grid {
+    .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 17px;
+      gap: 18px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .bank-step {
-      background: var(--white);
-      border: 1px solid var(--silver);
-      border-radius: 8px;
+    .process-step {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 12px;
       padding: 23px;
     }
 
-    .bank-step-number {
-      color: var(--blue);
-      font-size: 25px;
+    .process-step span {
+      color: #D9AD55;
       font-weight: 800;
+      font-size: 24px;
     }
 
-    .bank-step h3 {
-      color: var(--royal);
+    .process-step h3 {
+      color: #123B70;
       font-size: 17px;
+      margin: 12px 0 8px;
     }
 
-    .bank-step p {
+    .process-step p {
       color: #64748B;
-      font-size: 13px;
+      line-height: 1.7;
+      font-size: 14px;
     }
 
-    /* FAQ */
-
-    .bank-faq {
-      background: var(--white);
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
     }
 
-    .bank-faq details {
-      border: 1px solid var(--silver);
-      border-radius: 7px;
+    .faq-list details {
+      background: #fff;
+      border: 1px solid #E5EBF1;
+      border-radius: 9px;
+      padding: 19px 22px;
       margin-bottom: 12px;
-      padding: 17px 20px;
-      background: var(--white);
     }
 
-    .bank-faq summary {
-      color: var(--royal);
+    .faq-list summary {
+      color: #123B70;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .bank-faq details p {
+    .faq-list details p {
       color: #64748B;
+      line-height: 1.75;
       margin-bottom: 0;
-      font-size: 14px;
     }
 
-    /* DISCLAIMER & CTA */
-
-    .bank-disclaimer {
-      background: var(--light);
-      padding: 28px 0;
-    }
-
-    .bank-disclaimer p {
-      font-size: 12px;
-      color: #64748B;
-      margin: 0;
-    }
-
-    .bank-final-cta {
-      background: var(--royal);
-      color: var(--white);
+    .banking-cta {
+      background: #123B70;
+      color: #fff;
       text-align: center;
       padding: 65px 20px;
     }
 
-    .bank-final-cta h2 {
-      font-size: 32px;
-      margin: 0 0 10px;
+    .banking-cta h2 {
+      font-size: clamp(27px, 4vw, 36px);
+      margin: 0 0 14px;
     }
 
-    .bank-final-cta p {
-      color: #E6EDF5;
+    .banking-cta p {
+      color: #E6EDF6;
       max-width: 650px;
-      margin: 0 auto;
+      margin: 0 auto 25px;
+      line-height: 1.8;
     }
 
-    /* FOOTER */
+    .banking-cta .btn {
+      display: inline-block;
+      background: #D9AD55;
+      color: #0B2850;
+      padding: 14px 26px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-    .bank-footer {
-      background: #263445;
-      color: var(--white);
-      padding: 28px 0;
+    .legal-note {
+      max-width: 1050px;
+      margin: 30px auto 0;
+      color: #64748B;
+      font-size: 13px;
+      line-height: 1.7;
       text-align: center;
     }
 
-    .bank-footer strong {
-      letter-spacing: 1px;
+    @media (max-width: 850px) {
+      .bank-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .detail-layout { grid-template-columns: 1fr; gap: 25px; }
     }
 
-    .bank-footer p {
-      font-size: 12px;
-      color: #D3DCE6;
-      margin: 7px 0;
-    }
-
-    .bank-footer a {
-      color: var(--gold);
-    }
-
-    @media(max-width: 850px) {
-      .bank-nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 13px 0;
-      }
-
-      .bank-menu {
-        width: 100%;
-        gap: 15px;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 8px;
-      }
-
-      .bank-menu > a,
-      .bank-dropdown-label {
-        white-space: nowrap;
-      }
-
-      .bank-dropdown-content {
-        position: fixed;
-        top: auto;
-        left: 4%;
-        margin-top: 10px;
-      }
-
-      .bank-advisory-grid,
-      .bank-service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .bank-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .bank-process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .bank-hero {
-        padding: 65px 0;
-      }
-    }
-
-    @media(max-width: 480px) {
-      .bank-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-
-      .bank-process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .bank-section {
-        padding: 52px 0;
-      }
-
-      .bank-service h2 {
-        font-size: 27px;
-      }
+    @media (max-width: 520px) {
+      .banking-hero { padding: 65px 18px; }
+      .banking-section { padding: 55px 17px; }
+      .bank-grid { gap: 12px; }
+      .bank-card { padding: 20px 10px; }
+      .process-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-<div class="bank-page">
 
-  <!-- HEADER -->
-  <header class="bank-header">
-    <div class="bank-container bank-nav">
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+    </a>
 
-      <a href="index.html" class="bank-logo">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
-      </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
 
-      <nav class="bank-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
+      <div class="dropdown">
         <a href="business-setup.html">Business Setup</a>
-
-        <div class="bank-dropdown">
-          <span class="bank-dropdown-label">Banking & Finance ▾</span>
-          <div class="bank-dropdown-content">
-            <a href="#uae-banking">UAE Banking – Bank Options</a>
-            <a href="#business-accounts">Business Bank Accounts</a>
-            <a href="#business-loans">Business Loans</a>
-            <a href="#mortgage-loans">Mortgage Loans</a>
-          </div>
+        <div class="dropdown-menu">
+          <a href="business-setup.html#mainland">Mainland Company Formation</a>
+          <a href="business-setup.html#freezone">Free Zone Company Formation</a>
+          <a href="business-setup.html#offshore">Offshore Company Formation</a>
         </div>
+      </div>
 
-        <a href="taxation.html">Auditing & Taxation</a>
-        <a href="pro-visa.html">PRO & Visa</a>
-        <a href="contact.html">Contact</a>
-        <a class="bank-nav-cta" href="https://wa.me/971505356966">Contact Us</a>
-      </nav>
+      <div class="dropdown">
+        <a class="active" href="banking-finance.html">Banking & Finance</a>
+        <div class="dropdown-menu">
+          <a href="#uae-banking">UAE Banking – Bank Options</a>
+          <a href="#business-accounts">Business Accounts</a>
+          <a href="#business-loans">Business Loan</a>
+          <a href="#mortgage-loans">Mortgage Loan</a>
+        </div>
+      </div>
 
-    </div>
-  </header>
+      <a href="taxation.html">Auditing & Taxation</a>
+      <a href="pro-visa.html">PRO & Visa</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
 
   <!-- HERO -->
-  <section class="bank-hero">
-    <div class="bank-container">
-      <div class="bank-hero-content">
-        <span class="bank-eyebrow">DUCES Consultancy Services</span>
-        <h1>Banking & Finance Solutions in the UAE</h1>
-        <p>
-          Explore banking and finance options for your business and personal
-          requirements. DUCES provides independent guidance to help you
-          understand available options, prepare documentation and coordinate
-          your application journey.
-        </p>
+  <section class="banking-hero">
+    <div class="eyebrow">Banking & Financial Guidance</div>
+    <h1>Make Informed Banking & Finance Decisions in the UAE</h1>
+    <p>
+      From choosing a suitable business bank account to exploring business
+      finance and mortgage options, DUCES helps you understand the process,
+      prepare your profile and consider suitable options.
+    </p>
+    <a href="#uae-banking" class="btn btn-primary">Explore Banking Services</a>
+  </section>
 
-        <div class="bank-buttons">
-          <a class="bank-btn bank-btn-gold" href="#uae-banking">
-            Explore Banking Options
-          </a>
-          <a class="bank-btn bank-btn-outline" href="https://wa.me/971505356966">
-            Speak to a Consultant
-          </a>
-        </div>
+  <!-- UAE BANKING -->
+  <section class="banking-section" id="uae-banking">
+    <div class="section-heading">
+      <div class="eyebrow">UAE Banking Overview</div>
+      <h2>Explore Banking Options in the UAE</h2>
+      <p>
+        The UAE has a diverse banking sector serving individuals,
+        entrepreneurs, startups and established businesses. Each bank has
+        its own account features, eligibility requirements and procedures.
+      </p>
+    </div>
+
+    <div class="bank-grid">
+
+      <div class="bank-card">
+        <div class="bank-mark">FAB</div>
+        <h3>First Abu Dhabi Bank</h3>
+        <p>Personal and business banking solutions.</p>
       </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">EN</div>
+        <h3>Emirates NBD</h3>
+        <p>Retail, business and corporate banking.</p>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">M</div>
+        <h3>Mashreq</h3>
+        <p>Digital banking and business finance options.</p>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">WIO</div>
+        <h3>Wio Bank</h3>
+        <p>Digital-first banking for businesses and individuals.</p>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">RAK</div>
+        <h3>RAKBANK</h3>
+        <p>Banking and financing solutions for businesses.</p>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">ADIB</div>
+        <h3>Abu Dhabi Islamic Bank</h3>
+        <p>Sharia-compliant banking and finance solutions.</p>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">EI</div>
+        <h3>Emirates Islamic</h3>
+        <p>Islamic banking products and financial services.</p>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-mark">CBD</div>
+        <h3>Commercial Bank of Dubai</h3>
+        <p>Personal, business and corporate banking.</p>
+      </div>
+
+    </div>
+
+    <div class="independent-note">
+      <strong>Our independent approach:</strong>
+      DUCES Consultancy Services is an independent consultancy. We help
+      clients understand available banking options and identify institutions
+      they may consider based on their business activity, profile and
+      requirements. The banks displayed are examples of UAE banking
+      institutions, not a declaration of partnership, agency or endorsement.
+      Bank products, eligibility and terms are determined by each bank.
     </div>
   </section>
 
-  <!-- INDEPENDENT CONSULTANCY -->
-  <section class="bank-section bank-advisory">
-    <div class="bank-container bank-advisory-grid">
+  <!-- SERVICE OVERVIEW -->
+  <section class="banking-section alt">
+    <div class="section-heading">
+      <div class="eyebrow">Our Banking Services</div>
+      <h2>Financial Guidance for Different Needs</h2>
+      <p>
+        We help you understand the requirements and prepare for the next step
+        with a more organised approach.
+      </p>
+    </div>
 
-      <div>
-        <div class="bank-section-heading">
-          <span>Independent Guidance</span>
-          <h2>Choose Banking Options With Better Information</h2>
-          <p>
-            Every bank has its own account policies, eligibility criteria,
-            documentation requirements and internal approval process.
-            Selecting the right option starts with understanding your
-            business profile and financial requirements.
-          </p>
-        </div>
+    <div class="service-grid">
 
+      <div class="service-card">
+        <div class="service-number">01 / BUSINESS BANKING</div>
+        <h3>Business Bank Accounts</h3>
         <p>
-          DUCES Consultancy Services helps clients review available options,
-          understand general requirements, prepare their documentation and
-          coordinate applications with the relevant financial institutions.
+          Guidance for entrepreneurs and companies looking to open a
+          business bank account in the UAE.
         </p>
-      </div>
-
-      <div class="bank-advisory-panel">
-        <strong>How DUCES supports you</strong>
-        <ul class="bank-check-list">
-          <li>Understand your banking or finance requirement</li>
-          <li>Review suitable options based on your profile</li>
-          <li>Explain general documentation requirements</li>
-          <li>Assist with application preparation</li>
-          <li>Coordinate communication and follow-up</li>
+        <ul>
+          <li>Bank option assessment</li>
+          <li>Business profile preparation</li>
+          <li>Document checklist</li>
+          <li>KYC and application guidance</li>
         </ul>
+        <p><a href="#business-accounts">Explore Business Accounts →</a></p>
       </div>
 
-    </div>
-  </section>
-
-  <!-- UAE BANKING OPTIONS -->
-  <section class="bank-section bank-options" id="uae-banking">
-    <div class="bank-container">
-
-      <div class="bank-section-heading">
-        <span>UAE Banking Overview</span>
-        <h2>Explore Banking Institutions in the UAE</h2>
+      <div class="service-card">
+        <div class="service-number">02 / BUSINESS FINANCE</div>
+        <h3>Business Loans</h3>
         <p>
-          The UAE has a range of local, international and digital banking
-          institutions. Explore some of the names below and understand
-          which options may be relevant to your requirements.
+          Preliminary guidance for established businesses exploring
+          financing for working capital or business expansion.
         </p>
+        <ul>
+          <li>Business profile review</li>
+          <li>Turnover and banking assessment</li>
+          <li>Financial document checklist</li>
+          <li>Financing option guidance</li>
+        </ul>
+        <p><a href="#business-loans">Explore Business Loans →</a></p>
       </div>
 
-      <div class="bank-grid">
-
-        <div class="bank-tile">
-          <div class="bank-monogram">FAB</div>
-          <strong>First Abu Dhabi Bank</strong>
-          <small>Banking options</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">ENBD</div>
-          <strong>Emirates NBD</strong>
-          <small>Banking options</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">M</div>
-          <strong>Mashreq</strong>
-          <small>Banking options</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">WIO</div>
-          <strong>Wio Bank</strong>
-          <small>Digital banking</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">RAK</div>
-          <strong>RAKBANK</strong>
-          <small>Banking options</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">ADIB</div>
-          <strong>Abu Dhabi Islamic Bank</strong>
-          <small>Islamic banking</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">EIB</div>
-          <strong>Emirates Islamic</strong>
-          <small>Islamic banking</small>
-        </div>
-
-        <div class="bank-tile">
-          <div class="bank-monogram">CBD</div>
-          <strong>Commercial Bank of Dubai</strong>
-          <small>Banking options</small>
-        </div>
-
-      </div>
-
-      <div class="bank-note">
-        <strong>Important:</strong> The institutions displayed are examples
-        of banks operating in the UAE. DUCES Consultancy Services is an
-        independent consultancy and does not claim to be an official partner,
-        representative or authorised agent of these banks. Bank names and
-        references are for general information only.
+      <div class="service-card">
+        <div class="service-number">03 / PROPERTY FINANCE</div>
+        <h3>Mortgage Loans</h3>
+        <p>
+          Guidance for eligible residents and property buyers exploring
+          residential property finance options.
+        </p>
+        <ul>
+          <li>Initial requirement discussion</li>
+          <li>Income and liability overview</li>
+          <li>Document preparation guidance</li>
+          <li>Mortgage process assistance</li>
+        </ul>
+        <p><a href="#mortgage-loans">Explore Mortgage Loans →</a></p>
       </div>
 
     </div>
   </section>
 
   <!-- BUSINESS ACCOUNTS -->
-  <section class="bank-section bank-service" id="business-accounts">
-    <div class="bank-container bank-service-grid">
+  <section class="banking-section" id="business-accounts">
+    <div class="section-heading">
+      <div class="eyebrow">Business Banking</div>
+      <h2>Business Bank Account Assistance</h2>
+      <p>
+        A suitable business account supports your daily operations,
+        collections, supplier payments and financial management.
+      </p>
+    </div>
 
+    <div class="detail-layout">
       <div>
-        <span class="bank-service-tag">Business Banking</span>
-        <h2>Business Bank Account Assistance</h2>
-
+        <h3>Choose with a Clear Understanding</h3>
         <p>
-          A business bank account is an important part of operating a company
-          in the UAE. The appropriate banking option depends on the company's
-          legal structure, licensed activities, ownership, business model,
-          expected transactions and documentation.
+          Selecting a bank involves more than comparing account fees.
+          Business activity, ownership structure, expected transactions,
+          customer geography and source of funds can all influence a bank's
+          assessment.
         </p>
-
         <p>
-          DUCES helps business owners understand available banking options,
-          review general requirements and prepare for the application process.
+          DUCES helps you understand the available options, organise
+          documentation and prepare for the bank's application and
+          verification process.
         </p>
-
-        <a class="bank-btn bank-btn-gold"
-           style="background:#F4B942;color:#123B70;"
-           href="https://wa.me/971505356966">
-          Discuss Your Business Account
-        </a>
       </div>
 
-      <div class="bank-info-box">
-        <h3>Common Documentation</h3>
+      <div class="detail-panel">
+        <h4>Typical Documents to Prepare</h4>
         <ul>
-          <li>Valid UAE trade licence</li>
-          <li>MOA or company formation documents, where applicable</li>
-          <li>Shareholder and authorised signatory identification</li>
-          <li>Passport, visa and Emirates ID, where applicable</li>
-          <li>Office lease or Ejari, if required</li>
-          <li>Business profile and activity description</li>
-          <li>Expected turnover and transaction details</li>
-          <li>Invoices, contracts or supporting business evidence</li>
-          <li>Source of funds and ownership information</li>
+          <li>Valid UAE Trade Licence</li>
+          <li>Memorandum of Association, where applicable</li>
+          <li>Shareholder and authorised signatory documents</li>
+          <li>Passport, visa and Emirates ID copies, as applicable</li>
+          <li>Company address and tenancy documents, where required</li>
+          <li>Business activity and operating model details</li>
+          <li>Expected transaction and source-of-funds information</li>
+          <li>Invoices, contracts or supporting business records, if requested</li>
         </ul>
-        <p><small>Final requirements are determined by the selected bank.</small></p>
       </div>
-
     </div>
   </section>
 
   <!-- BUSINESS LOANS -->
-  <section class="bank-section bank-service" id="business-loans"
-           style="background:#FAF7F0;">
-    <div class="bank-container bank-service-grid">
+  <section class="banking-section alt" id="business-loans">
+    <div class="section-heading">
+      <div class="eyebrow">Business Finance</div>
+      <h2>Business Loan & Financing Guidance</h2>
+      <p>
+        Explore financing options for business requirements, working capital
+        and planned expansion.
+      </p>
+    </div>
 
+    <div class="detail-layout">
       <div>
-        <span class="bank-service-tag">Business Finance</span>
-        <h2>Business Loans & Finance Assistance</h2>
-
+        <h3>Understand Your Business Finance Profile</h3>
         <p>
-          Business finance may help eligible companies manage working capital,
-          business expansion, equipment purchases or other approved commercial
-          requirements.
+          Lenders may consider the company's operating history, turnover,
+          account conduct, profitability, existing liabilities and financial
+          records when reviewing a financing application.
         </p>
-
         <p>
-          DUCES helps business owners understand general finance options,
-          review preliminary requirements and organise supporting documents
-          before approaching a suitable lender.
-        </p>
-
-        <p>
-          Finance eligibility can depend on company turnover, profitability,
-          bank statements, business history, existing liabilities, ownership
-          and the lender's credit assessment.
+          DUCES can help organise your business information and understand
+          the documentation generally requested before you approach a lender.
         </p>
       </div>
 
-      <div class="bank-info-box">
-        <h3>What May Be Reviewed?</h3>
+      <div class="detail-panel">
+        <h4>Information Commonly Reviewed</h4>
         <ul>
-          <li>Company operating history</li>
-          <li>Annual turnover and financial performance</li>
+          <li>Trade Licence and company ownership details</li>
           <li>Business bank statements</li>
-          <li>VAT returns and financial records, where applicable</li>
+          <li>VAT returns and financial statements, where applicable</li>
+          <li>Annual turnover and business performance</li>
           <li>Existing loans and financial commitments</li>
-          <li>Business purpose and requested finance amount</li>
-          <li>Shareholder or guarantor information, if required</li>
+          <li>Business purpose and proposed use of funds</li>
+          <li>Invoices, contracts and supporting records</li>
         </ul>
-        <h3>DUCES Assistance</h3>
-        <p>
-          Preliminary profile review, document preparation guidance,
-          option comparison and application coordination.
-        </p>
       </div>
-
     </div>
   </section>
 
   <!-- MORTGAGE LOANS -->
-  <section class="bank-section bank-service" id="mortgage-loans">
-    <div class="bank-container bank-service-grid">
+  <section class="banking-section" id="mortgage-loans">
+    <div class="section-heading">
+      <div class="eyebrow">Property Finance</div>
+      <h2>Mortgage Loan Assistance</h2>
+      <p>
+        Understand the general mortgage process and prepare for discussions
+        with banks and finance providers.
+      </p>
+    </div>
 
+    <div class="detail-layout">
       <div>
-        <span class="bank-service-tag">Property Finance</span>
-        <h2>Mortgage Loan Assistance in the UAE</h2>
-
+        <h3>Plan Your Property Finance Journey</h3>
         <p>
-          Whether you are considering purchasing a home or exploring property
-          finance, understanding the available mortgage options and
-          documentation is an important first step.
+          Mortgage eligibility and terms can depend on income, employment or
+          business profile, residency status, credit history, existing
+          liabilities, property value and the lender's policies.
         </p>
-
         <p>
-          DUCES provides general guidance on mortgage requirements and helps
-          clients organise information for discussions with relevant lenders.
-        </p>
-
-        <p>
-          Mortgage terms and eligibility vary according to the applicant's
-          income, residency status, credit profile, property value, down
-          payment and lender policies.
+          DUCES provides initial guidance and documentation assistance to
+          help applicants understand the process and prepare their enquiries.
         </p>
       </div>
 
-      <div class="bank-info-box">
-        <h3>Common Mortgage Considerations</h3>
+      <div class="detail-panel">
+        <h4>Documents That May Be Requested</h4>
         <ul>
-          <li>Applicant income and employment or business profile</li>
-          <li>Residency and identification documents</li>
-          <li>Existing financial commitments</li>
-          <li>Property value and type</li>
-          <li>Available down payment</li>
-          <li>Credit history and lender assessment</li>
-          <li>Property and sale documentation</li>
+          <li>Passport, visa and Emirates ID, as applicable</li>
+          <li>Salary certificate or employment documents</li>
+          <li>Recent personal bank statements</li>
+          <li>Business and income documents for self-employed applicants</li>
+          <li>Existing loan and liability details</li>
+          <li>Property details and sale documents</li>
+          <li>Down payment and source-of-funds information</li>
         </ul>
-
-        <h3>Our Support</h3>
-        <p>
-          Understanding general mortgage options, preparing documents and
-          coordinating discussions with relevant financial institutions.
-        </p>
       </div>
-
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="bank-section bank-process">
-    <div class="bank-container">
+  <!-- PROCESS -->
+  <section class="banking-section alt">
+    <div class="section-heading">
+      <div class="eyebrow">How We Work</div>
+      <h2>A Structured Approach</h2>
+      <p>
+        Clear steps help you understand what information is needed and what
+        to expect during the process.
+      </p>
+    </div>
 
-      <div class="bank-section-heading">
-        <span>Our Approach</span>
-        <h2>A Clearer Way to Explore Your Options</h2>
-        <p>
-          Our process focuses on understanding your requirement and helping
-          you prepare before approaching a bank or lender.
-        </p>
+    <div class="process-grid">
+      <div class="process-step">
+        <span>01</span>
+        <h3>Understand</h3>
+        <p>We discuss your requirements, business profile and objectives.</p>
       </div>
 
-      <div class="bank-process-grid">
+      <div class="process-step">
+        <span>02</span>
+        <h3>Assess</h3>
+        <p>We review the information available and discuss relevant options.</p>
+      </div>
 
-        <div class="bank-step">
-          <div class="bank-step-number">01</div>
-          <h3>Understand</h3>
-          <p>We discuss your banking or finance requirement and profile.</p>
-        </div>
+      <div class="process-step">
+        <span>03</span>
+        <h3>Prepare</h3>
+        <p>We help organise documents and prepare for the application process.</p>
+      </div>
 
-        <div class="bank-step">
-          <div class="bank-step-number">02</div>
-          <h3>Review</h3>
-          <p>We help you understand available options and general requirements.</p>
-        </div>
-
-        <div class="bank-step">
-          <div class="bank-step-number">03</div>
-          <h3>Prepare</h3>
-          <p>We guide you through the relevant documentation and application preparation.</p>
-        </div>
-
-        <div class="bank-step">
-          <div class="bank-step-number">04</div>
-          <h3>Coordinate</h3>
-          <p>We assist with application coordination and follow-up as agreed.</p>
-        </div>
-
+      <div class="process-step">
+        <span>04</span>
+        <h3>Coordinate</h3>
+        <p>We guide you through the next steps with the relevant institution.</p>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="bank-section bank-faq">
-    <div class="bank-container">
+  <section class="banking-section">
+    <div class="section-heading">
+      <div class="eyebrow">Frequently Asked Questions</div>
+      <h2>Banking & Finance – FAQs</h2>
+    </div>
 
-      <div class="bank-section-heading">
-        <span>Frequently Asked Questions</span>
-        <h2>Banking & Finance – Common Questions</h2>
-      </div>
+    <div class="faq-list">
 
       <details>
-        <summary>Is DUCES an official partner of the banks displayed?</summary>
+        <summary>Does DUCES represent or partner with the banks listed?</summary>
         <p>
-          No. DUCES Consultancy Services operates independently. The bank
-          names displayed are for general information and comparison.
-          DUCES does not claim an official partnership or representation.
+          No. DUCES is an independent consultancy. The bank names are provided
+          for general information. We do not claim to be an appointed agent,
+          official representative or partner of these institutions.
         </p>
       </details>
 
       <details>
-        <summary>Can DUCES help a newly established company?</summary>
+        <summary>Can DUCES help me choose a business bank account?</summary>
         <p>
-          Yes. We can explain general banking requirements and help organise
-          documents for a newly established company. Account opening remains
-          subject to the bank's policies and due diligence.
+          We can discuss your business requirements, explain general account
+          considerations and help you identify banks you may wish to approach.
+          The bank independently decides whether to accept an application.
         </p>
       </details>
 
       <details>
-        <summary>Does DUCES guarantee business account opening?</summary>
+        <summary>Is a business bank account guaranteed after applying?</summary>
         <p>
-          No. Account opening decisions are made independently by banks
-          following their internal compliance and approval procedures.
+          No. Every bank conducts its own due diligence, KYC checks and
+          eligibility assessment. Account opening is subject to the bank's
+          approval and policies.
         </p>
       </details>
 
       <details>
-        <summary>Can DUCES guarantee a business loan or mortgage approval?</summary>
+        <summary>Can a newly established company apply for a business loan?</summary>
         <p>
-          No. Finance approval, amount, interest or profit rate, tenure and
-          other terms are determined by the relevant lender after assessment.
+          Requirements differ between lenders and financing products.
+          Operating history, turnover, financial performance and other
+          factors may be considered. We can help you understand the general
+          requirements before approaching a lender.
         </p>
       </details>
 
       <details>
-        <summary>Do all UAE banks have the same requirements?</summary>
+        <summary>Does DUCES guarantee loan or mortgage approval?</summary>
         <p>
-          No. Documentation, eligibility, account conditions and service
-          charges can vary between banks and may change over time.
+          No. All financing decisions, rates, terms and approvals are made
+          solely by the relevant bank or finance provider.
         </p>
       </details>
 
       <details>
-        <summary>How can I get started?</summary>
+        <summary>Can individuals and companies contact DUCES?</summary>
         <p>
-          Contact DUCES with a brief description of your requirement.
-          We can discuss the information needed for an initial review.
+          Yes. You can contact us to discuss business banking, business
+          finance or mortgage-related guidance and documentation assistance.
         </p>
       </details>
 
     </div>
+
+    <p class="legal-note">
+      Important: DUCES Consultancy Services provides consultancy,
+      information, documentation guidance and coordination support.
+      Banking and financing products are subject to the relevant institution's
+      eligibility criteria, due diligence, terms and final approval.
+      No approval, account opening, credit facility, interest rate or
+      financing outcome is guaranteed.
+    </p>
   </section>
 
-  <!-- DISCLAIMER -->
-  <section class="bank-disclaimer">
-    <div class="bank-container">
-      <p>
-        <strong>Disclaimer:</strong> DUCES Consultancy Services provides
-        independent consultancy, general guidance and application
-        coordination. It is not a bank, lender, financial institution or
-        authorised representative of the banks displayed. All banking and
-        finance products, rates, fees, eligibility criteria and approvals
-        are subject to the relevant institution's current policies and
-        independent assessment. No approval or financial outcome is guaranteed.
-        Regulated activities, where applicable, are subject to the relevant
-        authorisations and qualified professionals.
-      </p>
-    </div>
+  <!-- CTA -->
+  <section class="banking-cta">
+    <h2>Let's Discuss Your Banking Requirements</h2>
+    <p>
+      Whether you are setting up a company, opening a business account,
+      exploring business finance or considering a mortgage, speak with
+      DUCES to understand your next steps.
+    </p>
+    <a class="btn" href="https://wa.me/971505356966" target="_blank" rel="noopener">
+      Discuss Your Requirements on WhatsApp
+    </a>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="bank-final-cta">
-    <div class="bank-container">
-      <h2>Let's Understand Your Banking Requirements</h2>
-      <p>
-        Whether you need a business account, business finance or mortgage
-        guidance, speak with DUCES to understand your next steps.
-      </p>
+</main>
 
-      <div class="bank-buttons" style="justify-content:center;">
-        <a class="bank-btn bank-btn-gold"
-           href="https://wa.me/971505356966">
-          Connect on WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+<footer class="site-footer">
+  <div class="container">
+    <h3>DUCES CONSULTANCY SERVICES</h3>
+    <p>
+      From business formation to banking and operational support —
+      one consultancy for your business journey in the UAE.
+    </p>
+    <p>WhatsApp: +971 50 535 6966</p>
+    <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer class="bank-footer">
-    <div class="bank-container">
-      <strong>DUCES CONSULTANCY SERVICES</strong>
-      <p>Independent Business, Banking & Finance Consultancy</p>
-      <p>Dubai, United Arab Emirates</p>
-      <p>Call / WhatsApp: <a href="https://wa.me/971505356966">+971 50 535 6966</a></p>
-      <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-</div>
 </body>
 </html>
