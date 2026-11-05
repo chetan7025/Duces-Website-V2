@@ -1,298 +1,400 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact DUCES Consultancy Services for UAE business setup, business banking, finance, taxation and PRO support.">
   <title>Contact Us | DUCES Consultancy Services</title>
+  <meta name="description" content="Contact DUCES Consultancy Services for UAE business setup, banking and finance guidance, taxation coordination and PRO services.">
   <link rel="stylesheet" href="style.css">
 
   <style>
     .contact-hero {
-      background: linear-gradient(120deg, #123B70, #1976B9);
-      color: #FFFFFF;
-      text-align: center;
-      padding: 65px 20px;
+      background: linear-gradient(115deg, #123B70, #1976B9);
+      color: white;
+      padding: 75px 7%;
     }
-
+    .contact-hero-inner {
+      max-width: 1180px;
+      margin: auto;
+    }
+    .contact-hero .eyebrow {
+      color: #F4B942;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
     .contact-hero h1 {
-      font-size: clamp(30px, 5vw, 44px);
-      margin: 0 0 14px;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.15;
+      margin: 14px 0;
     }
-
     .contact-hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #F1F7FC;
+      max-width: 680px;
+      color: #EAF2FB;
       line-height: 1.8;
+      font-size: 17px;
     }
-
     .contact-section {
-      max-width: 1100px;
+      padding: 70px 7%;
+      background: #F5F7FA;
+    }
+    .contact-container {
+      max-width: 1180px;
       margin: auto;
-      padding: 60px 20px;
     }
-
-    .contact-layout {
+    .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: .85fr 1.15fr;
       gap: 30px;
-      align-items: stretch;
+      align-items: start;
     }
-
     .contact-info {
       background: #123B70;
-      color: #FFFFFF;
-      border-radius: 14px;
-      padding: 35px;
+      color: white;
+      padding: 34px;
+      border-radius: 16px;
     }
-
     .contact-info h2 {
-      margin-top: 0;
-      font-size: 27px;
+      font-size: 26px;
+      margin: 0 0 12px;
     }
-
-    .contact-info p {
-      color: #E5EBF1;
-      line-height: 1.8;
+    .contact-info > p {
+      color: #EAF2FB;
+      line-height: 1.7;
+      margin-bottom: 28px;
     }
-
-    .contact-detail {
-      border-top: 1px solid rgba(255,255,255,0.2);
+    .contact-item {
       padding: 17px 0;
+      border-top: 1px solid rgba(255,255,255,.2);
     }
-
-    .contact-detail strong {
-      display: block;
-      color: #D9AD55;
-      margin-bottom: 6px;
+    .contact-item h3 {
+      color: #F4B942;
+      font-size: 14px;
+      margin: 0 0 7px;
     }
-
-    .contact-detail a {
-      color: #FFFFFF;
+    .contact-item p,
+    .contact-item a {
+      color: white;
+      line-height: 1.6;
       text-decoration: none;
+      margin: 0;
       overflow-wrap: anywhere;
     }
-
-    .contact-action {
+    .contact-whatsapp {
       display: inline-block;
-      margin-top: 18px;
-      padding: 13px 22px;
-      background: #D9AD55;
-      color: #0B2850;
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .contact-services {
-      background: #F5F7FA;
-      border: 1px solid #E5EBF1;
-      border-radius: 14px;
-      padding: 35px;
-    }
-
-    .contact-services h2 {
+      background: #F4B942;
       color: #123B70;
-      margin-top: 0;
-      font-size: 26px;
-    }
-
-    .contact-services p {
-      color: #64748B;
-      line-height: 1.8;
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 22px 0;
-    }
-
-    .contact-list li {
-      background: #FFFFFF;
-      border: 1px solid #E5EBF1;
-      padding: 13px 15px;
-      margin-bottom: 10px;
+      padding: 13px 20px;
       border-radius: 7px;
-      color: #263445;
-    }
-
-    .contact-list li::before {
-      content: "✓";
-      color: #1976B9;
       font-weight: 700;
-      margin-right: 10px;
-    }
-
-    .contact-bottom {
-      background: #0B2850;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .contact-bottom h2 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .contact-bottom p {
-      color: #E5EBF1;
-      line-height: 1.8;
-    }
-
-    .contact-bottom a {
-      display: inline-block;
-      background: #D9AD55;
-      color: #0B2850;
       text-decoration: none;
-      padding: 14px 25px;
-      border-radius: 6px;
-      font-weight: 700;
-      margin-top: 15px;
+      margin-top: 22px;
     }
-
-    @media (max-width: 750px) {
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-
+    .contact-form {
+      background: white;
+      border: 1px solid #E5EBF1;
+      padding: 34px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(18,59,112,.05);
+    }
+    .contact-form h2 {
+      color: #123B70;
+      font-size: 26px;
+      margin: 0 0 8px;
+    }
+    .contact-form > p {
+      color: #64748B;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      color: #263445;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 14px;
+      border: 1px solid #D8E0E9;
+      border-radius: 7px;
+      font: inherit;
+      font-size: 14px;
+      color: #263445;
+      background: #fff;
+    }
+    .form-group textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: 2px solid #1976B9;
+      border-color: #1976B9;
+    }
+    .form-submit {
+      margin-top: 20px;
+      background: #123B70;
+      color: white;
+      border: 0;
+      padding: 14px 25px;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+    }
+    .form-note {
+      font-size: 12px;
+      color: #64748B;
+      line-height: 1.6;
+      margin-top: 13px;
+    }
+    .service-note {
+      padding: 28px;
+      background: #FAF7F0;
+      border: 1px solid #EEE7D9;
+      border-radius: 13px;
+      margin-top: 30px;
+    }
+    .service-note h3 {
+      color: #123B70;
+      margin: 0 0 9px;
+    }
+    .service-note p {
+      color: #64748B;
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media(max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media(max-width: 560px) {
+      .contact-hero { padding: 60px 6%; }
+      .contact-section { padding: 50px 6%; }
       .contact-info,
-      .contact-services {
-        padding: 25px 20px;
-      }
+      .contact-form { padding: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: auto; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services Logo">
-      </a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+    </a>
 
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="contact.html" class="nav-button">Get in Touch</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="business-setup.html">Business Setup</a>
 
-  <!-- INTRODUCTION -->
+      <div class="dropdown">
+        <a href="banking-finance.html">Banking & Finance</a>
+        <div class="dropdown-menu">
+          <a href="banking-finance.html#uae-banking">UAE Banking – Bank Options</a>
+          <a href="banking-finance.html#business-accounts">Business Accounts</a>
+          <a href="banking-finance.html#business-loans">Business Loan</a>
+          <a href="banking-finance.html#mortgage-loans">Mortgage Loan</a>
+        </div>
+      </div>
+
+      <a href="taxation.html">Auditing & Taxation</a>
+      <a href="pro-visa.html">PRO & Visa</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
   <section class="contact-hero">
-    <h1>Let's Connect</h1>
-    <p>
-      Have a business requirement or looking for the right
-      consultancy support in the UAE? Get in touch with DUCES
-      Consultancy Services.
-    </p>
+    <div class="contact-hero-inner">
+      <span class="eyebrow">Contact DUCES</span>
+      <h1>Let's Talk About Your Business Requirements.</h1>
+      <p>
+        Tell us what you are planning or what support you need.
+        Our team can help you understand the relevant service options
+        and the next steps.
+      </p>
+    </div>
   </section>
 
-  <!-- CONTACT INFORMATION -->
-  <main class="contact-section">
-    <div class="contact-layout">
+  <section class="contact-section">
+    <div class="contact-container">
 
-      <section class="contact-info">
-        <h2>Contact Information</h2>
+      <div class="contact-grid">
 
-        <p>
-          Speak with us about your business requirements.
-          We will help you understand the available options
-          and the next steps.
-        </p>
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>
+            Connect with DUCES Consultancy Services for business-related
+            guidance and service enquiries in the UAE.
+          </p>
 
-        <div class="contact-detail">
-          <strong>Call Us</strong>
-          <a href="tel:+971505356966">+971 50 535 6966</a>
-        </div>
+          <div class="contact-item">
+            <h3>WhatsApp / Phone</h3>
+            <a href="https://wa.me/971505356966" target="_blank" rel="noopener">
+              +971 50 535 6966
+            </a>
+          </div>
 
-        <div class="contact-detail">
-          <strong>WhatsApp</strong>
-          <a href="https://wa.me/971505356966" target="_blank">
-            Chat with our team
+          <div class="contact-item">
+            <h3>Business Enquiries</h3>
+            <p>Contact us through WhatsApp for an initial discussion.</p>
+          </div>
+
+          <div class="contact-item">
+            <h3>Location</h3>
+            <p>United Arab Emirates</p>
+          </div>
+
+          <a class="contact-whatsapp"
+             href="https://wa.me/971505356966"
+             target="_blank"
+             rel="noopener">
+            Chat on WhatsApp
           </a>
         </div>
 
-        <div class="contact-detail">
-          <strong>Location</strong>
-          United Arab Emirates
+        <div class="contact-form">
+          <h2>Send an Enquiry</h2>
+          <p>
+            Share a few details about your requirement so we can
+            understand how to direct your enquiry.
+          </p>
+
+          <form id="enquiryForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName"
+                       placeholder="Your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp *</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="Country code and number" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Your email address">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Required *</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Business Setup</option>
+                  <option>Business Bank Account</option>
+                  <option>Business Loan</option>
+                  <option>Mortgage Loan</option>
+                  <option>VAT & Corporate Tax</option>
+                  <option>Accounting & Bookkeeping</option>
+                  <option>Audit Coordination</option>
+                  <option>PRO & Visa Services</option>
+                  <option>Other Enquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="message">Tell Us About Your Requirement *</label>
+                <textarea id="message" name="message"
+                          placeholder="Briefly describe your requirement..."
+                          required></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="form-submit">
+              Continue on WhatsApp
+            </button>
+
+            <p class="form-note">
+              Selecting this button will open WhatsApp with your enquiry
+              details. Please review the message before sending it.
+            </p>
+
+          </form>
         </div>
 
-        <a class="contact-action"
-           href="https://wa.me/971505356966"
-           target="_blank">
-          Start a WhatsApp Conversation
-        </a>
-      </section>
-
-      <section class="contact-services">
-        <h2>How Can We Assist You?</h2>
-
-        <p>
-          Choose the area you would like to discuss with our
-          consultancy team.
-        </p>
-
-        <ul class="contact-list">
-          <li>Business Setup – Mainland & Free Zone</li>
-          <li>Business Bank Account Assistance</li>
-          <li>Business Loan & Finance Consultation</li>
-          <li>Auditing & Taxation Support</li>
-          <li>PRO, Visa & Documentation Services</li>
-        </ul>
-
-        <p>
-          Share your requirement with us and we will guide you
-          towards the appropriate next steps.
-        </p>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- FINAL CTA -->
-  <section class="contact-bottom">
-    <h2>Your Business Journey Starts with a Conversation</h2>
-
-    <p>
-      Let's understand your requirements and explore
-      the right solutions for your business.
-    </p>
-
-    <a href="https://wa.me/971505356966" target="_blank">
-      Contact DUCES Consultancy Services
-    </a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <h3>DUCES CONSULTANCY SERVICES</h3>
-
-      <p>Your business requirements, coordinated with clarity.</p>
-      <p>Phone: +971 50 535 6966</p>
-      <p>United Arab Emirates</p>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
       </div>
 
-      <p class="copyright">
-        © 2026 DUCES Consultancy Services. All Rights Reserved.
-      </p>
+      <div class="service-note">
+        <h3>How We Handle Enquiries</h3>
+        <p>
+          We first understand your requirement, then discuss relevant
+          options, documentation and possible next steps. Service scope,
+          fees, third-party requirements and approval timelines may vary
+          depending on the service and relevant authority or institution.
+        </p>
+      </div>
+
     </div>
-  </footer>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <h3>DUCES CONSULTANCY SERVICES</h3>
+    <p>Business Setup | Banking & Finance | Auditing & Taxation | PRO & Visa</p>
+    <p>WhatsApp: +971 50 535 6966</p>
+    <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("fullName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    const whatsappMessage =
+      "DUCES WEBSITE ENQUIRY\n\n" +
+      "Name: " + name + "\n" +
+      "Phone: " + phone + "\n" +
+      "Email: " + (email || "Not provided") + "\n" +
+      "Service: " + service + "\n" +
+      "Requirement: " + message;
+
+    const whatsappURL =
+      "https://wa.me/971505356966?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
 
 </body>
-</html>
+  </html>
