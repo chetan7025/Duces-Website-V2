@@ -1,406 +1,523 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about DUCES Consultancy Services, your business consultancy support partner in the UAE.">
   <title>About Us | DUCES Consultancy Services</title>
+  <meta name="description" content="Discover DUCES Consultancy Services, an independent UAE business consultancy supporting business setup, banking and finance guidance, taxation coordination and PRO services.">
   <link rel="stylesheet" href="style.css">
 
   <style>
     .about-hero {
-      background: linear-gradient(120deg, #123B70, #1976B9);
-      color: #FFFFFF;
-      text-align: center;
-      padding: 70px 20px;
+      background: linear-gradient(115deg, #123B70 0%, #1976B9 100%);
+      color: #fff;
+      padding: 85px 7%;
+      position: relative;
+      overflow: hidden;
     }
-
-    .about-hero h1 {
-      font-size: clamp(30px, 5vw, 44px);
-      margin: 0 0 15px;
-    }
-
-    .about-hero p {
-      max-width: 760px;
+    .about-hero-inner {
+      max-width: 1180px;
       margin: auto;
-      color: #F1F7FC;
+      position: relative;
+      z-index: 1;
+    }
+    .about-hero h1 {
+      max-width: 760px;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.12;
+      margin: 14px 0 20px;
+    }
+    .about-hero p {
+      max-width: 700px;
+      color: #eaf2fb;
+      font-size: 17px;
       line-height: 1.8;
     }
-
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #F4B942;
+    }
     .about-section {
-      max-width: 1100px;
+      padding: 75px 7%;
+    }
+    .about-container {
+      max-width: 1180px;
       margin: auto;
-      padding: 60px 20px;
     }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 35px;
-      align-items: center;
+    .about-heading {
+      max-width: 760px;
+      margin-bottom: 35px;
     }
-
-    .about-text h2,
     .about-heading h2 {
       color: #123B70;
-      font-size: 29px;
-      margin-top: 0;
+      font-size: clamp(28px, 4vw, 38px);
+      margin: 10px 0 14px;
+      line-height: 1.2;
     }
-
-    .about-text p,
-    .about-heading p {
+    .about-heading p,
+    .about-copy p {
       color: #64748B;
-      line-height: 1.9;
+      line-height: 1.8;
     }
-
-    .about-highlight {
-      background: #F5F7FA;
-      border-left: 5px solid #D9AD55;
-      padding: 30px;
-      border-radius: 10px;
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 42px;
+      align-items: center;
     }
-
-    .about-highlight h3 {
+    .story-panel {
+      background: #FAF7F0;
+      border-radius: 18px;
+      padding: 34px;
+      border: 1px solid #eee7d9;
+    }
+    .story-panel h3 {
       color: #123B70;
       font-size: 23px;
-      margin-top: 0;
+      margin: 0 0 14px;
     }
-
-    .about-highlight p {
-      color: #263445;
+    .story-panel p {
+      color: #526174;
       line-height: 1.8;
+      margin-bottom: 0;
     }
-
-    .values-section {
-      background: #F5F7FA;
-      padding: 60px 20px;
-    }
-
-    .about-heading {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 35px;
-    }
-
-    .values-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .value-card {
-      background: #FFFFFF;
-      border: 1px solid #E5EBF1;
-      border-radius: 12px;
-      padding: 28px 23px;
-    }
-
-    .value-card span {
-      color: #D9AD55;
-      font-size: 26px;
-      font-weight: 700;
-    }
-
-    .value-card h3 {
-      color: #123B70;
-      margin: 12px 0;
-    }
-
-    .value-card p {
-      color: #64748B;
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .who-section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    .who-grid {
+    .principles {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      gap: 16px;
     }
-
-    .who-item {
-      padding: 19px;
-      background: #FFFFFF;
+    .principle {
+      padding: 23px;
+      border-radius: 14px;
+      background: #EDF4FA;
       border: 1px solid #E5EBF1;
-      border-radius: 8px;
-      color: #263445;
-      font-weight: 600;
     }
-
-    .who-item::before {
-      content: "✓";
+    .principle:nth-child(2) { background: #F3F0F8; }
+    .principle:nth-child(3) { background: #FFF2E9; }
+    .principle:nth-child(4) { background: #FBF9F4; }
+    .principle h3 {
+      color: #123B70;
+      font-size: 18px;
+      margin: 0 0 9px;
+    }
+    .principle p {
+      color: #64748B;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .approach-section {
+      background: #EDF4FA;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .approach-step {
+      background: #fff;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #E5EBF1;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #123B70;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+    .approach-step h3 {
+      color: #123B70;
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+    .approach-step p {
+      color: #64748B;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .services-about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .service-about-card {
+      padding: 26px;
+      border: 1px solid #E5EBF1;
+      border-radius: 15px;
+      background: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .service-about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(18,59,112,.08);
+    }
+    .service-about-card h3 {
+      color: #123B70;
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .service-about-card p {
+      color: #64748B;
+      line-height: 1.7;
+      margin: 0 0 15px;
+    }
+    .service-about-card a {
       color: #1976B9;
-      margin-right: 10px;
+      font-weight: 700;
+      text-decoration: none;
     }
-
-    .about-cta {
-      background: #0B2850;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 55px 20px;
+    .independent-section {
+      background: #FBF9F4;
     }
-
-    .about-cta h2 {
-      font-size: 29px;
-      margin-bottom: 12px;
+    .independent-box {
+      max-width: 950px;
+      margin: auto;
+      padding: 35px;
+      border-left: 5px solid #F4B942;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(38,52,69,.05);
     }
-
-    .about-cta p {
-      color: #E5EBF1;
+    .independent-box h2 {
+      color: #123B70;
+      margin-top: 0;
+    }
+    .independent-box p {
+      color: #64748B;
       line-height: 1.8;
     }
-
-    .about-cta a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 14px 25px;
-      background: #D9AD55;
-      color: #0B2850;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 6px;
+    .about-cta {
+      padding: 65px 7%;
+      background: #123B70;
+      color: #fff;
+      text-align: center;
     }
-
-    @media (max-width: 750px) {
-      .about-grid,
-      .values-grid,
-      .who-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-section,
-      .who-section {
-        padding: 45px 18px;
-      }
+    .about-cta h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin: 0 0 14px;
+    }
+    .about-cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #eaf2fb;
+      line-height: 1.8;
+    }
+    .about-cta .btn {
+      display: inline-block;
+      background: #F4B942;
+      color: #123B70;
+      padding: 14px 27px;
+      border-radius: 7px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    @media(max-width: 800px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 560px) {
+      .about-hero { padding: 65px 6%; }
+      .about-section { padding: 55px 6%; }
+      .principles,
+      .approach-grid,
+      .services-about-grid { grid-template-columns: 1fr; }
+      .story-panel,
+      .independent-box { padding: 25px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services Logo">
-      </a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+    </a>
 
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="nav-button">Get in Touch</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <div class="dropdown">
+        <a href="business-setup.html">Business Setup</a>
+      </div>
+      <div class="dropdown">
+        <a href="banking-finance.html">Banking & Finance</a>
+        <div class="dropdown-menu">
+          <a href="banking-finance.html#uae-banking">UAE Banking – Bank Options</a>
+          <a href="banking-finance.html#business-accounts">Business Accounts</a>
+          <a href="banking-finance.html#business-loans">Business Loan</a>
+          <a href="banking-finance.html#mortgage-loans">Mortgage Loan</a>
+        </div>
+      </div>
+      <a href="taxation.html">Auditing & Taxation</a>
+      <a href="pro-visa.html">PRO & Visa</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- INTRODUCTION -->
+<main>
+
   <section class="about-hero">
-    <h1>About DUCES</h1>
-    <p>
-      Business consultancy and coordination support designed
-      to help entrepreneurs and companies navigate their
-      business requirements in the United Arab Emirates.
-    </p>
+    <div class="about-hero-inner">
+      <span class="eyebrow">About DUCES</span>
+      <h1>Practical Business Support. Clearer Decisions. Better Direction.</h1>
+      <p>
+        DUCES Consultancy Services supports entrepreneurs, business owners
+        and companies navigating business establishment and essential
+        business services in the UAE.
+      </p>
+    </div>
   </section>
 
-  <!-- WHO WE ARE -->
-  <main class="about-section">
-    <div class="about-grid">
+  <section class="about-section">
+    <div class="about-container story-grid">
 
-      <div class="about-text">
-        <h2>Who We Are</h2>
-
-        <p>
-          DUCES Consultancy Services is a UAE-focused business
-          consultancy dedicated to helping entrepreneurs,
-          investors and established businesses understand and
-          manage their business requirements.
-        </p>
-
-        <p>
-          From company formation and business banking to
-          business finance, taxation support and PRO services,
-          we aim to make complex business processes easier
-          to understand and coordinate.
-        </p>
-
-        <p>
-          We believe every business requirement deserves
-          clear communication, practical guidance and
-          a structured approach.
-        </p>
+      <div class="about-copy">
+        <div class="about-heading">
+          <span class="eyebrow" style="color:#1976B9;">Who We Are</span>
+          <h2>One Consultancy for Your Business Journey</h2>
+          <p>
+            Starting and managing a business involves more than obtaining
+            a trade licence. Business owners also need to consider banking,
+            financial requirements, taxation, documentation and ongoing
+            administrative responsibilities.
+          </p>
+          <p>
+            DUCES brings these service areas together through a structured
+            consultancy approach. We help clients understand available
+            options, prepare for requirements and coordinate the next steps
+            with relevant service providers and authorities.
+          </p>
+        </div>
       </div>
 
-      <div class="about-highlight">
+      <div class="story-panel">
         <h3>Our Purpose</h3>
-
         <p>
-          To simplify business-related processes by connecting
-          clients with suitable solutions, explaining
-          requirements clearly and coordinating the necessary
-          steps through the relevant service providers and
-          authorities.
-        </p>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- MISSION, VISION AND VALUES -->
-  <section class="values-section">
-    <div class="about-heading">
-      <h2>Our Mission, Vision & Values</h2>
-      <p>
-        The principles that guide the way we work with
-        businesses and clients.
-      </p>
-    </div>
-
-    <div class="values-grid">
-
-      <div class="value-card">
-        <span>01</span>
-        <h3>Our Mission</h3>
-        <p>
-          To provide clear, practical and reliable consultancy
-          support that helps businesses make informed decisions
-          and move forward with confidence.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <span>02</span>
-        <h3>Our Vision</h3>
-        <p>
-          To become a trusted business consultancy partner
-          recognised for transparent guidance, professional
-          coordination and long-term client relationships.
-        </p>
-      </div>
-
-      <div class="value-card">
-        <span>03</span>
-        <h3>Our Values</h3>
-        <p>
-          Integrity, transparency, accountability, professional
-          communication and a commitment to understanding
-          each client's requirements.
+          To make business-related decisions easier to understand by
+          providing clear information, practical guidance and coordinated
+          support throughout the business journey.
         </p>
       </div>
 
     </div>
   </section>
 
-  <!-- WHO WE SUPPORT -->
-  <section class="who-section">
-    <div class="about-heading">
-      <h2>Who We Support</h2>
-      <p>
-        Our consultancy services are designed for different
-        stages of the business journey.
-      </p>
-    </div>
+  <section class="about-section" style="background:#F5F7FA;">
+    <div class="about-container">
 
-    <div class="who-grid">
-      <div class="who-item">Entrepreneurs & Startups</div>
-      <div class="who-item">Small & Medium Enterprises</div>
-      <div class="who-item">Established UAE Businesses</div>
-      <div class="who-item">Investors & Business Owners</div>
-      <div class="who-item">Mainland & Free Zone Companies</div>
-      <div class="who-item">Businesses Planning Expansion</div>
+      <div class="about-heading">
+        <span class="eyebrow" style="color:#1976B9;">What Guides Us</span>
+        <h2>Our Working Principles</h2>
+        <p>
+          Our approach is built around clarity, responsible guidance and
+          organised service coordination.
+        </p>
+      </div>
+
+      <div class="principles">
+
+        <div class="principle">
+          <h3>Clarity First</h3>
+          <p>
+            We explain processes, requirements and available options in
+            straightforward language.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>Practical Guidance</h3>
+          <p>
+            We focus on requirements relevant to the client's business
+            activity, circumstances and objectives.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>Transparent Communication</h3>
+          <p>
+            We aim to communicate service scope, documentation needs,
+            expected steps and third-party dependencies clearly.
+          </p>
+        </div>
+
+        <div class="principle">
+          <h3>Responsible Coordination</h3>
+          <p>
+            We work within the applicable service scope and coordinate
+            with relevant authorities or qualified professionals where
+            required.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- OUR APPROACH -->
-  <section class="values-section">
-    <div class="about-heading">
-      <h2>The DUCES Approach</h2>
-      <p>
-        A simple and structured way to understand and
-        coordinate your business requirements.
-      </p>
-    </div>
+  <section class="about-section approach-section">
+    <div class="about-container">
 
-    <div class="values-grid">
-
-      <div class="value-card">
-        <span>01</span>
-        <h3>Understand</h3>
+      <div class="about-heading">
+        <span class="eyebrow" style="color:#1976B9;">How We Work</span>
+        <h2>A Structured Approach to Every Requirement</h2>
         <p>
-          We listen to your requirements, understand your
-          objectives and identify the support you need.
+          Every business has different needs. Our process starts by
+          understanding the requirement before moving towards a suitable
+          course of action.
         </p>
       </div>
 
-      <div class="value-card">
-        <span>02</span>
-        <h3>Explain</h3>
-        <p>
-          We explain available options, key requirements,
-          documentation and the expected process.
-        </p>
-      </div>
+      <div class="approach-grid">
 
-      <div class="value-card">
-        <span>03</span>
-        <h3>Coordinate</h3>
-        <p>
-          We assist with documentation, communication
-          and coordination with relevant service providers
-          and authorities.
-        </p>
-      </div>
+        <div class="approach-step">
+          <span class="step-number">01</span>
+          <h3>Understand</h3>
+          <p>
+            Understand your business activity, objectives and current
+            requirements.
+          </p>
+        </div>
 
+        <div class="approach-step">
+          <span class="step-number">02</span>
+          <h3>Evaluate</h3>
+          <p>
+            Review relevant options, requirements, documentation and
+            practical considerations.
+          </p>
+        </div>
+
+        <div class="approach-step">
+          <span class="step-number">03</span>
+          <h3>Prepare</h3>
+          <p>
+            Help organise information and documentation required for
+            the next stage.
+          </p>
+        </div>
+
+        <div class="approach-step">
+          <span class="step-number">04</span>
+          <h3>Coordinate</h3>
+          <p>
+            Coordinate the agreed next steps with the relevant service
+            providers or authorities.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <section class="about-section">
+    <div class="about-container">
+
+      <div class="about-heading">
+        <span class="eyebrow" style="color:#1976B9;">Our Services</span>
+        <h2>Business Support Across Key Areas</h2>
+        <p>
+          From setting up a company to managing important administrative
+          requirements, explore the services available through DUCES.
+        </p>
+      </div>
+
+      <div class="services-about-grid">
+
+        <div class="service-about-card">
+          <h3>Business Setup</h3>
+          <p>
+            Guidance on UAE Mainland and Free Zone company formation,
+            business activities, licensing options and related setup
+            requirements.
+          </p>
+          <a href="business-setup.html">Explore Business Setup →</a>
+        </div>
+
+        <div class="service-about-card">
+          <h3>Banking & Finance</h3>
+          <p>
+            Assistance with business banking options, business account
+            documentation, business finance and mortgage-related guidance.
+          </p>
+          <a href="banking-finance.html">Explore Banking & Finance →</a>
+        </div>
+
+        <div class="service-about-card">
+          <h3>Auditing & Taxation</h3>
+          <p>
+            Support with VAT, Corporate Tax, bookkeeping and accounting
+            coordination, and audit preparation requirements.
+          </p>
+          <a href="taxation.html">Explore Auditing & Taxation →</a>
+        </div>
+
+        <div class="service-about-card">
+          <h3>PRO & Visa</h3>
+          <p>
+            Documentation assistance and administrative coordination for
+            visa, Emirates ID, labour and related government processes.
+          </p>
+          <a href="pro-visa.html">Explore PRO & Visa →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section independent-section">
+    <div class="independent-box">
+      <span class="eyebrow" style="color:#1976B9;">Our Service Model</span>
+      <h2>Independent Consultancy. Clear Service Scope.</h2>
+      <p>
+        DUCES Consultancy Services operates as an independent consultancy.
+        We provide guidance, documentation assistance and coordination
+        within our applicable service scope.
+      </p>
+      <p>
+        We are not a bank, financial institution, government authority,
+        audit firm or regulator. Banking, lending, licensing, tax and
+        immigration decisions remain with the relevant institutions and
+        authorities. Where a service requires specific professional
+        qualifications or authorisation, it must be handled by an
+        appropriately qualified or authorised provider.
+      </p>
+    </div>
+  </section>
+
   <section class="about-cta">
-    <h2>Let's Build Your Next Business Step</h2>
-
+    <h2>Let's Discuss Your Business Requirements</h2>
     <p>
-      Whether you are starting a company, exploring
-      business banking or managing compliance requirements,
-      DUCES is ready to understand your needs.
+      Whether you are planning a new business or looking for support with
+      an existing company, start with a conversation about your needs.
     </p>
-
-    <a href="https://wa.me/971505356966" target="_blank">
-      Talk to DUCES
+    <a class="btn" href="https://wa.me/971505356966" target="_blank" rel="noopener">
+      Connect With DUCES
     </a>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <h3>DUCES CONSULTANCY SERVICES</h3>
+</main>
 
-      <p>Your business requirements, coordinated with clarity.</p>
-      <p>Phone: +971 50 535 6966</p>
-      <p>United Arab Emirates</p>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <p class="copyright">
-        © 2026 DUCES Consultancy Services. All Rights Reserved.
-      </p>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+    <h3>DUCES CONSULTANCY SERVICES</h3>
+    <p>Business Setup | Banking & Finance | Auditing & Taxation | PRO & Visa</p>
+    <p>WhatsApp: +971 50 535 6966</p>
+    <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
+  </div>
+</footer>
 
 </body>
-</html>
+  </html>
