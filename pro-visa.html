@@ -1,0 +1,1036 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UAE PRO services, visa documentation, Emirates ID, medical fitness and government document coordination by DUCES Consultancy Services.">
+  <title>PRO & Visa Services | DUCES Consultancy Services</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --royal:#123B70;
+      --blue:#1976B9;
+      --sea:#48C9B0;
+      --gold:#F4B942;
+      --charcoal:#263445;
+      --light:#F5F7FA;
+      --silver:#E5EBF1;
+      --white:#FFFFFF;
+      --beige:#FAF7F0;
+      --powder:#EDF4FA;
+      --peach:#FFF2E9;
+      --muted:#64748B;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      color:var(--charcoal);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.7;
+    }
+
+    a { text-decoration:none; }
+
+    .pro-container {
+      width:min(1160px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    .pro-header {
+      background:white;
+      border-bottom:1px solid var(--silver);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .pro-nav {
+      min-height:80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .pro-logo img {
+      width:145px;
+      max-height:65px;
+      object-fit:contain;
+    }
+
+    .pro-menu {
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .pro-menu>a,
+    .pro-dropdown-label {
+      color:var(--charcoal);
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .pro-menu a:hover { color:var(--blue); }
+
+    .pro-dropdown {
+      position:relative;
+      padding:15px 0;
+    }
+
+    .pro-dropdown-label { cursor:pointer; }
+
+    .pro-dropdown-content {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:220px;
+      padding:8px;
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:8px;
+      box-shadow:0 12px 28px rgba(18,59,112,.12);
+    }
+
+    .pro-dropdown:hover .pro-dropdown-content,
+    .pro-dropdown:focus-within .pro-dropdown-content {
+      display:block;
+    }
+
+    .pro-dropdown-content a {
+      display:block;
+      padding:10px 12px;
+      border-radius:5px;
+      color:var(--charcoal);
+      font-size:13px;
+    }
+
+    .pro-dropdown-content a:hover {
+      background:var(--powder);
+    }
+
+    .pro-nav-cta {
+      background:var(--royal);
+      color:white!important;
+      padding:10px 15px;
+      border-radius:5px;
+    }
+
+    /* HERO */
+
+    .pro-hero {
+      background:var(--royal);
+      color:white;
+      padding:82px 0;
+    }
+
+    .pro-hero-grid {
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      align-items:center;
+      gap:45px;
+    }
+
+    .pro-eyebrow {
+      color:var(--gold);
+      text-transform:uppercase;
+      font-size:12px;
+      letter-spacing:2px;
+      font-weight:700;
+    }
+
+    .pro-hero h1 {
+      color:white;
+      font-size:clamp(35px,5vw,53px);
+      line-height:1.15;
+      margin:16px 0;
+    }
+
+    .pro-hero p {
+      color:#E5EDF6;
+      font-size:16px;
+    }
+
+    .pro-hero-panel {
+      padding:29px;
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:12px;
+    }
+
+    .pro-hero-panel h3 {
+      color:var(--gold);
+      margin-top:0;
+    }
+
+    .pro-hero-panel p {
+      font-size:14px;
+      margin-bottom:0;
+    }
+
+    .pro-button {
+      display:inline-block;
+      background:var(--gold);
+      color:var(--royal);
+      padding:13px 22px;
+      border-radius:5px;
+      font-size:14px;
+      font-weight:700;
+      margin-top:20px;
+    }
+
+    /* COMMON */
+
+    .pro-section {
+      padding:72px 0;
+      scroll-margin-top:100px;
+    }
+
+    .pro-heading {
+      max-width:760px;
+      margin-bottom:35px;
+    }
+
+    .pro-heading span {
+      color:var(--blue);
+      text-transform:uppercase;
+      font-size:12px;
+      letter-spacing:1.6px;
+      font-weight:700;
+    }
+
+    .pro-heading h2 {
+      color:var(--royal);
+      font-size:clamp(27px,4vw,37px);
+      line-height:1.25;
+      margin:10px 0;
+    }
+
+    .pro-heading p { color:var(--muted); }
+
+    /* OVERVIEW */
+
+    .pro-overview { background:var(--beige); }
+
+    .pro-overview-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .pro-overview h2 {
+      color:var(--royal);
+      font-size:32px;
+      line-height:1.3;
+    }
+
+    .pro-overview p { color:#596879; }
+
+    .pro-overview-box {
+      background:white;
+      padding:27px;
+      border-left:5px solid var(--gold);
+      border-radius:9px;
+    }
+
+    .pro-overview-box h3 { color:var(--royal); }
+    .pro-overview-box li { margin:9px 0; }
+
+    /* SERVICE CARDS */
+
+    .pro-services {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:19px;
+    }
+
+    .pro-card {
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:9px;
+      padding:25px;
+      transition:.2s ease;
+    }
+
+    .pro-card:hover {
+      transform:translateY(-3px);
+      border-color:var(--blue);
+      box-shadow:0 8px 24px rgba(18,59,112,.07);
+    }
+
+    .pro-card-number {
+      color:var(--gold);
+      font-size:30px;
+      font-weight:800;
+    }
+
+    .pro-card h3 {
+      color:var(--royal);
+      font-size:19px;
+    }
+
+    .pro-card p {
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* DETAIL SECTIONS */
+
+    .pro-detail-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    .pro-detail-copy h2 {
+      color:var(--royal);
+      font-size:32px;
+      line-height:1.3;
+      margin-top:10px;
+    }
+
+    .pro-detail-copy p { color:#596879; }
+
+    .pro-detail-box {
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:10px;
+      padding:26px;
+    }
+
+    .pro-detail-box h3 { color:var(--royal); }
+    .pro-detail-box li { margin:9px 0; }
+
+    .pro-tag {
+      display:inline-block;
+      background:#DDF4EF;
+      color:var(--royal);
+      padding:5px 12px;
+      border-radius:20px;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .pro-visa { background:var(--powder); }
+    .pro-id { background:var(--white); }
+    .pro-labour { background:var(--peach); }
+    .pro-docs { background:var(--beige); }
+
+    /* PROCESS */
+
+    .pro-process { background:var(--powder); }
+
+    .pro-process-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:17px;
+    }
+
+    .pro-step {
+      background:white;
+      border:1px solid var(--silver);
+      padding:22px;
+      border-radius:9px;
+    }
+
+    .pro-step strong {
+      color:var(--blue);
+      font-size:26px;
+    }
+
+    .pro-step h3 {
+      color:var(--royal);
+      font-size:17px;
+    }
+
+    .pro-step p {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* FAQ */
+
+    .pro-faq details {
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:8px;
+      padding:17px 20px;
+      margin-bottom:12px;
+    }
+
+    .pro-faq summary {
+      color:var(--royal);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .pro-faq details p {
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:0;
+    }
+
+    /* DISCLAIMER */
+
+    .pro-disclaimer {
+      background:var(--light);
+      padding:25px 0;
+    }
+
+    .pro-disclaimer p {
+      color:var(--muted);
+      font-size:12px;
+      margin:0;
+    }
+
+    /* CTA */
+
+    .pro-cta {
+      background:var(--royal);
+      color:white;
+      padding:62px 20px;
+      text-align:center;
+    }
+
+    .pro-cta h2 {
+      color:white;
+      font-size:32px;
+      margin:0 0 12px;
+    }
+
+    .pro-cta p {
+      color:#E5EDF6;
+      max-width:680px;
+      margin:auto;
+    }
+
+    /* FOOTER */
+
+    .pro-footer {
+      background:var(--charcoal);
+      color:white;
+      text-align:center;
+      padding:28px 0;
+    }
+
+    .pro-footer strong { letter-spacing:1px; }
+
+    .pro-footer p {
+      color:#D3DCE6;
+      font-size:12px;
+      margin:7px 0;
+    }
+
+    .pro-footer a { color:var(--gold); }
+
+    @media(max-width:850px) {
+      .pro-nav {
+        align-items:flex-start;
+        flex-direction:column;
+        padding:12px 0;
+      }
+
+      .pro-menu {
+        width:100%;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        gap:15px;
+        padding-bottom:8px;
+      }
+
+      .pro-dropdown-content {
+        position:fixed;
+        top:auto;
+        left:4%;
+        margin-top:10px;
+      }
+
+      .pro-hero-grid,
+      .pro-overview-grid,
+      .pro-detail-grid {
+        grid-template-columns:1fr;
+      }
+
+      .pro-services {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .pro-process-grid {
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:520px) {
+      .pro-section { padding:52px 0; }
+      .pro-services,
+      .pro-process-grid {
+        grid-template-columns:1fr;
+      }
+
+      .pro-hero { padding:60px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="pro-page">
+
+  <!-- HEADER -->
+  <header class="pro-header">
+    <div class="pro-container pro-nav">
+
+      <a href="index.html" class="pro-logo">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+      </a>
+
+      <nav class="pro-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+
+        <div class="pro-dropdown">
+          <span class="pro-dropdown-label">Banking & Finance ▾</span>
+          <div class="pro-dropdown-content">
+            <a href="banking-finance.html#uae-banking">UAE Banking</a>
+            <a href="banking-finance.html#business-accounts">Business Accounts</a>
+            <a href="banking-finance.html#business-loans">Business Loans</a>
+            <a href="banking-finance.html#mortgage-loans">Mortgage Loans</a>
+          </div>
+        </div>
+
+        <a href="taxation.html">Auditing & Taxation</a>
+        <a href="pro-visa.html">PRO & Visa</a>
+        <a href="contact.html">Contact</a>
+        <a class="pro-nav-cta" href="https://wa.me/971505356966">Contact Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="pro-hero">
+    <div class="pro-container pro-hero-grid">
+
+      <div>
+        <span class="pro-eyebrow">DUCES Consultancy Services</span>
+        <h1>PRO & Visa Services in the UAE</h1>
+
+        <p>
+          Simplify your business and residency documentation journey.
+          DUCES helps individuals and businesses understand UAE
+          administrative requirements and coordinate relevant processes.
+        </p>
+
+        <a href="https://wa.me/971505356966" class="pro-button">
+          Discuss Your Requirements
+        </a>
+      </div>
+
+      <div class="pro-hero-panel">
+        <h3>Your Documentation Support Partner</h3>
+        <p>
+          From visa documentation and Emirates ID processes to labour-related
+          paperwork and government documentation coordination, get organised
+          support throughout your administrative journey.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="pro-section pro-overview">
+    <div class="pro-container pro-overview-grid">
+
+      <div>
+        <div class="pro-heading">
+          <span>Business & Residency Support</span>
+          <h2>Administrative Support for Your UAE Journey</h2>
+        </div>
+
+        <p>
+          Establishing a business or managing residency in the UAE involves
+          different government processes, documentation and approvals.
+        </p>
+
+        <p>
+          DUCES Consultancy Services helps clients understand common
+          requirements, organise supporting documents and coordinate
+          relevant service processes with the appropriate authorities
+          and service providers.
+        </p>
+      </div>
+
+      <div class="pro-overview-box">
+        <h3>Our Support Areas</h3>
+        <ul>
+          <li>Employment and investor visa documentation</li>
+          <li>Partner and family visa process coordination</li>
+          <li>Emirates ID and medical fitness process guidance</li>
+          <li>Labour-related documentation coordination</li>
+          <li>Immigration and government document support</li>
+          <li>Company-related administrative assistance</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE OVERVIEW -->
+  <section class="pro-section">
+    <div class="pro-container">
+
+      <div class="pro-heading">
+        <span>Our Services</span>
+        <h2>PRO & Visa Support Solutions</h2>
+        <p>
+          Administrative and documentation coordination for individuals,
+          entrepreneurs and UAE businesses.
+        </p>
+      </div>
+
+      <div class="pro-services">
+
+        <article class="pro-card">
+          <div class="pro-card-number">01</div>
+          <h3>Employment Visa</h3>
+          <p>
+            Documentation and process coordination for eligible
+            employees joining UAE companies.
+          </p>
+        </article>
+
+        <article class="pro-card">
+          <div class="pro-card-number">02</div>
+          <h3>Investor & Partner Visa</h3>
+          <p>
+            General guidance and documentation support for eligible
+            company owners and business partners.
+          </p>
+        </article>
+
+        <article class="pro-card">
+          <div class="pro-card-number">03</div>
+          <h3>Family Visa</h3>
+          <p>
+            Assistance in understanding sponsorship requirements and
+            organising supporting documents.
+          </p>
+        </article>
+
+        <article class="pro-card">
+          <div class="pro-card-number">04</div>
+          <h3>Emirates ID & Medical</h3>
+          <p>
+            Guidance and coordination for relevant identity and
+            medical fitness procedures.
+          </p>
+        </article>
+
+        <article class="pro-card">
+          <div class="pro-card-number">05</div>
+          <h3>Labour Documentation</h3>
+          <p>
+            Coordination support for employment-related paperwork
+            and relevant administrative processes.
+          </p>
+        </article>
+
+        <article class="pro-card">
+          <div class="pro-card-number">06</div>
+          <h3>Document Clearing</h3>
+          <p>
+            Assistance with document collection, organisation,
+            submission coordination and follow-up.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPLOYMENT VISA -->
+  <section class="pro-section pro-visa" id="employment-visa">
+    <div class="pro-container pro-detail-grid">
+
+      <div class="pro-detail-copy">
+        <span class="pro-tag">Employment Residency</span>
+        <h2>UAE Employment Visa Assistance</h2>
+
+        <p>
+          Employers recruiting staff in the UAE need to follow the
+          applicable employment, immigration and residency procedures.
+          Requirements depend on the employer's licence, establishment
+          status, available quota and employee circumstances.
+        </p>
+
+        <p>
+          DUCES can assist with understanding documentation requirements
+          and coordinating relevant administrative steps with the
+          appropriate employer, authority or service provider.
+        </p>
+      </div>
+
+      <div class="pro-detail-box">
+        <h3>Common Process Areas</h3>
+        <ul>
+          <li>Employment documentation checklist</li>
+          <li>Work permit process coordination</li>
+          <li>Entry permit documentation, where applicable</li>
+          <li>Medical fitness process guidance</li>
+          <li>Emirates ID application coordination</li>
+          <li>Residency issuance follow-up</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INVESTOR VISA -->
+  <section class="pro-section" id="investor-visa">
+    <div class="pro-container pro-detail-grid">
+
+      <div class="pro-detail-copy">
+        <span class="pro-tag">Business Owners</span>
+        <h2>Investor & Partner Visa Support</h2>
+
+        <p>
+          Entrepreneurs and shareholders may be eligible for residency
+          through their company, subject to the applicable company
+          structure, licensing authority and immigration requirements.
+        </p>
+
+        <p>
+          DUCES helps business owners understand the general process,
+          prepare supporting information and coordinate the relevant
+          administrative steps.
+        </p>
+      </div>
+
+      <div class="pro-detail-box">
+        <h3>Typical Documentation Areas</h3>
+        <ul>
+          <li>Valid trade licence</li>
+          <li>Company formation or ownership documents</li>
+          <li>Passport and personal identification</li>
+          <li>Photograph and application details</li>
+          <li>Immigration establishment information</li>
+          <li>Additional documents requested by the authority</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAMILY VISA -->
+  <section class="pro-section pro-docs" id="family-visa">
+    <div class="pro-container pro-detail-grid">
+
+      <div class="pro-detail-copy">
+        <span class="pro-tag">Family Residency</span>
+        <h2>Family Visa Documentation Support</h2>
+
+        <p>
+          UAE residents may be eligible to sponsor family members
+          subject to the applicable sponsorship conditions, income
+          requirements, accommodation requirements and other
+          immigration rules.
+        </p>
+
+        <p>
+          DUCES helps applicants understand general documentation
+          requirements and coordinate the application process.
+        </p>
+      </div>
+
+      <div class="pro-detail-box">
+        <h3>Common Documentation</h3>
+        <ul>
+          <li>Sponsor's passport and Emirates ID</li>
+          <li>Valid residency information</li>
+          <li>Family member passport and photograph</li>
+          <li>Proof of relationship, where required</li>
+          <li>Accommodation and income documents, where applicable</li>
+          <li>Medical fitness requirements for applicable age groups</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EMIRATES ID -->
+  <section class="pro-section pro-id" id="emirates-id">
+    <div class="pro-container pro-detail-grid">
+
+      <div class="pro-detail-copy">
+        <span class="pro-tag">Identity & Medical</span>
+        <h2>Emirates ID & Medical Fitness Coordination</h2>
+
+        <p>
+          Emirates ID and medical fitness procedures form important
+          parts of many UAE residency processes.
+        </p>
+
+        <p>
+          DUCES provides general process guidance and documentation
+          coordination for eligible applicants, subject to the
+          requirements of the relevant authorities.
+        </p>
+      </div>
+
+      <div class="pro-detail-box">
+        <h3>Our Assistance May Include</h3>
+        <ul>
+          <li>Application information preparation</li>
+          <li>Emirates ID process guidance</li>
+          <li>Medical fitness appointment coordination</li>
+          <li>Biometrics process information</li>
+          <li>Application status follow-up</li>
+          <li>Additional documentation coordination</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LABOUR -->
+  <section class="pro-section pro-labour" id="labour">
+    <div class="pro-container pro-detail-grid">
+
+      <div class="pro-detail-copy">
+        <span class="pro-tag">Employer Administration</span>
+        <h2>Labour & Employment Documentation</h2>
+
+        <p>
+          Companies employing staff in the UAE may need to manage
+          employment documentation and administrative procedures
+          through the relevant government channels.
+        </p>
+
+        <p>
+          DUCES can help businesses understand common document
+          requirements and coordinate administrative processes
+          with the appropriate authorised channels.
+        </p>
+      </div>
+
+      <div class="pro-detail-box">
+        <h3>Common Support Areas</h3>
+        <ul>
+          <li>Employment documentation coordination</li>
+          <li>Work permit process information</li>
+          <li>Employment contract documentation support</li>
+          <li>Company and employee record organisation</li>
+          <li>Relevant application follow-up</li>
+          <li>General administrative coordination</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DOCUMENT CLEARING -->
+  <section class="pro-section" id="documents">
+    <div class="pro-container pro-detail-grid">
+
+      <div class="pro-detail-copy">
+        <span class="pro-tag">Document Clearing</span>
+        <h2>Government Document Clearing & Coordination</h2>
+
+        <p>
+          Business and personal administrative requirements often
+          involve collecting, preparing and submitting documents
+          through different channels.
+        </p>
+
+        <p>
+          DUCES supports clients with document organisation,
+          application coordination and follow-up for relevant
+          administrative requirements.
+        </p>
+      </div>
+
+      <div class="pro-detail-box">
+        <h3>Documentation Support</h3>
+        <ul>
+          <li>Document checklist preparation</li>
+          <li>Application information organisation</li>
+          <li>Document collection and submission coordination</li>
+          <li>Translation and attestation coordination, where required</li>
+          <li>Application tracking and follow-up</li>
+          <li>Business-related administrative documentation</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="pro-section pro-process">
+    <div class="pro-container">
+
+      <div class="pro-heading">
+        <span>Our Approach</span>
+        <h2>A Simple, Organised Process</h2>
+        <p>
+          We help you understand the requirements and organise
+          the necessary steps before proceeding.
+        </p>
+      </div>
+
+      <div class="pro-process-grid">
+
+        <div class="pro-step">
+          <strong>01</strong>
+          <h3>Understand</h3>
+          <p>Discuss your visa, PRO or documentation requirement.</p>
+        </div>
+
+        <div class="pro-step">
+          <strong>02</strong>
+          <h3>Prepare</h3>
+          <p>Identify relevant documents and information.</p>
+        </div>
+
+        <div class="pro-step">
+          <strong>03</strong>
+          <h3>Coordinate</h3>
+          <p>Assist with relevant administrative application steps.</p>
+        </div>
+
+        <div class="pro-step">
+          <strong>04</strong>
+          <h3>Follow Up</h3>
+          <p>Coordinate updates and additional documentation requests.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pro-section pro-faq">
+    <div class="pro-container">
+
+      <div class="pro-heading">
+        <span>Frequently Asked Questions</span>
+        <h2>PRO & Visa – Common Questions</h2>
+      </div>
+
+      <details>
+        <summary>Can DUCES help with employment visas?</summary>
+        <p>
+          DUCES can assist with general documentation guidance and
+          coordination of relevant employment visa procedures.
+          Eligibility and approval depend on the employer, applicant
+          and applicable authorities.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can a company owner apply for an investor visa?</summary>
+        <p>
+          Eligible company owners or partners may qualify for an
+          appropriate residency route, subject to the licensing
+          authority and immigration requirements.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can DUCES help with family sponsorship?</summary>
+        <p>
+          DUCES can help explain general sponsorship documentation
+          and coordinate the relevant application process.
+          The sponsor must meet the applicable conditions.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does DUCES guarantee visa approval?</summary>
+        <p>
+          No. All visa, work permit, Emirates ID and residency
+          decisions are subject to the relevant authority's
+          eligibility rules and approval process.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can DUCES assist with document attestation?</summary>
+        <p>
+          We can help identify general documentation requirements
+          and coordinate with appropriate service providers where
+          attestation or translation is required.
+        </p>
+      </details>
+
+      <details>
+        <summary>What documents should I provide initially?</summary>
+        <p>
+          The initial checklist depends on the service. Passport,
+          existing visa or Emirates ID details, company information
+          and relevant supporting documents may be requested.
+        </p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="pro-disclaimer">
+    <div class="pro-container">
+      <p>
+        <strong>Disclaimer:</strong>
+        DUCES Consultancy Services provides general consultancy,
+        documentation assistance and administrative coordination.
+        Government approvals, visa issuance, work permits, Emirates ID
+        and residency decisions are made by the relevant authorities.
+        Services requiring specific government authorisation or
+        regulated representation will be handled only through
+        appropriately authorised channels. No approval or processing
+        timeline is guaranteed. Requirements and fees may change.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pro-cta">
+    <div class="pro-container">
+      <h2>Need Assistance With Your UAE Documentation?</h2>
+      <p>
+        Discuss your business, visa or administrative requirements
+        with DUCES Consultancy Services.
+      </p>
+
+      <a href="https://wa.me/971505356966" class="pro-button">
+        Connect on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pro-footer">
+    <div class="pro-container">
+      <strong>DUCES CONSULTANCY SERVICES</strong>
+      <p>Business Setup | Banking & Finance | Auditing & Taxation | PRO & Visa</p>
+      <p>Dubai, United Arab Emirates</p>
+      <p>WhatsApp: <a href="https://wa.me/971505356966">+971 50 535 6966</a></p>
+      <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
