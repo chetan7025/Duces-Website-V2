@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UAE VAT, Corporate Tax, bookkeeping, accounting and audit coordination support by DUCES Consultancy Services.">
+  <title>Auditing & Taxation | DUCES Consultancy Services</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --royal:#123B70;
+      --blue:#1976B9;
+      --sea:#48C9B0;
+      --gold:#F4B942;
+      --charcoal:#263445;
+      --light:#F5F7FA;
+      --silver:#E5EBF1;
+      --white:#FFFFFF;
+      --beige:#FAF7F0;
+      --powder:#EDF4FA;
+      --lavender:#F3F0F8;
+      --muted:#64748B;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      color:var(--charcoal);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.7;
+    }
+
+    a { text-decoration:none; }
+
+    .tax-container {
+      width:min(1160px,92%);
+      margin:auto;
+    }
+
+    .tax-header {
+      background:white;
+      border-bottom:1px solid var(--silver);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .tax-nav {
+      min-height:80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .tax-logo img {
+      width:145px;
+      max-height:65px;
+      object-fit:contain;
+    }
+
+    .tax-menu {
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .tax-menu>a,
+    .tax-dropdown-label {
+      color:var(--charcoal);
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .tax-menu a:hover { color:var(--blue); }
+
+    .tax-dropdown {
+      position:relative;
+      padding:15px 0;
+    }
+
+    .tax-dropdown-label { cursor:pointer; }
+
+    .tax-dropdown-content {
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:220px;
+      padding:8px;
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:8px;
+      box-shadow:0 12px 28px rgba(18,59,112,.12);
+    }
+
+    .tax-dropdown:hover .tax-dropdown-content,
+    .tax-dropdown:focus-within .tax-dropdown-content {
+      display:block;
+    }
+
+    .tax-dropdown-content a {
+      display:block;
+      padding:10px 12px;
+      color:var(--charcoal);
+      font-size:13px;
+      border-radius:5px;
+    }
+
+    .tax-dropdown-content a:hover {
+      background:var(--powder);
+    }
+
+    .tax-nav-cta {
+      background:var(--royal);
+      color:white!important;
+      padding:10px 15px;
+      border-radius:5px;
+    }
+
+    /* HERO */
+
+    .tax-hero {
+      background:var(--royal);
+      color:white;
+      padding:82px 0;
+    }
+
+    .tax-hero-grid {
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      align-items:center;
+      gap:45px;
+    }
+
+    .tax-eyebrow {
+      color:var(--gold);
+      font-size:12px;
+      letter-spacing:2px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .tax-hero h1 {
+      color:white;
+      font-size:clamp(35px,5vw,53px);
+      line-height:1.15;
+      margin:16px 0;
+    }
+
+    .tax-hero p {
+      color:#E5EDF6;
+      font-size:16px;
+    }
+
+    .tax-hero-panel {
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:12px;
+      padding:28px;
+    }
+
+    .tax-hero-panel h3 {
+      color:var(--gold);
+      margin-top:0;
+    }
+
+    .tax-hero-panel p {
+      font-size:14px;
+      margin-bottom:0;
+    }
+
+    .tax-button {
+      display:inline-block;
+      background:var(--gold);
+      color:var(--royal);
+      font-weight:700;
+      font-size:14px;
+      padding:13px 22px;
+      border-radius:5px;
+      margin-top:20px;
+    }
+
+    /* SECTION STYLES */
+
+    .tax-section {
+      padding:72px 0;
+      scroll-margin-top:100px;
+    }
+
+    .tax-heading {
+      max-width:760px;
+      margin-bottom:35px;
+    }
+
+    .tax-heading span {
+      color:var(--blue);
+      text-transform:uppercase;
+      letter-spacing:1.6px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .tax-heading h2 {
+      color:var(--royal);
+      font-size:clamp(27px,4vw,37px);
+      line-height:1.25;
+      margin:10px 0;
+    }
+
+    .tax-heading p {
+      color:var(--muted);
+      margin:0;
+    }
+
+    /* OVERVIEW */
+
+    .tax-overview { background:var(--beige); }
+
+    .tax-overview-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .tax-overview h2 {
+      color:var(--royal);
+      font-size:32px;
+      line-height:1.3;
+    }
+
+    .tax-overview p { color:#596879; }
+
+    .tax-overview-box {
+      background:white;
+      padding:28px;
+      border-radius:10px;
+      border-left:5px solid var(--gold);
+    }
+
+    .tax-overview-box h3 { color:var(--royal); }
+
+    .tax-overview-box ul { padding-left:20px; }
+    .tax-overview-box li { margin:9px 0; }
+
+    /* SERVICES */
+
+    .tax-services {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    .tax-card {
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:10px;
+      padding:28px;
+      transition:.2s ease;
+    }
+
+    .tax-card:hover {
+      border-color:var(--blue);
+      transform:translateY(-3px);
+      box-shadow:0 8px 25px rgba(18,59,112,.06);
+    }
+
+    .tax-card-number {
+      color:var(--gold);
+      font-size:34px;
+      font-weight:800;
+    }
+
+    .tax-card h3 {
+      color:var(--royal);
+      font-size:21px;
+      margin:8px 0;
+    }
+
+    .tax-card p { color:var(--muted); }
+
+    .tax-card ul {
+      padding-left:20px;
+      color:var(--charcoal);
+      font-size:14px;
+    }
+
+    .tax-card li { margin:7px 0; }
+
+    /* TAX SECTION BACKGROUNDS */
+
+    .tax-vat { background:var(--powder); }
+    .tax-corporate { background:var(--white); }
+    .tax-books { background:var(--lavender); }
+    .tax-audit { background:var(--beige); }
+
+    .tax-detail-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:38px;
+      align-items:start;
+    }
+
+    .tax-detail-copy h2 {
+      color:var(--royal);
+      font-size:32px;
+      line-height:1.3;
+      margin-top:10px;
+    }
+
+    .tax-detail-copy p { color:#596879; }
+
+    .tax-detail-box {
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:10px;
+      padding:27px;
+    }
+
+    .tax-detail-box h3 {
+      color:var(--royal);
+      margin-top:0;
+    }
+
+    .tax-detail-box li { margin:9px 0; }
+
+    .tax-tag {
+      display:inline-block;
+      background:#DDF4EF;
+      color:var(--royal);
+      border-radius:20px;
+      padding:5px 12px;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    /* BUSINESS TYPES */
+
+    .tax-business-types {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .tax-type {
+      background:white;
+      border:1px solid var(--silver);
+      padding:25px;
+      border-radius:9px;
+    }
+
+    .tax-type h3 { color:var(--royal); }
+    .tax-type p { color:var(--muted); font-size:14px; }
+
+    /* PROCESS */
+
+    .tax-process { background:var(--powder); }
+
+    .tax-process-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:17px;
+    }
+
+    .tax-step {
+      background:white;
+      border:1px solid var(--silver);
+      border-radius:9px;
+      padding:22px;
+    }
+
+    .tax-step strong {
+      color:var(--blue);
+      font-size:26px;
+    }
+
+    .tax-step h3 {
+      color:var(--royal);
+      font-size:17px;
+    }
+
+    .tax-step p {
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* FAQ */
+
+    .tax-faq details {
+      border:1px solid var(--silver);
+      border-radius:8px;
+      padding:17px 20px;
+      margin-bottom:12px;
+    }
+
+    .tax-faq summary {
+      color:var(--royal);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .tax-faq details p {
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:0;
+    }
+
+    /* CTA & FOOTER */
+
+    .tax-disclaimer {
+      background:var(--light);
+      padding:25px 0;
+    }
+
+    .tax-disclaimer p {
+      font-size:12px;
+      color:var(--muted);
+      margin:0;
+    }
+
+    .tax-cta {
+      background:var(--royal);
+      color:white;
+      text-align:center;
+      padding:62px 20px;
+    }
+
+    .tax-cta h2 {
+      color:white;
+      font-size:32px;
+      margin:0 0 12px;
+    }
+
+    .tax-cta p {
+      color:#E5EDF6;
+      max-width:680px;
+      margin:auto;
+    }
+
+    .tax-footer {
+      background:var(--charcoal);
+      color:white;
+      text-align:center;
+      padding:28px 0;
+    }
+
+    .tax-footer strong { letter-spacing:1px; }
+
+    .tax-footer p {
+      color:#D3DCE6;
+      font-size:12px;
+      margin:7px 0;
+    }
+
+    .tax-footer a { color:var(--gold); }
+
+    @media(max-width:850px) {
+      .tax-nav {
+        align-items:flex-start;
+        flex-direction:column;
+        padding:12px 0;
+      }
+
+      .tax-menu {
+        width:100%;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        gap:15px;
+        padding-bottom:8px;
+      }
+
+      .tax-dropdown-content {
+        position:fixed;
+        top:auto;
+        left:4%;
+        margin-top:10px;
+      }
+
+      .tax-hero-grid,
+      .tax-overview-grid,
+      .tax-detail-grid {
+        grid-template-columns:1fr;
+      }
+
+      .tax-process-grid {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .tax-business-types {
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:520px) {
+      .tax-section { padding:52px 0; }
+      .tax-services { grid-template-columns:1fr; }
+      .tax-process-grid { grid-template-columns:1fr; }
+      .tax-hero { padding:60px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="tax-page">
+
+  <!-- HEADER -->
+  <header class="tax-header">
+    <div class="tax-container tax-nav">
+
+      <a href="index.html" class="tax-logo">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+      </a>
+
+      <nav class="tax-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="business-setup.html">Business Setup</a>
+
+        <div class="tax-dropdown">
+          <span class="tax-dropdown-label">Banking & Finance ▾</span>
+          <div class="tax-dropdown-content">
+            <a href="banking-finance.html#uae-banking">UAE Banking</a>
+            <a href="banking-finance.html#business-accounts">Business Accounts</a>
+            <a href="banking-finance.html#business-loans">Business Loans</a>
+            <a href="banking-finance.html#mortgage-loans">Mortgage Loans</a>
+          </div>
+        </div>
+
+        <div class="tax-dropdown">
+          <span class="tax-dropdown-label">Auditing & Taxation ▾</span>
+          <div class="tax-dropdown-content">
+            <a href="#vat">VAT Services</a>
+            <a href="#corporate-tax">Corporate Tax</a>
+            <a href="#bookkeeping">Accounting & Bookkeeping</a>
+            <a href="#audit">Audit Coordination</a>
+          </div>
+        </div>
+
+        <a href="pro-visa.html">PRO & Visa</a>
+        <a href="contact.html">Contact</a>
+        <a class="tax-nav-cta" href="https://wa.me/971505356966">Contact Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="tax-hero">
+    <div class="tax-container tax-hero-grid">
+
+      <div>
+        <span class="tax-eyebrow">DUCES Consultancy Services</span>
+        <h1>Auditing & Taxation Services in the UAE</h1>
+
+        <p>
+          Stay organised and better prepared with practical support for
+          VAT, Corporate Tax, accounting, bookkeeping and audit-related
+          requirements.
+        </p>
+
+        <a href="https://wa.me/971505356966" class="tax-button">
+          Discuss Your Requirements
+        </a>
+      </div>
+
+      <div class="tax-hero-panel">
+        <h3>Business Financial Support</h3>
+        <p>
+          From maintaining financial records to understanding tax
+          responsibilities, DUCES helps businesses identify their
+          requirements and coordinate with appropriate qualified
+          professionals where necessary.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="tax-section tax-overview">
+    <div class="tax-container tax-overview-grid">
+
+      <div>
+        <div class="tax-heading">
+          <span>Financial & Tax Support</span>
+          <h2>Build Better Financial Records. Stay Prepared.</h2>
+        </div>
+
+        <p>
+          Operating a business in the UAE involves financial record-keeping,
+          tax compliance responsibilities and, where applicable, audit
+          requirements.
+        </p>
+
+        <p>
+          DUCES Consultancy Services helps businesses understand the
+          requirements relevant to their operations and coordinate
+          accounting, tax and audit support.
+        </p>
+      </div>
+
+      <div class="tax-overview-box">
+        <h3>Our Service Areas</h3>
+        <ul>
+          <li>VAT registration and compliance support</li>
+          <li>UAE Corporate Tax support</li>
+          <li>Accounting and bookkeeping</li>
+          <li>Financial record organisation</li>
+          <li>Audit preparation and coordination</li>
+          <li>Tax-related documentation support</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE OVERVIEW CARDS -->
+  <section class="tax-section">
+    <div class="tax-container">
+
+      <div class="tax-heading">
+        <span>Our Services</span>
+        <h2>Financial Services for UAE Businesses</h2>
+        <p>
+          Understand the key areas where your company may need accounting,
+          tax and financial support.
+        </p>
+      </div>
+
+      <div class="tax-services">
+
+        <article class="tax-card">
+          <div class="tax-card-number">01</div>
+          <h3>VAT Services</h3>
+          <p>
+            Guidance and coordination for VAT-related requirements
+            applicable to your business.
+          </p>
+          <ul>
+            <li>VAT registration support</li>
+            <li>VAT return preparation coordination</li>
+            <li>VAT records and documentation</li>
+            <li>General VAT compliance guidance</li>
+          </ul>
+          <a href="#vat" style="color:#1976B9;font-weight:700;">Explore VAT Services →</a>
+        </article>
+
+        <article class="tax-card">
+          <div class="tax-card-number">02</div>
+          <h3>Corporate Tax</h3>
+          <p>
+            Support to understand UAE Corporate Tax obligations
+            and organise relevant business records.
+          </p>
+          <ul>
+            <li>Corporate Tax registration guidance</li>
+            <li>Tax documentation support</li>
+            <li>Financial information organisation</li>
+            <li>Return preparation coordination</li>
+          </ul>
+          <a href="#corporate-tax" style="color:#1976B9;font-weight:700;">Explore Corporate Tax →</a>
+        </article>
+
+        <article class="tax-card">
+          <div class="tax-card-number">03</div>
+          <h3>Accounting & Bookkeeping</h3>
+          <p>
+            Organised financial records help business owners
+            understand their operations and prepare for reporting.
+          </p>
+          <ul>
+            <li>Bookkeeping support</li>
+            <li>Income and expense records</li>
+            <li>Invoice and payment records</li>
+            <li>Financial statement coordination</li>
+          </ul>
+          <a href="#bookkeeping" style="color:#1976B9;font-weight:700;">Explore Accounting →</a>
+        </article>
+
+        <article class="tax-card">
+          <div class="tax-card-number">04</div>
+          <h3>Audit Preparation & Coordination</h3>
+          <p>
+            Assistance with organising financial information
+            and coordinating with suitable audit professionals.
+          </p>
+          <ul>
+            <li>Financial record organisation</li>
+            <li>Supporting document preparation</li>
+            <li>Audit requirement coordination</li>
+            <li>Communication support</li>
+          </ul>
+          <a href="#audit" style="color:#1976B9;font-weight:700;">Explore Audit Support →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VAT -->
+  <section class="tax-section tax-vat" id="vat">
+    <div class="tax-container tax-detail-grid">
+
+      <div class="tax-detail-copy">
+        <span class="tax-tag">Value Added Tax</span>
+        <h2>UAE VAT Services</h2>
+
+        <p>
+          VAT is an important part of the UAE tax framework. Businesses
+          should understand whether registration is required, how their
+          transactions are treated and what records need to be maintained.
+        </p>
+
+        <p>
+          DUCES can help identify general VAT requirements, organise
+          supporting documents and coordinate registration or return
+          preparation with qualified professionals where required.
+        </p>
+      </div>
+
+      <div class="tax-detail-box">
+        <h3>VAT Support May Include</h3>
+        <ul>
+          <li>Understanding VAT registration requirements</li>
+          <li>Reviewing relevant business information</li>
+          <li>Organising sales and purchase records</li>
+          <li>Invoice and expense documentation</li>
+          <li>VAT return preparation coordination</li>
+          <li>General compliance documentation support</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CORPORATE TAX -->
+  <section class="tax-section tax-corporate" id="corporate-tax">
+    <div class="tax-container tax-detail-grid">
+
+      <div class="tax-detail-copy">
+        <span class="tax-tag">UAE Corporate Tax</span>
+        <h2>Corporate Tax Support</h2>
+
+        <p>
+          UAE businesses need to understand the Corporate Tax rules
+          applicable to their legal structure, activities and taxable income.
+          Requirements can differ depending on the nature of the business
+          and applicable tax provisions.
+        </p>
+
+        <p>
+          DUCES assists with general requirement identification, document
+          organisation and coordination with qualified tax professionals
+          for matters requiring specialist review or submission.
+        </p>
+      </div>
+
+      <div class="tax-detail-box">
+        <h3>Corporate Tax Support Areas</h3>
+        <ul>
+          <li>Corporate Tax registration guidance</li>
+          <li>Understanding relevant filing responsibilities</li>
+          <li>Organising company financial records</li>
+          <li>Revenue and expense documentation</li>
+          <li>Tax return preparation coordination</li>
+          <li>General information about applicable obligations</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKKEEPING -->
+  <section class="tax-section tax-books" id="bookkeeping">
+    <div class="tax-container tax-detail-grid">
+
+      <div class="tax-detail-copy">
+        <span class="tax-tag">Accounting Support</span>
+        <h2>Accounting & Bookkeeping</h2>
+
+        <p>
+          Accurate and organised financial records help business owners
+          monitor their income, expenses, cash flow and financial position.
+        </p>
+
+        <p>
+          Whether you are a newly established company or an operating
+          business, maintaining proper records can help support management
+          decisions and tax-related reporting.
+        </p>
+      </div>
+
+      <div class="tax-detail-box">
+        <h3>Bookkeeping & Accounting Support</h3>
+        <ul>
+          <li>Recording income and expenses</li>
+          <li>Sales and purchase documentation</li>
+          <li>Invoice and payment records</li>
+          <li>Bank transaction reconciliation support</li>
+          <li>Accounts receivable and payable records</li>
+          <li>Financial statement preparation coordination</li>
+          <li>Monthly or periodic record organisation</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AUDIT -->
+  <section class="tax-section tax-audit" id="audit">
+    <div class="tax-container tax-detail-grid">
+
+      <div class="tax-detail-copy">
+        <span class="tax-tag">Audit Support</span>
+        <h2>Audit Preparation & Coordination</h2>
+
+        <p>
+          Some businesses may require audited financial statements
+          depending on applicable laws, licensing authority requirements,
+          free zone rules, lender conditions or contractual obligations.
+        </p>
+
+        <p>
+          DUCES helps businesses organise relevant financial records and
+          coordinate with appropriately qualified and authorised audit
+          professionals where an independent audit is required.
+        </p>
+      </div>
+
+      <div class="tax-detail-box">
+        <h3>Our Coordination Support</h3>
+        <ul>
+          <li>Identifying general audit documentation requirements</li>
+          <li>Organising accounting records</li>
+          <li>Collecting supporting invoices and statements</li>
+          <li>Coordinating information requests</li>
+          <li>Communication with audit professionals</li>
+          <li>Tracking document submission requirements</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUSINESS TYPES -->
+  <section class="tax-section">
+    <div class="tax-container">
+
+      <div class="tax-heading">
+        <span>Who We Support</span>
+        <h2>Support Across Different Business Structures</h2>
+        <p>
+          Tax and accounting requirements depend on the company's
+          activities, legal structure and applicable regulations.
+        </p>
+      </div>
+
+      <div class="tax-business-types">
+
+        <div class="tax-type">
+          <h3>Mainland Companies</h3>
+          <p>
+            Accounting, VAT and Corporate Tax support for eligible
+            mainland businesses operating in the UAE.
+          </p>
+        </div>
+
+        <div class="tax-type">
+          <h3>Free Zone Companies</h3>
+          <p>
+            Support to understand applicable tax obligations,
+            qualifying conditions and financial record requirements.
+          </p>
+        </div>
+
+        <div class="tax-type">
+          <h3>Small & Growing Businesses</h3>
+          <p>
+            Practical assistance with bookkeeping, financial records
+            and understanding relevant compliance responsibilities.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="tax-section tax-process">
+    <div class="tax-container">
+
+      <div class="tax-heading">
+        <span>Our Working Approach</span>
+        <h2>From Understanding to Coordination</h2>
+      </div>
+
+      <div class="tax-process-grid">
+
+        <div class="tax-step">
+          <strong>01</strong>
+          <h3>Understand</h3>
+          <p>We discuss your company structure and financial requirements.</p>
+        </div>
+
+        <div class="tax-step">
+          <strong>02</strong>
+          <h3>Identify</h3>
+          <p>We help identify relevant documentation and support requirements.</p>
+        </div>
+
+        <div class="tax-step">
+          <strong>03</strong>
+          <h3>Organise</h3>
+          <p>We assist in arranging records and preparing information.</p>
+        </div>
+
+        <div class="tax-step">
+          <strong>04</strong>
+          <h3>Coordinate</h3>
+          <p>We coordinate with appropriate professionals for required services.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="tax-section tax-faq">
+    <div class="tax-container">
+
+      <div class="tax-heading">
+        <span>Frequently Asked Questions</span>
+        <h2>Auditing & Taxation – FAQs</h2>
+      </div>
+
+      <details>
+        <summary>Does every UAE company need VAT registration?</summary>
+        <p>
+          No. VAT registration depends on applicable taxable supply
+          thresholds and other conditions under UAE VAT legislation.
+          Businesses should review their individual circumstances.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do Free Zone companies have to consider Corporate Tax?</summary>
+        <p>
+          Yes. Free Zone companies are within the UAE Corporate Tax
+          framework. A 0% rate may apply to qualifying income where
+          all relevant conditions are met. It is not automatic for
+          every Free Zone company.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can DUCES help with bookkeeping?</summary>
+        <p>
+          DUCES can discuss bookkeeping and accounting support
+          requirements and coordinate suitable services based on
+          the business's needs and the qualifications required.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does DUCES issue independent audit reports?</summary>
+        <p>
+          Independent audit opinions must be issued by appropriately
+          qualified and authorised audit professionals. DUCES can
+          assist with document organisation and coordination.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can DUCES help with Corporate Tax returns?</summary>
+        <p>
+          DUCES can assist with general documentation and coordinate
+          return-related work with qualified professionals or
+          appropriately authorised tax service providers where required.
+        </p>
+      </details>
+
+      <details>
+        <summary>What documents should I prepare?</summary>
+        <p>
+          Common documents include the trade licence, company formation
+          documents, invoices, bank statements, expense records and
+          financial information. Exact requirements depend on the service.
+        </p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="tax-disclaimer">
+    <div class="tax-container">
+      <p>
+        <strong>Important Disclaimer:</strong>
+        DUCES Consultancy Services provides consultancy, general
+        documentation support and service coordination. This website
+        does not represent DUCES as an authorised tax agent, licensed
+        auditor or regulated accounting professional. Regulated tax
+        submissions, audit opinions and specialist professional work
+        must be performed by appropriately qualified and authorised
+        professionals. Tax treatment and obligations depend on applicable
+        UAE laws and individual circumstances. Information on this page
+        is general and should not be treated as legal or tax advice.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="tax-cta">
+    <div class="tax-container">
+      <h2>Need Help With Your Business Tax Requirements?</h2>
+      <p>
+        Speak with DUCES Consultancy Services to discuss your accounting,
+        VAT, Corporate Tax or audit coordination requirements.
+      </p>
+
+      <a href="https://wa.me/971505356966" class="tax-button">
+        Connect on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="tax-footer">
+    <div class="tax-container">
+      <strong>DUCES CONSULTANCY SERVICES</strong>
+      <p>Business Setup | Banking & Finance | Auditing & Taxation | PRO & Visa</p>
+      <p>Dubai, United Arab Emirates</p>
+      <p>WhatsApp: <a href="https://wa.me/971505356966">+971 50 535 6966</a></p>
+      <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
