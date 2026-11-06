@@ -634,3 +634,107 @@ img {
   .footer-bottom { flex-direction: column; }
   .whatsapp-button { right: 12px; bottom: 12px; }
 }
+
+/* PRO & VISA PAGE */
+
+.pro-hero {
+  background:
+    linear-gradient(90deg, rgba(18,59,112,.94), rgba(18,59,112,.65)),
+    url("assets/pro-hero-dubai.jpg") center/cover no-repeat;
+  color: var(--white);
+  padding: 105px 0;
+}
+
+.pro-hero h1,
+.pro-hero p {
+  color: var(--white);
+  max-width: 760px;
+}
+
+.pro-hero p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.pro-service-card {
+  background: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.pro-service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.pro-service-content {
+  padding: 25px;
+}
+
+.pro-service-content h3 {
+  color: var(--royal-blue);
+  margin-bottom: 12px;
+}
+
+.pro-info-card {
+  background: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: var(--shadow);
+}
+
+.pro-info-card h3 {
+  color: var(--royal-blue);
+  margin-bottom: 10px;
+}
+
+.pro-highlight {
+  background: #EAF5F1;
+  border-left: 4px solid #008F6B;
+  padding: 20px 22px;
+  border-radius: 6px;
+  margin: 25px 0;
+  line-height: 1.7;
+}
+
+.pro-process-card {
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  border-top: 3px solid var(--corporate-blue);
+  box-shadow: var(--shadow);
+}
+
+.pro-process-number {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--emerald-green);
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.pro-disclaimer {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #64748B;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .pro-hero {
+    padding: 75px 0;
+  }
+
+  .pro-service-card img {
+    height: 190px;
+  }
+}
