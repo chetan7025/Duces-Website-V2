@@ -4,246 +4,666 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>DUCES Consultancy Services | UAE Business Setup & Corporate Support</title>
-
-  <meta name="description" content="Independent UAE business consultancy supporting company formation, business banking, finance, accounting, taxation, PRO and visa coordination.">
-
   <meta name="theme-color" content="#123B70">
+
+  <title>DUCES Consultancy Services | UAE Business Consultancy</title>
+  <meta name="description" content="DUCES Consultancy Services provides independent business setup, banking and finance, accounting and tax, and PRO and visa consultancy in the UAE.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* HOMEPAGE-SPECIFIC STYLES */
-
-    .home-hero {
-      background-image: url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85");
+    :root {
+      --home-blue: #123B70;
+      --home-corporate: #1976B9;
+      --home-green: #008F6B;
+      --home-gold: #D9AD55;
+      --home-white: #FFFFFF;
+      --home-bg: #F5F7FA;
+      --home-border: #E5EBF1;
     }
 
-    .home-intro {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
+    body {
+      font-family: "DM Sans", sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .home-container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .home-header {
+      position: relative;
+      z-index: 20;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--home-border);
+    }
+
+    .home-header-inner {
+      min-height: 86px;
+      display: flex;
       align-items: center;
-      gap: 65px;
+      justify-content: space-between;
+      gap: 28px;
     }
 
-    .home-intro-image {
+    .home-brand img {
+      display: block;
+      width: 165px;
+      max-height: 62px;
+      object-fit: contain;
+    }
+
+    .home-nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .home-nav a,
+    .home-nav summary {
+      color: var(--home-blue);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .home-nav a:hover,
+    .home-nav summary:hover {
+      color: var(--home-corporate);
+    }
+
+    .home-dropdown {
       position: relative;
     }
 
-    .home-intro-image img {
-      width: 100%;
-      height: 440px;
-      object-fit: cover;
-      border-radius: 12px;
+    .home-dropdown summary {
+      list-style: none;
     }
 
-    .intro-caption {
+    .home-dropdown summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .home-dropdown-menu {
       position: absolute;
-      right: -18px;
-      bottom: 25px;
-      max-width: 235px;
-      padding: 19px 22px;
-      color: var(--white);
-      background: var(--royal-blue);
-      border-left: 4px solid var(--champagne-gold);
-      box-shadow: var(--shadow-md);
+      top: 28px;
+      left: 0;
+      width: 245px;
+      padding: 10px;
+      background: #FFFFFF;
+      border: 1px solid var(--home-border);
+      border-radius: 8px;
+      box-shadow: 0 12px 28px rgba(18,59,112,.12);
     }
 
-    .intro-caption strong {
+    .home-dropdown-menu a {
       display: block;
-      color: var(--white);
-      font-family: var(--font-heading);
-      font-size: 16px;
+      padding: 11px;
+      border-radius: 5px;
     }
 
-    .intro-caption span {
-      display: block;
-      margin-top: 5px;
-      color: rgba(255,255,255,.8);
-      font-size: 12px;
+    .home-dropdown-menu a:hover {
+      background: var(--home-bg);
     }
 
-    .intro-points {
+    .home-header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      color: #FFFFFF !important;
+      background: var(--home-corporate);
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .home-mobile-nav {
+      display: none;
+    }
+
+    .home-hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+      background:
+        linear-gradient(90deg, rgba(18,59,112,.96), rgba(18,59,112,.77)),
+        url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85")
+        center 48% / cover no-repeat;
+    }
+
+    .home-hero-content {
+      max-width: 760px;
+      padding: 90px 0;
+    }
+
+    .home-eyebrow {
+      display: inline-block;
+      margin-bottom: 17px;
+      color: var(--home-green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .home-hero .home-eyebrow {
+      color: var(--home-gold);
+    }
+
+    .home-hero h1 {
+      margin: 0 0 22px;
+      color: #FFFFFF;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.15;
+      letter-spacing: -1.7px;
+    }
+
+    .home-hero p {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: rgba(255,255,255,.9);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .home-button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+
+    .home-button-primary {
+      color: #FFFFFF;
+      background: var(--home-corporate);
+    }
+
+    .home-button-primary:hover {
+      background: var(--home-green);
+    }
+
+    .home-button-outline {
+      color: #FFFFFF;
+      border-color: rgba(255,255,255,.7);
+    }
+
+    .home-button-outline:hover {
+      color: var(--home-blue);
+      background: #FFFFFF;
+    }
+
+    .home-button-gold {
+      color: var(--home-blue);
+      background: var(--home-gold);
+    }
+
+    .home-section {
+      padding: 85px 0;
+    }
+
+    .home-section-light {
+      background: var(--home-bg);
+    }
+
+    .home-section-heading {
+      max-width: 740px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .home-section-heading h2 {
+      margin: 0 0 14px;
+      color: var(--home-blue);
+      font-size: clamp(27px, 3.5vw, 38px);
+      line-height: 1.25;
+    }
+
+    .home-section-heading p {
+      margin: 0;
+      color: #64748B;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .home-about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .home-about-image img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .home-about-copy h2 {
+      margin: 0 0 18px;
+      color: var(--home-blue);
+      font-size: 34px;
+      line-height: 1.25;
+    }
+
+    .home-about-copy p {
+      margin: 0 0 15px;
+      color: #64748B;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .home-about-points {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin: 25px 0;
     }
 
-    .intro-point {
-      padding: 13px 15px;
-      background: var(--light-bg);
-      border-left: 3px solid var(--emerald-green);
-      color: var(--royal-blue);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .home-services {
-      background: var(--light-bg);
-    }
-
-    .home-services .service-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .home-services .service-card-content {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .home-services .service-link {
-      margin-top: auto;
-      padding-top: 18px;
-    }
-
-    .service-number {
-      color: var(--emerald-green);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-    }
-
-    .home-approach {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .approach-image img {
-      width: 100%;
-      height: 440px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .approach-list {
-      margin-top: 25px;
-    }
-
-    .approach-item {
-      display: flex;
-      gap: 17px;
-      padding: 17px 0;
-      border-bottom: 1px solid var(--soft-silver);
-    }
-
-    .approach-number {
-      display: flex;
-      flex: 0 0 39px;
-      width: 39px;
-      height: 39px;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      background: var(--corporate-blue);
-      border-radius: 50%;
+    .home-about-point {
+      padding: 13px;
+      color: var(--home-blue);
+      background: var(--home-bg);
+      border-left: 3px solid var(--home-green);
       font-size: 12px;
       font-weight: 700;
     }
 
-    .approach-item h3 {
-      margin-bottom: 5px;
-      font-size: 16px;
+    .home-service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    .approach-item p {
+    .home-service-card {
+      overflow: hidden;
+      background: #FFFFFF;
+      border: 1px solid var(--home-border);
+      border-radius: 7px;
+      transition: .2s ease;
+    }
+
+    .home-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(18,59,112,.09);
+    }
+
+    .home-service-card img {
+      display: block;
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+    }
+
+    .home-service-content {
+      padding: 22px;
+    }
+
+    .home-service-content h3 {
+      margin: 0 0 10px;
+      color: var(--home-blue);
+      font-size: 17px;
+    }
+
+    .home-service-content p {
+      min-height: 82px;
+      margin: 0 0 17px;
+      color: #64748B;
       font-size: 13px;
+      line-height: 1.7;
     }
 
-    .home-process {
-      background: var(--royal-blue);
+    .home-service-content a {
+      color: var(--home-corporate);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
     }
 
-    .home-process .eyebrow {
-      color: var(--champagne-gold);
+    .home-service-content a:hover {
+      color: var(--home-green);
     }
 
-    .home-process .section-title,
-    .home-process .section-description {
-      color: var(--white);
+    .home-package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .home-process .process-card {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.17);
-      border-top: 3px solid var(--champagne-gold);
+    .home-package {
+      padding: 30px;
+      background: #FFFFFF;
+      border: 1px solid var(--home-border);
+      border-radius: 7px;
     }
 
-    .home-process .process-card h3,
-    .home-process .process-card p {
-      color: var(--white);
+    .home-package-featured {
+      border-top: 4px solid var(--home-green);
     }
 
-    .home-process .process-number {
-      color: var(--royal-blue);
-      background: var(--champagne-gold);
+    .home-package-tag {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 6px 10px;
+      color: var(--home-corporate);
+      background: var(--home-bg);
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .home-package h3 {
+      margin: 0 0 12px;
+      color: var(--home-blue);
+      font-size: 22px;
+    }
+
+    .home-package p {
+      min-height: 68px;
+      margin: 0 0 18px;
+      color: #64748B;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .home-package ul {
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .home-package li {
+      padding: 10px 0;
+      color: #475569;
+      border-bottom: 1px solid var(--home-border);
+      font-size: 12px;
+    }
+
+    .home-package li::before {
+      content: "✓";
+      margin-right: 9px;
+      color: var(--home-green);
+      font-weight: 800;
+    }
+
+    .home-approach-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .home-approach-image img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .home-approach-copy h2 {
+      margin: 0 0 15px;
+      color: var(--home-blue);
+      font-size: 34px;
+      line-height: 1.25;
+    }
+
+    .home-approach-copy > p {
+      color: #64748B;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .home-step {
+      display: flex;
+      gap: 15px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--home-border);
+    }
+
+    .home-step-number {
+      display: flex;
+      flex: 0 0 36px;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      background: var(--home-corporate);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .home-step h3 {
+      margin: 0 0 5px;
+      color: var(--home-blue);
+      font-size: 15px;
+    }
+
+    .home-step p {
+      margin: 0;
+      color: #64748B;
+      font-size: 12px;
+      line-height: 1.7;
     }
 
     .home-cta {
-      background: var(--light-bg);
+      padding: 70px 0;
+      color: #FFFFFF;
+      background: var(--home-blue);
+      text-align: center;
     }
 
-    .home-cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-      padding: 48px;
-      background: var(--white);
-      border: 1px solid var(--soft-silver);
-      border-left: 5px solid var(--emerald-green);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
+    .home-cta h2 {
+      max-width: 760px;
+      margin: 0 auto 15px;
+      color: #FFFFFF;
+      font-size: clamp(28px, 4vw, 39px);
     }
 
-    .home-cta-inner h2 {
+    .home-cta p {
       max-width: 650px;
-      margin-bottom: 10px;
-      font-size: clamp(25px, 3vw, 36px);
+      margin: 0 auto 25px;
+      color: rgba(255,255,255,.85);
+      font-size: 14px;
+      line-height: 1.8;
     }
 
-    .home-cta-inner p {
-      max-width: 620px;
+    .home-footer {
+      padding: 55px 0 20px;
+      color: #FFFFFF;
+      background: #123B70;
     }
 
-    @media (max-width: 820px) {
-      .home-intro,
-      .home-approach {
+    .home-footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .home-footer-logo {
+      width: 155px;
+      max-height: 65px;
+      object-fit: contain;
+      margin-bottom: 17px;
+      background: #FFFFFF;
+      padding: 5px;
+      border-radius: 4px;
+    }
+
+    .home-footer p {
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .home-footer h3 {
+      margin: 0 0 17px;
+      color: #FFFFFF;
+      font-size: 14px;
+    }
+
+    .home-footer a {
+      display: block;
+      margin-bottom: 11px;
+      color: rgba(255,255,255,.78);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .home-footer a:hover {
+      color: var(--home-gold);
+    }
+
+    .home-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.2);
+    }
+
+    .home-footer-bottom p {
+      margin: 0;
+      font-size: 11px;
+    }
+
+    @media (max-width: 1000px) {
+      .home-nav {
+        gap: 13px;
+      }
+
+      .home-nav a,
+      .home-nav summary {
+        font-size: 11px;
+      }
+
+      .home-service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .home-header-inner {
+        min-height: 75px;
+      }
+
+      .home-nav,
+      .home-header-cta {
+        display: none;
+      }
+
+      .home-mobile-nav {
+        display: block;
+      }
+
+      .home-mobile-nav summary {
+        color: var(--home-blue);
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .home-mobile-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        display: grid;
+        padding: 15px 22px;
+        background: #FFFFFF;
+        border-bottom: 1px solid var(--home-border);
+        box-shadow: 0 12px 20px rgba(18,59,112,.08);
+      }
+
+      .home-mobile-links a {
+        padding: 12px 0;
+        color: var(--home-blue);
+        border-bottom: 1px solid var(--home-border);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .home-hero {
+        min-height: 510px;
+      }
+
+      .home-about-grid,
+      .home-approach-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
       }
 
-      .intro-caption {
-        right: 12px;
-      }
-
-      .home-cta-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 30px;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .home-intro-image img,
-      .approach-image img {
+      .home-about-image img,
+      .home-approach-image img {
         height: 300px;
       }
 
-      .intro-points {
+      .home-package-grid {
         grid-template-columns: 1fr;
       }
 
-      .home-cta-inner {
-        padding: 24px;
+      .home-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .home-container {
+        width: min(100% - 30px, 1160px);
+      }
+
+      .home-section {
+        padding: 60px 0;
+      }
+
+      .home-service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .home-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-footer-bottom {
+        flex-direction: column;
+      }
+
+      .home-hero p {
+        font-size: 15px;
       }
     }
   </style>
@@ -251,572 +671,405 @@
 
 <body>
 
-  <!-- HEADER -->
+<header class="home-header">
+  <div class="home-container home-header-inner">
 
-  <header class="site-header">
-    <div class="container header-inner">
+    <a href="index.html" class="home-brand">
+      <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+    </a>
 
-      <a class="brand" href="index.html" aria-label="DUCES Home">
-        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
-      </a>
+    <nav class="home-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html" class="active">Home</a>
-
-        <div class="nav-dropdown">
-          <a href="business-setup.html">Business Setup ▾</a>
-          <div class="dropdown-content">
-            <a href="business-setup.html#mainland">Mainland Company Formation</a>
-            <a href="business-setup.html#freezone">Free Zone Company Formation</a>
-            <a href="business-setup.html#offshore">Offshore Company Formation</a>
-          </div>
+      <details class="home-dropdown">
+        <summary>Business Setup ▾</summary>
+        <div class="home-dropdown-menu">
+          <a href="business-setup.html">Business Setup Overview</a>
+          <a href="mainland.html">Mainland Company Formation</a>
+          <a href="freezone.html">Free Zone Company Formation</a>
+          <a href="offshore.html">Offshore Company Formation</a>
         </div>
+      </details>
 
+      <a href="banking-finance.html">Banking & Finance</a>
+      <a href="accounting-tax.html">Accounting & Tax</a>
+      <a href="pro-visa.html">PRO & Visa</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="home-header-cta">Get Consultation</a>
+
+    <details class="home-mobile-nav">
+      <summary>☰ Menu</summary>
+      <div class="home-mobile-links">
+        <a href="index.html">Home</a>
+        <a href="business-setup.html">Business Setup</a>
+        <a href="mainland.html">Mainland</a>
+        <a href="freezone.html">Free Zone</a>
+        <a href="offshore.html">Offshore</a>
         <a href="banking-finance.html">Banking & Finance</a>
         <a href="accounting-tax.html">Accounting & Tax</a>
         <a href="pro-visa.html">PRO & Visa</a>
         <a href="contact.html">Contact</a>
-      </nav>
-
-      <a class="header-cta" href="contact.html">Get Consultation</a>
-
-      <div class="mobile-menu">
-        <details>
-          <summary>☰ Menu</summary>
-          <div class="mobile-links">
-            <a href="index.html">Home</a>
-            <a href="business-setup.html">Business Setup</a>
-            <a href="business-setup.html#mainland">Mainland Formation</a>
-            <a href="business-setup.html#freezone">Free Zone Formation</a>
-            <a href="business-setup.html#offshore">Offshore Formation</a>
-            <a href="banking-finance.html">Banking & Finance</a>
-            <a href="accounting-tax.html">Accounting & Tax</a>
-            <a href="pro-visa.html">PRO & Visa</a>
-            <a href="contact.html">Contact Us</a>
-          </div>
-        </details>
       </div>
+    </details>
 
-    </div>
-  </header>
+  </div>
+</header>
 
-  <main>
+<main>
 
-    <!-- HERO -->
+  <!-- HERO -->
+  <section class="home-hero">
+    <div class="home-container">
+      <div class="home-hero-content">
+        <span class="home-eyebrow">DUCES Consultancy Services</span>
 
-    <section class="hero home-hero">
-      <div class="container">
-        <div class="hero-content">
+        <h1>Your Business Journey in the UAE Starts with the Right Guidance.</h1>
 
-          <span class="eyebrow">UAE Business Consultancy</span>
-
-          <h1>
-            Your Business in the UAE.
-            <br>
-            A Clearer Way Forward.
-          </h1>
-
-          <p>
-            From company formation and business banking to accounting,
-            taxation and government-process coordination, DUCES helps
-            you understand your options and navigate your next steps.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">
-              Discuss Your Requirements
-            </a>
-
-            <a class="btn btn-outline-light" href="business-setup.html">
-              Explore Our Services
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- INTRODUCTION -->
-
-    <section class="section">
-      <div class="container home-intro">
-
-        <div class="home-intro-image">
-          <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85"
-            alt="Business professionals working together"
-            loading="lazy"
-          >
-
-          <div class="intro-caption">
-            <strong>Business Support in the UAE</strong>
-            <span>Practical guidance for your next business decision</span>
-          </div>
-        </div>
-
-        <div class="content-copy">
-
-          <span class="eyebrow">Welcome to DUCES</span>
-
-          <h2 class="section-title">
-            Business Decisions Deserve Clear Guidance.
-          </h2>
-
-          <p>
-            Establishing and managing a business in the UAE involves
-            decisions about licensing, banking, finance, taxation and
-            administrative requirements.
-          </p>
-
-          <p>
-            DUCES Consultancy Services is an independent business
-            consultancy that helps entrepreneurs and business owners
-            understand available options, prepare documentation and
-            coordinate relevant processes.
-          </p>
-
-          <div class="intro-points">
-            <div class="intro-point">Company Formation Guidance</div>
-            <div class="intro-point">Business Banking Support</div>
-            <div class="intro-point">Accounting & Tax Support</div>
-            <div class="intro-point">PRO & Visa Coordination</div>
-          </div>
-
-          <a class="btn btn-primary" href="contact.html">
-            Speak With Our Team
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-
-    <section class="section home-services">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">Our Services</span>
-            <h2 class="section-title">Support Across Your Business Journey</h2>
-            <p class="section-description">
-              Explore our core consultancy and coordination services
-              for businesses operating or planning to establish in the UAE.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-grid">
-
-          <article class="service-card">
-            <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85"
-              alt="Modern commercial buildings"
-              loading="lazy"
-            >
-
-            <div class="service-card-content">
-              <span class="service-number">01 / BUSINESS SETUP</span>
-              <h3>Company Formation</h3>
-              <p>
-                Mainland, Free Zone and Offshore company formation
-                guidance, activity selection and documentation coordination.
-              </p>
-              <a class="service-link" href="business-setup.html">
-                Explore Business Setup →
-              </a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=85"
-              alt="Financial planning and business documents"
-              loading="lazy"
-            >
-
-            <div class="service-card-content">
-              <span class="service-number">02 / BANKING & FINANCE</span>
-              <h3>Business Banking & Finance</h3>
-              <p>
-                Guidance on business bank accounts, finance options,
-                working capital, mortgage and payment solutions.
-              </p>
-              <a class="service-link" href="banking-finance.html">
-                Explore Banking & Finance →
-              </a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img
-              src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=85"
-              alt="Accounting and financial records"
-              loading="lazy"
-            >
-
-            <div class="service-card-content">
-              <span class="service-number">03 / ACCOUNTING & TAX</span>
-              <h3>Accounting & Tax Support</h3>
-              <p>
-                Bookkeeping, VAT and Corporate Tax registration,
-                return filing coordination and compliance support.
-              </p>
-              <a class="service-link" href="accounting-tax.html">
-                Explore Accounting & Tax →
-              </a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85"
-              alt="Professional reviewing business documents"
-              loading="lazy"
-            >
-
-            <div class="service-card-content">
-              <span class="service-number">04 / PRO SERVICES</span>
-              <h3>PRO & Document Services</h3>
-              <p>
-                Administrative assistance, document clearing and
-                coordination for relevant government processes.
-              </p>
-              <a class="service-link" href="pro-visa.html">
-                Explore PRO Services →
-              </a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img
-              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85"
-              alt="Aircraft travelling through the sky"
-              loading="lazy"
-            >
-
-            <div class="service-card-content">
-              <span class="service-number">05 / VISA SERVICES</span>
-              <h3>Visa & Immigration Support</h3>
-              <p>
-                Investor, partner, employment and family visa
-                documentation and application coordination.
-              </p>
-              <a class="service-link" href="pro-visa.html">
-                Explore Visa Services →
-              </a>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <img
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=85"
-              alt="Modern residential property"
-              loading="lazy"
-            >
-
-            <div class="service-card-content">
-              <span class="service-number">06 / PROPERTY FINANCE</span>
-              <h3>Mortgage Support</h3>
-              <p>
-                Guidance on mortgage requirements, documentation
-                and available property finance application routes.
-              </p>
-              <a class="service-link" href="banking-finance.html">
-                Explore Finance Support →
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- BUSINESS SETUP OPTIONS -->
-
-    <section class="section">
-      <div class="container content-grid">
-
-        <div class="content-copy">
-          <span class="eyebrow">Choose the Right Structure</span>
-
-          <h2 class="section-title">
-            Explore Your UAE Company Formation Options.
-          </h2>
-
-          <p>
-            The right business structure depends on your activity,
-            ownership requirements, operating plans and budget.
-            Understanding the differences before proceeding can help
-            you make a more informed decision.
-          </p>
-
-          <ul class="info-list">
-            <li>Mainland company formation guidance</li>
-            <li>Free Zone company formation guidance</li>
-            <li>Offshore structure information</li>
-            <li>Activity and documentation considerations</li>
-          </ul>
-
-          <a class="btn btn-primary" href="business-setup.html">
-            Compare Setup Options
-          </a>
-        </div>
-
-        <div class="content-image">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=85"
-            alt="Dubai commercial architecture"
-            loading="lazy"
-          >
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHY DUCES -->
-
-    <section class="section section-light">
-      <div class="container home-approach">
-
-        <div class="approach-image">
-          <img
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=85"
-            alt="Professional corporate office environment"
-            loading="lazy"
-          >
-        </div>
-
-        <div>
-
-          <span class="eyebrow">The DUCES Approach</span>
-
-          <h2 class="section-title">
-            Structured Support. Informed Decisions.
-          </h2>
-
-          <p class="section-description">
-            We focus on understanding your requirements, explaining
-            relevant options and coordinating the agreed next steps.
-          </p>
-
-          <div class="approach-list">
-
-            <div class="approach-item">
-              <span class="approach-number">01</span>
-              <div>
-                <h3>Understand Your Requirements</h3>
-                <p>
-                  We begin with your business activity, objectives
-                  and practical requirements.
-                </p>
-              </div>
-            </div>
-
-            <div class="approach-item">
-              <span class="approach-number">02</span>
-              <div>
-                <h3>Review Available Options</h3>
-                <p>
-                  We explain relevant routes, requirements,
-                  documentation and considerations.
-                </p>
-              </div>
-            </div>
-
-            <div class="approach-item">
-              <span class="approach-number">03</span>
-              <div>
-                <h3>Coordinate the Process</h3>
-                <p>
-                  We assist with agreed documentation and
-                  coordination with relevant service providers.
-                </p>
-              </div>
-            </div>
-
-            <div class="approach-item">
-              <span class="approach-number">04</span>
-              <div>
-                <h3>Support the Next Steps</h3>
-                <p>
-                  We help you understand follow-up requirements
-                  as your business progresses.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-
-    <section class="section home-process">
-      <div class="container">
-
-        <span class="eyebrow">A Straightforward Process</span>
-
-        <h2 class="section-title">How We Work</h2>
-
-        <p class="section-description">
-          A clear consultation and coordination process,
-          built around your business requirements.
+        <p>
+          Independent business consultancy for company formation,
+          banking and finance, accounting and tax, and corporate
+          support services in the UAE.
         </p>
 
-        <div class="process-grid">
-
-          <article class="process-card">
-            <span class="process-number">01</span>
-            <h3>Consultation</h3>
-            <p>
-              Share your business objectives and requirements
-              with our consultancy team.
-            </p>
-          </article>
-
-          <article class="process-card">
-            <span class="process-number">02</span>
-            <h3>Assessment</h3>
-            <p>
-              We review your needs and explain relevant
-              options and considerations.
-            </p>
-          </article>
-
-          <article class="process-card">
-            <span class="process-number">03</span>
-            <h3>Documentation</h3>
-            <p>
-              We help organise the required information
-              and agreed documentation.
-            </p>
-          </article>
-
-          <article class="process-card">
-            <span class="process-number">04</span>
-            <h3>Coordination</h3>
-            <p>
-              We coordinate the agreed next steps and
-              communicate relevant updates.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL ENQUIRY -->
-
-    <section class="section home-cta">
-      <div class="container">
-
-        <div class="home-cta-inner">
-          <div>
-            <span class="eyebrow">Start a Conversation</span>
-
-            <h2>
-              Have a UAE Business Requirement?
-              Let's Discuss the Right Next Step.
-            </h2>
-
-            <p>
-              Contact DUCES Consultancy Services to discuss
-              your company formation, banking, finance,
-              accounting, tax or administrative requirements.
-            </p>
-          </div>
-
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/971505356966?text=Hello%20DUCES%2C%20I%20would%20like%20to%20discuss%20my%20UAE%20business%20requirements."
-            target="_blank"
-            rel="noopener"
-          >
-            WhatsApp Our Team
+        <div class="home-actions">
+          <a href="contact.html" class="home-button home-button-primary">
+            Discuss Your Requirements
+          </a>
+          <a href="business-setup.html" class="home-button home-button-outline">
+            Explore Business Setup
           </a>
         </div>
-
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- ABOUT DUCES -->
+  <section class="home-section">
+    <div class="home-container home-about-grid">
 
-  <!-- FOOTER -->
-
-  <footer class="site-footer">
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-          <img
-            class="footer-logo"
-            src="assets/duces-logo.jpg"
-            alt="DUCES Consultancy Services"
-            loading="lazy"
-          >
-
-          <p>
-            Independent business consultancy supporting
-            entrepreneurs and businesses across key UAE
-            business and administrative requirements.
-          </p>
-        </div>
-
-        <div>
-          <h3>Quick Links</h3>
-          <a href="index.html">Home</a>
-          <a href="business-setup.html">Business Setup</a>
-          <a href="banking-finance.html">Banking & Finance</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-
-        <div>
-          <h3>Our Services</h3>
-          <a href="business-setup.html">Company Formation</a>
-          <a href="banking-finance.html">Business Banking & Finance</a>
-          <a href="accounting-tax.html">Accounting & Tax</a>
-          <a href="pro-visa.html">PRO & Visa</a>
-        </div>
-
-        <div>
-          <h3>Contact</h3>
-          <p>United Arab Emirates</p>
-          <a href="tel:+971505356966">+971 50 535 6966</a>
-          <a href="https://wa.me/971505356966"
-             target="_blank" rel="noopener">
-            WhatsApp Enquiry
-          </a>
-        </div>
-
+      <div class="home-about-image">
+        <img
+          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1100&q=85"
+          alt="Professional modern business office"
+          loading="lazy">
       </div>
 
-      <div class="footer-bottom">
-        <span>
-          © 2026 DUCES Consultancy Services. All Rights Reserved.
-        </span>
+      <div class="home-about-copy">
+        <span class="home-eyebrow">About DUCES</span>
 
-        <span>
-          Independent Business Consultancy | UAE
-        </span>
+        <h2>Business Support Built Around Your Requirements.</h2>
+
+        <p>
+          DUCES Consultancy Services is an independent UAE business
+          consultancy supporting entrepreneurs, investors and
+          established businesses.
+        </p>
+
+        <p>
+          We help clients understand business setup options, banking
+          requirements, accounting responsibilities and corporate
+          administrative processes.
+        </p>
+
+        <p>
+          Our approach is straightforward: understand the requirement,
+          explain relevant options and coordinate the agreed next steps.
+        </p>
+
+        <div class="home-about-points">
+          <div class="home-about-point">Business Setup</div>
+          <div class="home-about-point">Banking & Finance</div>
+          <div class="home-about-point">Accounting & Tax</div>
+          <div class="home-about-point">PRO & Visa</div>
+        </div>
+
+        <a href="contact.html" class="home-button home-button-primary">
+          Connect with DUCES
+        </a>
       </div>
 
     </div>
-  </footer>
+  </section>
 
-  <!-- FLOATING WHATSAPP -->
+  <!-- SERVICES OVERVIEW -->
+  <section class="home-section home-section-light">
+    <div class="home-container">
 
-  <a
-    class="whatsapp-button"
-    href="https://wa.me/971505356966"
-    target="_blank"
-    rel="noopener"
-    aria-label="Contact DUCES on WhatsApp"
-  >
-    WhatsApp Us
-  </a>
+      <div class="home-section-heading">
+        <span class="home-eyebrow">Our Services</span>
+        <h2>Our Consultancy Services</h2>
+        <p>
+          Explore our core service areas. Each section provides
+          further information about the relevant services and process.
+        </p>
+      </div>
+
+      <div class="home-service-grid">
+
+        <article class="home-service-card">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=850&q=85"
+            alt="Modern commercial buildings"
+            loading="lazy">
+          <div class="home-service-content">
+            <h3>Business Setup</h3>
+            <p>Mainland, Free Zone and Offshore company formation guidance.</p>
+            <a href="business-setup.html">Explore Business Setup →</a>
+          </div>
+        </article>
+
+        <article class="home-service-card">
+          <img
+            src="https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?auto=format&fit=crop&w=850&q=85"
+            alt="Professional financial workspace"
+            loading="lazy">
+          <div class="home-service-content">
+            <h3>Banking & Finance</h3>
+            <p>Business account assistance, finance enquiries and payment solutions.</p>
+            <a href="banking-finance.html">Explore Banking & Finance →</a>
+          </div>
+        </article>
+
+        <article class="home-service-card">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=850&q=85"
+            alt="Accounting and financial documents"
+            loading="lazy">
+          <div class="home-service-content">
+            <h3>Accounting & Tax</h3>
+            <p>Bookkeeping, VAT, Corporate Tax and accounting support.</p>
+            <a href="accounting-tax.html">Explore Accounting & Tax →</a>
+          </div>
+        </article>
+
+        <article class="home-service-card">
+          <img
+            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=850&q=85"
+            alt="Business documents and paperwork"
+            loading="lazy">
+          <div class="home-service-content">
+            <h3>PRO & Visa</h3>
+            <p>Visa documentation, Emirates ID and corporate administrative support.</p>
+            <a href="pro-visa.html">Explore PRO & Visa →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS SETUP PACKAGES -->
+  <section class="home-section" id="packages">
+    <div class="home-container">
+
+      <div class="home-section-heading">
+        <span class="home-eyebrow">Company Formation</span>
+        <h2>Choose Your Business Setup Route</h2>
+        <p>
+          Compare the main UAE company formation routes.
+          We can help you understand the relevant options based
+          on your activity and business objectives.
+        </p>
+      </div>
+
+      <div class="home-package-grid">
+
+        <article class="home-package">
+          <span class="home-package-tag">UAE Local Market</span>
+          <h3>Mainland</h3>
+          <p>
+            Company formation guidance for businesses planning
+            to operate in the UAE Mainland.
+          </p>
+          <ul>
+            <li>Business activity discussion</li>
+            <li>Licence and authority guidance</li>
+            <li>Ownership structure considerations</li>
+            <li>Office and visa requirements</li>
+            <li>Documentation coordination</li>
+          </ul>
+          <a href="mainland.html" class="home-button home-button-primary">
+            Explore Mainland
+          </a>
+        </article>
+
+        <article class="home-package home-package-featured">
+          <span class="home-package-tag">Multiple Jurisdictions</span>
+          <h3>Free Zone</h3>
+          <p>
+            Explore six Free Zone options and compare their
+            facilities, activities and packages.
+          </p>
+          <ul>
+            <li>RAKEZ</li>
+            <li>Ajman Free Zone</li>
+            <li>Ajman NuVentures</li>
+            <li>SHAMS</li>
+            <li>Meydan Free Zone</li>
+            <li>IFZA</li>
+          </ul>
+          <a href="freezone.html" class="home-button home-button-primary">
+            Explore Free Zones
+          </a>
+        </article>
+
+        <article class="home-package">
+          <span class="home-package-tag">International Structure</span>
+          <h3>Offshore</h3>
+          <p>
+            Information and coordination for eligible clients
+            considering an Offshore company structure.
+          </p>
+          <ul>
+            <li>Structure overview</li>
+            <li>Jurisdiction considerations</li>
+            <li>Incorporation documentation</li>
+            <li>Shareholder information</li>
+            <li>General compliance considerations</li>
+          </ul>
+          <a href="offshore.html" class="home-button home-button-primary">
+            Explore Offshore
+          </a>
+        </article>
+
+      </div>
+
+      <p style="margin-top:24px;color:#64748B;font-size:11px;line-height:1.8;">
+        Package prices, government charges, visa allocations, office
+        requirements and inclusions depend on the selected authority,
+        business activity and individual circumstances. Final quotations
+        are provided after reviewing the requirements.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="home-section home-section-light">
+    <div class="home-container home-approach-grid">
+
+      <div class="home-approach-image">
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85"
+          alt="Business professionals collaborating"
+          loading="lazy">
+      </div>
+
+      <div class="home-approach-copy">
+        <span class="home-eyebrow">Our Approach</span>
+        <h2>A Clear and Structured Way Forward.</h2>
+        <p>
+          We focus on understanding your business needs and helping
+          you navigate the relevant service process.
+        </p>
+
+        <div class="home-step">
+          <span class="home-step-number">01</span>
+          <div>
+            <h3>Understand</h3>
+            <p>We discuss your business activity, objectives and requirements.</p>
+          </div>
+        </div>
+
+        <div class="home-step">
+          <span class="home-step-number">02</span>
+          <div>
+            <h3>Explain</h3>
+            <p>We outline relevant options, documents and considerations.</p>
+          </div>
+        </div>
+
+        <div class="home-step">
+          <span class="home-step-number">03</span>
+          <div>
+            <h3>Coordinate</h3>
+            <p>We assist with the agreed documentation and coordination.</p>
+          </div>
+        </div>
+
+        <div class="home-step">
+          <span class="home-step-number">04</span>
+          <div>
+            <h3>Support</h3>
+            <p>We help you understand the next steps in the process.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="home-cta">
+    <div class="home-container">
+      <span class="home-eyebrow" style="color:#D9AD55;">Speak with DUCES</span>
+      <h2>Let's Discuss Your Business Requirements.</h2>
+      <p>
+        Whether you are starting a new company or managing an
+        existing business, contact us to discuss the support you need.
+      </p>
+      <a
+        href="https://wa.me/971505356966?text=Hello%20DUCES%2C%20I%20would%20like%20to%20discuss%20my%20business%20requirements."
+        class="home-button home-button-gold">
+        Contact DUCES on WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="home-footer">
+  <div class="home-container">
+
+    <div class="home-footer-grid">
+
+      <div>
+        <img
+          src="assets/duces-logo.jpg"
+          alt="DUCES Consultancy Services"
+          class="home-footer-logo">
+        <p>
+          Independent UAE business consultancy supporting company
+          formation, banking and finance, accounting and tax,
+          and corporate services.
+        </p>
+      </div>
+
+      <div>
+        <h3>Business Setup</h3>
+        <a href="business-setup.html">Overview</a>
+        <a href="mainland.html">Mainland</a>
+        <a href="freezone.html">Free Zone</a>
+        <a href="offshore.html">Offshore</a>
+      </div>
+
+      <div>
+        <h3>Our Services</h3>
+        <a href="banking-finance.html">Banking & Finance</a>
+        <a href="accounting-tax.html">Accounting & Tax</a>
+        <a href="pro-visa.html">PRO & Visa</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+971505356966">+971 50 535 6966</a>
+        <a href="https://wa.me/971505356966">WhatsApp DUCES</a>
+        <a href="contact.html">Send an Enquiry</a>
+      </div>
+
+    </div>
+
+    <div class="home-footer-bottom">
+      <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
+      <p>Independent Business Consultancy — UAE</p>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
