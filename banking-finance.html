@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Banking & Finance | DUCES Consultancy Services</title>
-<meta name="description" content="Business bank account guidance, business loans, working capital, mortgage guidance and payment solutions in the UAE with DUCES Consultancy Services.">
+<meta name="description" content="Business banking, business finance, mortgage and payment solutions consultancy in the UAE.">
 
 <style>
 :root{
@@ -109,10 +109,10 @@ img{display:block;max-width:100%}
   position:relative;
   background:
     linear-gradient(90deg,
-      rgba(18,59,112,.96) 0%,
-      rgba(18,59,112,.84) 48%,
-      rgba(18,59,112,.30) 100%),
-    url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90")
+      rgba(18,59,112,.94) 0%,
+      rgba(18,59,112,.78) 48%,
+      rgba(18,59,112,.25) 100%),
+    url("assets/banking-hero-1B-museum-of-future.jpg")
     center/cover;
 }
 .hero-content{max-width:720px;padding:85px 0}
@@ -184,14 +184,10 @@ img{display:block;max-width:100%}
   height:48px;
   object-fit:contain;
 }
-
-/* INCREASED LOGO SIZE: ONLY THESE FOUR BANKS */
-
 .bank-logo-card img.large-bank-logo{
   width:190px;
   height:68px;
 }
-
 .bank-logo-card h3{
   color:var(--royal);
   font-size:13px;
@@ -292,7 +288,7 @@ img{display:block;max-width:100%}
   font-weight:700;
 }
 
-/* BUSINESS LOAN FEATURE IMAGES */
+/* BUSINESS FINANCE */
 
 .finance-grid{
   display:grid;
@@ -326,37 +322,23 @@ img{display:block;max-width:100%}
   gap:20px;
 }
 .payment-item{
-  padding:26px;
   background:var(--white);
   border:1px solid var(--silver);
-  border-top:3px solid var(--sea);
+  border-radius:7px;
+  overflow:hidden;
 }
+.payment-item img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+.payment-content{padding:23px}
 .payment-item h3{
   color:var(--royal);
   font-size:18px;
   margin-bottom:10px;
 }
 .payment-item p{color:var(--royal);opacity:.8;font-size:13px}
-
-/* PROCESS */
-
-.process-section{background:var(--royal);color:var(--white)}
-.process-section .section-heading h2{color:var(--white)}
-.process-section .section-heading p{color:var(--white)}
-.process-section .eyebrow{color:var(--sea)}
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-.process-step{border-top:2px solid var(--sea);padding-top:20px}
-.process-step span{color:var(--gold);font-size:29px;font-weight:800}
-.process-step h3{
-  color:var(--white);
-  font-size:17px;
-  margin:10px 0;
-}
-.process-step p{color:var(--white);opacity:.85;font-size:13px}
 
 /* FAQ */
 
@@ -380,28 +362,6 @@ img{display:block;max-width:100%}
   font-size:14px;
   margin-top:13px;
 }
-
-/* CTA */
-
-.banking-cta{
-  background:var(--royal);
-  border-top:5px solid var(--sea);
-  padding:65px 0;
-  color:var(--white);
-}
-.cta-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
-}
-.banking-cta h2{
-  color:var(--white);
-  font-size:clamp(27px,4vw,38px);
-  margin:10px 0;
-}
-.banking-cta p{color:var(--white);opacity:.9;max-width:650px}
-.banking-cta .eyebrow{color:var(--sea)}
 
 /* FOOTER */
 
@@ -459,7 +419,6 @@ img{display:block;max-width:100%}
 @media(max-width:1050px){
   .nav{gap:12px;font-size:12px}
 }
-
 @media(max-width:800px){
   .header-inner{min-height:72px}
   .brand img{width:145px}
@@ -501,12 +460,8 @@ img{display:block;max-width:100%}
   .detail-grid{grid-template-columns:1fr;gap:30px}
   .finance-grid{grid-template-columns:1fr}
   .payment-grid{grid-template-columns:repeat(2,1fr)}
-  .process-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .cta-inner{display:block}
-  .cta-inner .btn{margin-top:22px}
 }
-
 @media(max-width:520px){
   .banking-hero{min-height:500px}
   .hero-content{padding:65px 0}
@@ -514,16 +469,9 @@ img{display:block;max-width:100%}
   .bank-logo-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .bank-logo-card{min-height:115px;padding:14px 8px}
   .bank-logo-card img{width:120px;height:42px}
-
-  /* Larger requested bank logos on mobile */
-  .bank-logo-card img.large-bank-logo{
-    width:155px;
-    height:58px;
-  }
-
+  .bank-logo-card img.large-bank-logo{width:155px;height:58px}
   .service-grid{grid-template-columns:1fr}
   .payment-grid{grid-template-columns:1fr}
-  .process-grid{grid-template-columns:1fr 1fr}
   .detail-list{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column}
@@ -598,7 +546,7 @@ img{display:block;max-width:100%}
 
 <main>
 
-<!-- HERO: DUBAI FINANCIAL DISTRICT -->
+<!-- HERO: SELECTED IMAGE 1B -->
 
 <section class="banking-hero">
  <div class="container">
@@ -627,9 +575,9 @@ img{display:block;max-width:100%}
    <div class="eyebrow">UAE Banking Options</div>
    <h2>Explore Banking Options in UAE</h2>
    <p>
-    Explore selected local and international banking institutions
-    operating in the UAE. Banking products, account criteria and
-    approval requirements vary from one institution to another.
+    Explore selected banking institutions operating in the UAE.
+    Products, eligibility criteria and approval requirements
+    vary between institutions.
    </p>
   </div>
 
@@ -708,7 +656,7 @@ img{display:block;max-width:100%}
  </div>
 </section>
 
-<!-- BANKING SUPPORT: THREE IMAGE CARDS -->
+<!-- BANKING SUPPORT -->
 
 <section class="section alt">
  <div class="container">
@@ -726,9 +674,8 @@ img{display:block;max-width:100%}
   <div class="service-grid">
 
    <article class="service-card">
-    <img
-     src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=85"
-     alt="Business debit card and laptop digital banking workspace">
+    <img src="assets/banking-account-2C.jpg"
+     alt="Business banking relationship meeting">
     <div class="service-content">
      <div class="service-number">01 / BUSINESS BANKING</div>
      <h3>Business Bank Account</h3>
@@ -746,15 +693,14 @@ img{display:block;max-width:100%}
    </article>
 
    <article class="service-card">
-    <img
-     src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85"
-     alt="Large commercial warehouse and logistics facility">
+    <img src="assets/business-loan-3A.jpg"
+     alt="Manufacturing factory and industrial production">
     <div class="service-content">
      <div class="service-number">02 / BUSINESS FINANCE</div>
      <h3>Business Loans</h3>
      <p>
       Preliminary guidance for eligible businesses exploring
-      working capital and expansion finance.
+      finance for manufacturing, operations and expansion.
      </p>
      <ul>
       <li>Business profile review</li>
@@ -766,9 +712,8 @@ img{display:block;max-width:100%}
    </article>
 
    <article class="service-card">
-    <img
-     src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
-     alt="Modern luxury residential villa">
+    <img src="assets/mortgage-loan-4C.jpg"
+     alt="Modern family residence">
     <div class="service-content">
      <div class="service-number">03 / PROPERTY FINANCE</div>
      <h3>Mortgage Loan</h3>
@@ -789,15 +734,14 @@ img{display:block;max-width:100%}
  </div>
 </section>
 
-<!-- OPEN BUSINESS BANK ACCOUNT -->
+<!-- BUSINESS BANK ACCOUNT OPENING -->
 
 <section class="section" id="business-accounts">
  <div class="container detail-grid">
 
   <div class="detail-image">
-   <img
-    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
-    alt="Business owner using a laptop for an online business bank account application">
+   <img src="assets/business-account-opening-5A.jpg"
+    alt="Business owner completing an online business bank account application">
   </div>
 
   <div class="detail-copy">
@@ -850,31 +794,29 @@ img{display:block;max-width:100%}
   <div class="finance-grid">
 
    <article class="finance-card">
-    <img
-     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=85"
-     alt="Laptop screen showing business analytics and financial graphs">
+    <img src="assets/business-loan-application-6C.jpg"
+     alt="Financial analyst reviewing business cash flow forecasts">
     <div class="finance-content">
-     <div class="eyebrow">Business Finance</div>
-     <h3>Business Loan Assessment</h3>
+     <div class="eyebrow">Business Finance Application</div>
+     <h3>Business Loan Application</h3>
      <p>
       Understand common considerations such as company vintage,
-      turnover, account conduct, financial statements, existing
-      liabilities and repayment capacity.
+      turnover, account conduct, financial statements, cash flow,
+      existing liabilities and repayment capacity.
      </p>
     </div>
    </article>
 
    <article class="finance-card">
-    <img
-     src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=1100&q=85"
-     alt="Industrial manufacturing factory and production machinery">
+    <img src="assets/working-capital-7B.jpg"
+     alt="Airport cargo freight and international import export operations">
     <div class="finance-content">
-     <div class="eyebrow">Business Expansion</div>
-     <h3>Working Capital & Business Growth</h3>
+     <div class="eyebrow">Import & Export Finance</div>
+     <h3>Working Capital</h3>
      <p>
-      Explore general financing requirements for manufacturing,
-      equipment purchases, operational expenses and business
-      expansion. Final terms depend on the lender's assessment.
+      Explore general financing requirements for import and export
+      businesses, cargo operations, international trade, inventory
+      and day-to-day business expenses.
      </p>
     </div>
    </article>
@@ -915,15 +857,14 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="detail-image">
-   <img
-    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85"
-    alt="Modern luxury residential villa">
+   <img src="assets/mortgage-detail-8D.jpg"
+    alt="Contemporary luxury glass villa">
   </div>
 
  </div>
 </section>
 
-<!-- PAYMENT SOLUTIONS -->
+<!-- PAYMENT SOLUTIONS WITH POS IMAGE -->
 
 <section class="section alt" id="payment-solutions">
  <div class="container">
@@ -940,72 +881,40 @@ img{display:block;max-width:100%}
   <div class="payment-grid">
 
    <article class="payment-item">
-    <h3>POS Terminals</h3>
-    <p>
-     Guidance on card payment terminal requirements for
-     retail and service businesses.
-    </p>
+    <img src="assets/pos-terminal.jpg"
+     alt="POS card payment terminal for business transactions">
+    <div class="payment-content">
+     <h3>POS Terminals</h3>
+     <p>
+      Guidance on card payment terminal requirements for
+      retail and service businesses.
+     </p>
+    </div>
    </article>
 
    <article class="payment-item">
-    <h3>SoftPOS</h3>
-    <p>
-     Explore compatible mobile-based payment acceptance
-     solutions where available.
-    </p>
+    <img src="assets/softpos-payment.jpg"
+     alt="Mobile phone used for contactless SoftPOS payment">
+    <div class="payment-content">
+     <h3>SoftPOS</h3>
+     <p>
+      Explore compatible mobile-based payment acceptance
+      solutions where available.
+     </p>
+    </div>
    </article>
 
    <article class="payment-item">
-    <h3>Online Payment Gateway</h3>
-    <p>
-     Understand payment gateway requirements for
-     businesses accepting online payments.
-    </p>
+    <img src="assets/online-payment-gateway.jpg"
+     alt="Online payment gateway and digital business payments">
+    <div class="payment-content">
+     <h3>Online Payment Gateway</h3>
+     <p>
+      Understand payment gateway requirements for
+      businesses accepting online payments.
+     </p>
+    </div>
    </article>
-
-  </div>
- </div>
-</section>
-
-<!-- PROCESS -->
-
-<section class="section process-section">
- <div class="container">
-
-  <div class="section-heading">
-   <div class="eyebrow">Our Approach</div>
-   <h2>How We Assist You</h2>
-   <p>
-    A structured approach to help you understand the process
-    and prepare for the next step.
-   </p>
-  </div>
-
-  <div class="process-grid">
-
-   <div class="process-step">
-    <span>01</span>
-    <h3>Understand</h3>
-    <p>We discuss your company, activity and banking requirements.</p>
-   </div>
-
-   <div class="process-step">
-    <span>02</span>
-    <h3>Review</h3>
-    <p>We review the available information and general requirements.</p>
-   </div>
-
-   <div class="process-step">
-    <span>03</span>
-    <h3>Prepare</h3>
-    <p>We help organise the relevant documents and business profile.</p>
-   </div>
-
-   <div class="process-step">
-    <span>04</span>
-    <h3>Coordinate</h3>
-    <p>We guide you through the next steps with the relevant institution.</p>
-   </div>
 
   </div>
  </div>
@@ -1013,7 +922,7 @@ img{display:block;max-width:100%}
 
 <!-- FAQ -->
 
-<section class="section alt">
+<section class="section">
  <div class="container">
 
   <div class="section-heading center">
@@ -1096,8 +1005,8 @@ img{display:block;max-width:100%}
     <p>
      Common considerations include company financial performance,
      bank statements, business activity, revenue, outstanding facilities,
-     credit profile and supporting financial documents. Requirements
-     vary between lenders.
+     cash flow, credit profile and supporting financial documents.
+     Requirements vary between lenders.
     </p>
    </details>
 
@@ -1140,27 +1049,6 @@ img{display:block;max-width:100%}
    </details>
 
   </div>
- </div>
-</section>
-
-<!-- CTA -->
-
-<section class="banking-cta">
- <div class="container cta-inner">
-
-  <div>
-   <div class="eyebrow">DUCES Consultancy Services</div>
-   <h2>Looking for Banking Support in the UAE?</h2>
-   <p>
-    Discuss your business requirements with our consultancy team
-    and understand the possible next steps.
-   </p>
-  </div>
-
-  <a href="https://wa.me/971505356966" class="btn btn-primary">
-   Contact Our Consultant
-  </a>
-
  </div>
 </section>
 
@@ -1216,7 +1104,8 @@ img{display:block;max-width:100%}
  </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/971505356966" target="_blank" rel="noopener">
+<a class="whatsapp" href="https://wa.me/971505356966"
+ target="_blank" rel="noopener">
  WhatsApp Us
 </a>
 
