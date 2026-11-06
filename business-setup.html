@@ -1,930 +1,154 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mainland, Free Zone and Offshore company formation in the UAE with DUCES Consultancy Services.">
-<title>UAE Business Setup & Company Formation | DUCES</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-:root{
-  --royal:#123B70;
-  --blue:#1976B9;
-  --sea:#48C9B0;
-  --gold:#D9AD55;
-  --white:#FFFFFF;
-  --light:#F5F7FA;
-  --silver:#E5EBF1;
+/* Logo grids */
+.bank-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 18px;
+  align-items: stretch;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--royal);
-  background:var(--white);
-  line-height:1.7;
-}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1160px,92%);margin:auto}
-
-/* HEADER - SAME STRUCTURE AS HOMEPAGE */
-
-.header{
-  width:100%;
-  background:var(--white);
-  border-bottom:1px solid var(--silver);
-  position:sticky;
-  top:0;
-  z-index:1000;
+.bank-logo-card {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.header-inner{
-  width:100%;
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
+.bank-logo-card img {
+  max-width: 100%;
+  max-height: 58px;
+  object-fit: contain;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
+/* Business setup page */
+.setup-hero {
+  background:
+    linear-gradient(90deg, rgba(18,59,112,.94), rgba(18,59,112,.68)),
+    url("assets/setup-hero-dubai.jpg") center/cover no-repeat;
+  color: var(--white);
+  padding: 105px 0;
 }
 
-.brand img{
-  width:175px;
-  max-height:62px;
-  height:auto;
-  object-fit:contain;
+.setup-hero h1,
+.setup-hero p {
+  color: var(--white);
+  max-width: 760px;
 }
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  font-size:13px;
-  font-weight:700;
-  color:var(--royal);
+.setup-hero p {
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-.nav>a,.nav-label{
-  white-space:nowrap;
-  color:var(--royal);
-  padding:12px 0;
+.setup-type-card {
+  background: var(--white);
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
-.nav>a:hover,.nav-label:hover{
-  color:var(--blue);
+.setup-type-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-.dropdown{position:relative}
-
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  min-width:245px;
-  padding:10px 0;
-  background:var(--white);
-  border-top:3px solid var(--sea);
-  box-shadow:0 12px 30px rgba(18,59,112,.14);
-  z-index:1100;
+.setup-type-content {
+  padding: 25px;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu{
-  display:block;
+.setup-type-content h3 {
+  color: var(--royal-blue);
+  margin-bottom: 12px;
 }
 
-.dropdown-menu a{
-  display:block;
-  padding:11px 17px;
-  font-size:13px;
-  color:var(--royal);
-  white-space:normal;
+.setup-note {
+  background: #EAF5F1;
+  border-left: 4px solid #008F6B;
+  padding: 18px 22px;
+  border-radius: 6px;
+  margin: 25px 0;
 }
 
-.dropdown-menu a:hover{
-  background:var(--light);
-  color:var(--blue);
+.comparison-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  background: var(--white);
 }
 
-.mobile-nav{display:none}
-
-/* HERO */
-
-.setup-hero{
-  background:var(--royal);
-  color:var(--white);
-  padding:85px 0;
-  text-align:center;
+.comparison-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
 }
 
-.setup-hero .eyebrow{
-  display:block;
-  color:var(--gold);
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
+.comparison-table th {
+  background: var(--royal-blue);
+  color: var(--white);
+  text-align: left;
+  padding: 16px;
 }
 
-.setup-hero h1{
-  max-width:900px;
-  margin:17px auto;
-  color:var(--white) !important;
-  font-size:clamp(35px,5vw,54px);
-  line-height:1.17;
-  font-weight:700;
+.comparison-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--silver);
+  vertical-align: top;
+  line-height: 1.6;
 }
 
-.setup-hero p{
-  max-width:750px;
-  margin:18px auto 0;
-  color:var(--white) !important;
-  font-size:17px;
-  line-height:1.8;
+.comparison-table tr:last-child td {
+  border-bottom: 0;
 }
 
-/* COMMON SECTION */
-
-.setup-section{
-  padding:78px 0;
+.comparison-table tr:nth-child(even) {
+  background: var(--light-bg);
 }
 
-.setup-section.alt{
-  background:var(--light);
+.setup-step {
+  border-top: 3px solid var(--corporate-blue);
+  padding: 24px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.setup-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:45px;
-  align-items:center;
+.setup-step-number {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--emerald-green);
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 
-.setup-grid.reverse .setup-image{
-  order:2;
+.faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--silver);
 }
 
-.setup-image img{
-  width:100%;
-  height:390px;
-  object-fit:cover;
-  border-radius:9px;
+.faq-item h3 {
+  color: var(--royal-blue);
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
-.setup-content h2{
-  margin:0 0 17px;
-  color:var(--royal);
-  font-size:clamp(27px,3vw,35px);
-  line-height:1.25;
-}
-
-.setup-content p{
-  color:var(--royal);
-  opacity:.85;
-  margin:0 0 15px;
-}
-
-.setup-content h3{
-  color:var(--royal);
-  font-size:19px;
-  margin:23px 0 10px;
-}
-
-.setup-content ul{
-  padding-left:21px;
-  margin:12px 0 22px;
-}
-
-.setup-content li{
-  color:var(--royal);
-  margin:9px 0;
-}
-
-.setup-button{
-  display:inline-block;
-  margin-top:10px;
-  padding:13px 23px;
-  border-radius:5px;
-  background:var(--blue);
-  color:var(--white);
-  font-size:14px;
-  font-weight:700;
-  transition:.2s;
-}
-
-.setup-button:hover{
-  background:var(--royal);
-  color:var(--white);
-}
-
-/* FREE ZONE AUTHORITIES */
-
-.authority-section{
-  margin-top:55px;
-}
-
-.authority-heading{
-  max-width:760px;
-  margin:0 auto 30px;
-  text-align:center;
-}
-
-.authority-heading h3{
-  color:var(--royal);
-  font-size:27px;
-  margin:0 0 10px;
-}
-
-.authority-heading p{
-  color:var(--royal);
-  opacity:.8;
-  margin:0;
-}
-
-.authority-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:19px;
-}
-
-.authority-card{
-  padding:25px 22px;
-  background:var(--white);
-  border:1px solid var(--silver);
-  border-radius:9px;
-  text-align:center;
-}
-
-.authority-card img{
-  width:100%;
-  height:65px;
-  object-fit:contain;
-  margin:0 auto 17px;
-}
-
-.authority-card h4{
-  color:var(--royal);
-  font-size:18px;
-  margin:0 0 9px;
-}
-
-.authority-card p{
-  color:var(--royal);
-  font-size:13px;
-  line-height:1.7;
-  margin:0 0 13px;
-}
-
-.authority-card a{
-  color:var(--blue);
-  font-size:13px;
-  font-weight:700;
-}
-
-/* OFFSHORE INFORMATION */
-
-.offshore-panel{
-  padding:25px;
-  margin-top:20px;
-  background:var(--light);
-  border-left:4px solid var(--gold);
-  border-radius:6px;
-}
-
-.offshore-panel h3{
-  margin:0 0 9px;
-  color:var(--royal);
-}
-
-/* FAQ */
-
-.faq-section{
-  padding:80px 0;
-  background:var(--light);
-}
-
-.faq-heading{
-  max-width:760px;
-  margin:0 auto 38px;
-  text-align:center;
-}
-
-.faq-heading span{
-  color:var(--blue);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-}
-
-.faq-heading h2{
-  color:var(--royal);
-  font-size:clamp(28px,4vw,39px);
-  line-height:1.25;
-  margin:12px 0;
-}
-
-.faq-heading p{
-  color:var(--royal);
-  opacity:.8;
-}
-
-.faq-list{
-  max-width:900px;
-  margin:auto;
-}
-
-.faq-item{
-  margin-bottom:12px;
-  background:var(--white);
-  border:1px solid var(--silver);
-  border-radius:7px;
-  overflow:hidden;
-}
-
-.faq-item summary{
-  position:relative;
-  padding:18px 52px 18px 21px;
-  color:var(--royal);
-  font-size:15px;
-  font-weight:700;
-  cursor:pointer;
-  list-style:none;
-}
-
-.faq-item summary::-webkit-details-marker{display:none}
-
-.faq-item summary:after{
-  content:"+";
-  position:absolute;
-  right:20px;
-  top:50%;
-  transform:translateY(-50%);
-  color:var(--blue);
-  font-size:24px;
-  font-weight:400;
-}
-
-.faq-item[open] summary:after{content:"−"}
-
-.faq-answer{
-  padding:0 21px 20px;
-}
-
-.faq-answer p{
-  color:var(--royal);
-  opacity:.85;
-  margin:0;
-  font-size:14px;
-}
-
-/* CTA */
-
-.setup-cta{
-  padding:70px 0;
-  background:var(--royal);
-  text-align:center;
-}
-
-.setup-cta h2{
-  color:var(--white) !important;
-  font-size:clamp(27px,4vw,37px);
-  margin:0 0 13px;
-}
-
-.setup-cta p{
-  max-width:700px;
-  margin:0 auto 22px;
-  color:var(--white) !important;
-}
-
-.setup-cta .setup-button{
-  background:var(--gold);
-  color:var(--royal);
-}
-
-.setup-cta .setup-button:hover{
-  background:var(--sea);
-  color:var(--royal);
-}
-
-/* FOOTER */
-
-.setup-footer{
-  padding:32px 0;
-  background:var(--royal);
-  border-top:1px solid var(--blue);
-  text-align:center;
-}
-
-.setup-footer strong{
-  display:block;
-  color:var(--white);
-  font-size:21px;
-  letter-spacing:1px;
-}
-
-.setup-footer p{
-  color:var(--white);
-  font-size:13px;
-  margin:5px 0;
-}
-
-/* TABLET */
-
-@media(max-width:1050px){
-  .nav{gap:13px;font-size:12px}
-  .brand img{width:145px}
-}
-
-/* MOBILE - SAME DETAILS MENU AS HOMEPAGE */
-
-@media(max-width:760px){
-  .header-inner{min-height:72px}
-  .brand img{width:135px}
-
-  .nav{display:none}
-
-  .mobile-nav{
-    display:block;
-    position:relative;
+@media (max-width: 768px) {
+  .setup-hero {
+    padding: 75px 0;
   }
 
-  .mobile-nav summary{
-    cursor:pointer;
-    list-style:none;
-    background:var(--royal);
-    color:var(--white);
-    padding:11px 15px;
-    border-radius:4px;
-    font-size:13px;
-    font-weight:700;
+  .setup-type-card img {
+    height: 190px;
   }
-
-  .mobile-nav summary::-webkit-details-marker{
-    display:none;
-  }
-
-  .mobile-menu{
-    position:absolute;
-    right:0;
-    top:45px;
-    width:min(300px,88vw);
-    max-height:75vh;
-    overflow:auto;
-    background:var(--white);
-    border-top:3px solid var(--sea);
-    box-shadow:0 12px 30px rgba(18,59,112,.18);
-    padding:12px;
-    z-index:1200;
-  }
-
-  .mobile-menu a{
-    display:block;
-    padding:11px;
-    color:var(--royal);
-    border-bottom:1px solid var(--silver);
-    font-size:13px;
-    font-weight:700;
-  }
-
-  .setup-hero{padding:62px 0}
-  .setup-hero h1{font-size:37px}
-  .setup-hero p{font-size:15px}
-
-  .setup-section{padding:55px 0}
-
-  .setup-grid{
-    grid-template-columns:1fr;
-    gap:27px;
-  }
-
-  .setup-grid.reverse .setup-image{order:0}
-  .setup-image img{height:290px}
-
-  .authority-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .faq-section{padding:58px 0}
 }
-
-/* SMALL MOBILE */
-
-@media(max-width:520px){
-  .setup-hero h1{font-size:32px}
-  .setup-hero p{font-size:14px}
-
-  .authority-grid{grid-template-columns:1fr}
-  .authority-card{padding:23px}
-
-  .faq-item summary{
-    padding:16px 43px 16px 15px;
-    font-size:14px;
-  }
-
-  .faq-answer{padding:0 15px 17px}
-  .offshore-panel{padding:20px}
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-
-<header class="header">
-  <div class="container header-inner">
-
-    <a class="brand" href="index.html">
-      <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
-    </a>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-
-      <div class="dropdown">
-        <a class="nav-label" href="business-setup.html">Business Setup ▾</a>
-        <div class="dropdown-menu">
-          <a href="business-setup.html#mainland">Mainland Company Formation</a>
-          <a href="business-setup.html#freezone">Free Zone Company Formation</a>
-          <a href="business-setup.html#offshore">Offshore Company Formation</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <a class="nav-label" href="banking-finance.html">Banking & Finance ▾</a>
-        <div class="dropdown-menu">
-          <a href="banking-finance.html#uae-banking">UAE Banking Options</a>
-          <a href="banking-finance.html#business-accounts">Business Accounts</a>
-          <a href="banking-finance.html#business-loans">Business Loan</a>
-          <a href="banking-finance.html#mortgage-loans">Mortgage Loan</a>
-        </div>
-      </div>
-
-      <a href="taxation.html">Auditing & Taxation</a>
-      <a href="pro-visa.html">PRO & Visa</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <details class="mobile-nav">
-      <summary>☰ Menu</summary>
-      <div class="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="business-setup.html">Business Setup</a>
-        <a href="#mainland">Mainland Company Formation</a>
-        <a href="#freezone">Free Zone Company Formation</a>
-        <a href="#offshore">Offshore Company Formation</a>
-        <a href="banking-finance.html">Banking & Finance</a>
-        <a href="banking-finance.html#business-accounts">Business Accounts</a>
-        <a href="banking-finance.html#business-loans">Business Loan</a>
-        <a href="taxation.html">Auditing & Taxation</a>
-        <a href="pro-visa.html">PRO & Visa</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </details>
-
-  </div>
-</header>
-
-<!-- HERO -->
-
-<section class="setup-hero">
-  <div class="container">
-    <div class="eyebrow">DUCES Consultancy Services</div>
-    <h1>UAE Business Setup & Company Formation</h1>
-    <p>
-      Explore the right company structure for your business.
-      We guide you through mainland, free zone and offshore
-      company formation in the UAE.
-    </p>
-  </div>
-</section>
-
-<!-- MAINLAND -->
-
-<section class="setup-section" id="mainland">
-  <div class="container">
-    <div class="setup-grid">
-
-      <div class="setup-image">
-        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85" alt="Dubai city skyline">
-      </div>
-
-      <div class="setup-content">
-        <h2>Mainland Company Formation</h2>
-        <p>
-          A mainland company can be suitable for businesses planning
-          to operate across the UAE market, work with local customers
-          and explore government or private-sector opportunities.
-        </p>
-
-        <h3>Key considerations</h3>
-        <ul>
-          <li>Access to the UAE mainland market, subject to the licensed activity and applicable rules.</li>
-          <li>Many business activities permit 100% foreign ownership.</li>
-          <li>Choice of commercial, professional and other permitted activities.</li>
-          <li>Office and premises requirements depend on the activity and licensing authority.</li>
-          <li>Additional external approvals may apply to certain regulated activities.</li>
-        </ul>
-
-        <p>
-          DUCES helps you understand the available business structures,
-          activity requirements, documentation and licensing process.
-        </p>
-
-        <a class="setup-button" href="contact.html">Discuss Mainland Setup</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FREE ZONE -->
-
-<section class="setup-section alt" id="freezone">
-  <div class="container">
-
-    <div class="setup-grid reverse">
-
-      <div class="setup-image">
-        <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=85" alt="Cargo ship and international trade containers">
-      </div>
-
-      <div class="setup-content">
-        <h2>Free Zone Company Formation</h2>
-        <p>
-          UAE free zones offer different licensing options for
-          entrepreneurs, consultants, traders, service providers
-          and international businesses.
-        </p>
-
-        <h3>Key considerations</h3>
-        <ul>
-          <li>Free zone options for different industries and business activities.</li>
-          <li>100% foreign ownership under applicable free zone structures.</li>
-          <li>Different licence, shareholder and visa package options.</li>
-          <li>Flexible workspace solutions offered by selected authorities.</li>
-          <li>Business activity and market access rules vary by jurisdiction.</li>
-        </ul>
-
-        <p>
-          We help compare suitable free zones based on your activity,
-          operational requirements, budget and visa needs.
-        </p>
-
-        <a class="setup-button" href="contact.html">Discuss Free Zone Setup</a>
-      </div>
-
-    </div>
-
-    <!-- FREE ZONE AUTHORITIES -->
-
-    <div class="authority-section">
-
-      <div class="authority-heading">
-        <h3>Explore Free Zone Authorities</h3>
-        <p>
-          Compare selected UAE free zones and understand the type
-          of businesses and requirements they may suit.
-        </p>
-      </div>
-
-      <div class="authority-grid">
-
-        <div class="authority-card">
-          <img src="assets/rakez.png" alt="RAKEZ logo">
-          <h4>RAKEZ</h4>
-          <p>Considered by businesses exploring trading, industrial, commercial and service-related activities in Ras Al Khaimah.</p>
-          <a href="https://rakez.com/" target="_blank" rel="noopener">Official Website ↗</a>
-        </div>
-
-        <div class="authority-card">
-          <img src="assets/ajman-freezone.png" alt="Ajman Free Zone logo">
-          <h4>Ajman Free Zone</h4>
-          <p>An option to review for startups, trading businesses, service providers and companies comparing setup costs.</p>
-          <a href="https://afz.gov.ae/" target="_blank" rel="noopener">Official Website ↗</a>
-        </div>
-
-        <div class="authority-card">
-          <img src="assets/ajman-nuventures.png" alt="Ajman NuVentures logo">
-          <h4>Ajman NuVentures</h4>
-          <p>A jurisdiction to explore when comparing business licensing and company formation options in Ajman.</p>
-          <a href="https://ancfza.ae/" target="_blank" rel="noopener">Official Website ↗</a>
-        </div>
-
-        <div class="authority-card">
-          <img src="assets/meydan.png" alt="Meydan Free Zone logo">
-          <h4>Meydan Free Zone</h4>
-          <p>Often considered by entrepreneurs and professional service businesses looking for a Dubai free zone presence.</p>
-          <a href="https://www.meydanfz.ae/" target="_blank" rel="noopener">Official Website ↗</a>
-        </div>
-
-        <div class="authority-card">
-          <img src="assets/ifza.png" alt="IFZA logo">
-          <h4>IFZA</h4>
-          <p>A free zone option to compare for consultancy, professional services and various commercial activities.</p>
-          <a href="https://ifza.com/" target="_blank" rel="noopener">Official Website ↗</a>
-        </div>
-
-        <div class="authority-card">
-          <img src="assets/shams.png" alt="SHAMS logo">
-          <h4>SHAMS</h4>
-          <p>A jurisdiction worth reviewing for media, creative, consultancy and other permitted business activities.</p>
-          <a href="https://shamsfz.ae/" target="_blank" rel="noopener">Official Website ↗</a>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- OFFSHORE -->
-
-<section class="setup-section" id="offshore">
-  <div class="container">
-
-    <div class="setup-grid">
-
-      <div class="setup-image">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=85" alt="Airplane travelling internationally">
-      </div>
-
-      <div class="setup-content">
-        <h2>Offshore Company Formation</h2>
-        <p>
-          Offshore companies are generally considered for specific
-          international business, holding and investment structures.
-          They are not the same as a mainland or free zone operating company.
-        </p>
-
-        <h3>Key considerations</h3>
-        <ul>
-          <li>May be suitable for certain international holding or investment structures.</li>
-          <li>Can be considered for international ownership arrangements.</li>
-          <li>Usually does not provide the same UAE operational permissions as a mainland or free zone licence.</li>
-          <li>Banking, compliance, documentation and substance requirements need careful review.</li>
-          <li>Tax treatment depends on the company's activities, structure and applicable laws.</li>
-        </ul>
-
-        <div class="offshore-panel">
-          <h3>Is an offshore company right for you?</h3>
-          <p>
-            The correct structure depends on what you intend to do,
-            where your customers are located and how the company
-            will operate. Speak with our team before deciding.
-          </p>
-        </div>
-
-        <a class="setup-button" href="contact.html">Discuss Offshore Setup</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPANY FORMATION FAQ -->
-
-<section class="faq-section" id="company-formation-faq">
-  <div class="container">
-
-    <div class="faq-heading">
-      <span>Helpful Information</span>
-      <h2>Company Formation – Frequently Asked Questions</h2>
-      <p>Find answers to common questions about starting and registering a business in the UAE.</p>
-    </div>
-
-    <div class="faq-list">
-
-      <details class="faq-item">
-        <summary>1. How do I start a company in the UAE?</summary>
-        <div class="faq-answer">
-          <p>The usual process starts with understanding your business activity, selecting a suitable jurisdiction, choosing a legal structure, reserving a trade name, preparing the required documents and applying for the business licence. Additional approvals, premises, immigration and visa steps may apply depending on the business.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>2. What is the difference between mainland, free zone and offshore companies?</summary>
-        <div class="faq-answer">
-          <p>Mainland companies are licensed for permitted business activities in the UAE mainland market. Free zone companies are registered under a specific free zone authority and follow its licensing and operating rules. Offshore companies are generally used for specific international or holding structures and do not carry the same operating permissions as a regular UAE business licence.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>3. Can a foreign national own 100% of a UAE company?</summary>
-        <div class="faq-answer">
-          <p>Many UAE mainland activities and free zone structures allow 100% foreign ownership. Certain strategic or regulated activities may have additional conditions. Ownership should be checked against the exact activity and relevant authority before applying.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>4. What documents are normally required for company formation?</summary>
-        <div class="faq-answer">
-          <p>Common documents include passport copies of shareholders and managers, contact details, residential address information and proposed business activities. Depending on the authority, legal structure and activity, additional documents may be requested.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>5. How much does it cost to set up a company in the UAE?</summary>
-        <div class="faq-answer">
-          <p>The cost depends on jurisdiction, business activity, licence type, number of shareholders, visa requirements, office or workspace requirements and government charges. Request a written quotation separating licence fees from visa, immigration, medical, Emirates ID, office and renewal costs.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>6. How long does UAE company formation take?</summary>
-        <div class="faq-answer">
-          <p>Processing time varies by authority, activity, document readiness and external approvals. A confirmed timeline can only be provided after reviewing the proposed setup and the authority's current process.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>7. Do I need an office to register a company in the UAE?</summary>
-        <div class="faq-answer">
-          <p>It depends on the jurisdiction and licence. Some free zones provide flexi-desk or shared workspace options, while other activities or structures require dedicated premises. Mainland requirements also depend on the activity and licensing authority.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>8. Can I get a UAE residence visa with my company?</summary>
-        <div class="faq-answer">
-          <p>Certain company licences and packages may allow eligible shareholders or employees to apply for residence visas. The number of visas depends on the authority, package, workspace and applicable immigration requirements. Visa issuance remains subject to government approval.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>9. Does a company licence guarantee a business bank account?</summary>
-        <div class="faq-answer">
-          <p>No. A trade licence does not guarantee bank account approval. Banks independently review company activities, ownership, business model, source of funds, expected transactions and supporting documents. DUCES can assist with preparation and application coordination, but the bank makes the final decision.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>10. Can I change my business activity or add a new activity later?</summary>
-        <div class="faq-answer">
-          <p>In many cases, a company can apply to add, remove or amend business activities. Approval depends on the licensing authority, proposed activity and any additional requirements. Fees and supporting documents may apply.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>11. Do UAE companies need VAT and Corporate Tax registration?</summary>
-        <div class="faq-answer">
-          <p>VAT and Corporate Tax obligations depend on the company's activities, taxable supplies, revenue, status and applicable UAE tax rules. Free zone registration does not automatically mean every income stream is tax-free. Businesses should assess their registration, filing and record-keeping obligations with qualified tax support.</p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>12. Can DUCES help me choose the right jurisdiction?</summary>
-        <div class="faq-answer">
-          <p>Yes. DUCES can discuss your proposed activity, ownership, expected customers, visa needs, workspace requirements and budget, then help you compare suitable mainland, free zone and offshore options. Final eligibility and approval remain with the relevant authorities.</p>
-        </div>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-
-<section class="setup-cta">
-  <div class="container">
-    <h2>Planning to Start Your Business in the UAE?</h2>
-    <p>
-      Speak with DUCES to discuss your business activity,
-      company structure and suitable setup options.
-    </p>
-    <a class="setup-button" href="https://wa.me/971505356966" target="_blank" rel="noopener">
-      Talk to a Business Consultant
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-
-<footer class="setup-footer">
-  <div class="container">
-    <strong>DUCES</strong>
-    <p>DUCES Consultancy Services</p>
-    <p>Business Setup | Banking & Finance | Taxation | PRO & Visa</p>
-    <p>+971 50 535 6966</p>
-    <p>© 2026 DUCES Consultancy Services. All Rights Reserved.</p>
-  </div>
-</footer>
-
-</body>
-</html>
