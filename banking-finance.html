@@ -8,7 +8,7 @@
 <meta name="description" content="Business bank account guidance, business loans, working capital, mortgage guidance and payment solutions in the UAE with DUCES Consultancy Services.">
 
 <style>
-:root {
+:root{
   --royal:#123B70;
   --blue:#1976B9;
   --sea:#48C9B0;
@@ -19,16 +19,13 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-
 html{scroll-behavior:smooth;scroll-padding-top:100px}
-
 body{
   font-family:Arial,Helvetica,sans-serif;
   color:var(--royal);
   background:var(--white);
   line-height:1.7;
 }
-
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 .container{width:min(1160px,92%);margin:auto}
@@ -42,7 +39,6 @@ img{display:block;max-width:100%}
   top:0;
   z-index:1000;
 }
-
 .header-inner{
   min-height:82px;
   display:flex;
@@ -50,13 +46,7 @@ img{display:block;max-width:100%}
   justify-content:space-between;
   gap:25px;
 }
-
-.brand img{
-  width:175px;
-  height:auto;
-  object-fit:contain;
-}
-
+.brand img{width:175px;height:auto;object-fit:contain}
 .nav{
   display:flex;
   align-items:center;
@@ -65,11 +55,9 @@ img{display:block;max-width:100%}
   font-weight:700;
   color:var(--royal);
 }
-
 .nav>a,.nav-label{white-space:nowrap}
 .nav>a:hover,.nav-label:hover{color:var(--blue)}
 .dropdown{position:relative}
-
 .dropdown-menu{
   display:none;
   position:absolute;
@@ -81,21 +69,17 @@ img{display:block;max-width:100%}
   box-shadow:0 12px 30px rgba(18,59,112,.14);
   padding:10px 0;
 }
-
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu{display:block}
-
 .dropdown-menu a{
   display:block;
   padding:11px 17px;
   font-size:13px;
 }
-
 .dropdown-menu a:hover{
   background:var(--light);
   color:var(--blue);
 }
-
 .mobile-nav{display:none}
 
 /* BUTTONS */
@@ -111,25 +95,12 @@ img{display:block;max-width:100%}
   transition:.25s;
   text-align:center;
 }
-
-.btn-primary{
-  background:var(--gold);
-  color:var(--royal);
-}
-
+.btn-primary{background:var(--gold);color:var(--royal)}
 .btn-primary:hover{background:var(--sea)}
+.btn-outline{border:1px solid var(--white);color:var(--white)}
+.btn-outline:hover{background:var(--white);color:var(--royal)}
 
-.btn-outline{
-  border:1px solid var(--white);
-  color:var(--white);
-}
-
-.btn-outline:hover{
-  background:var(--white);
-  color:var(--royal);
-}
-
-/* HERO - DIFC / DUBAI FINANCIAL DISTRICT */
+/* HERO */
 
 .banking-hero{
   min-height:540px;
@@ -144,12 +115,7 @@ img{display:block;max-width:100%}
     url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=90")
     center/cover;
 }
-
-.hero-content{
-  max-width:720px;
-  padding:85px 0;
-}
-
+.hero-content{max-width:720px;padding:85px 0}
 .eyebrow{
   color:var(--blue);
   font-size:12px;
@@ -157,70 +123,45 @@ img{display:block;max-width:100%}
   letter-spacing:2px;
   text-transform:uppercase;
 }
-
 .banking-hero .eyebrow{color:var(--sea)}
-
 .banking-hero h1{
   color:var(--white);
   font-size:clamp(37px,5vw,59px);
   line-height:1.13;
   margin:20px 0;
 }
-
 .banking-hero p{
   color:var(--white);
   max-width:620px;
   font-size:17px;
   margin-bottom:28px;
 }
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:13px;
-}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px}
 
 /* GENERAL SECTIONS */
 
 .section{padding:80px 0}
 .section.alt{background:var(--light)}
-
-.section-heading{
-  max-width:760px;
-  margin-bottom:38px;
-}
-
-.section-heading.center{
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
-}
-
+.section-heading{max-width:760px;margin-bottom:38px}
+.section-heading.center{text-align:center;margin-left:auto;margin-right:auto}
 .section-heading h2{
   color:var(--royal);
   font-size:clamp(28px,4vw,40px);
   line-height:1.2;
   margin:12px 0 15px;
 }
-
-.section-heading p{
-  color:var(--royal);
-  opacity:.78;
-  font-size:15px;
-}
+.section-heading p{color:var(--royal);opacity:.78;font-size:15px}
 
 /* BANK LOGOS */
 
 .bank-section{background:var(--white)}
-
 .bank-logo-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:16px;
 }
-
 .bank-logo-card{
-  min-height:125px;
+  min-height:135px;
   padding:20px;
   display:flex;
   flex-direction:column;
@@ -233,17 +174,22 @@ img{display:block;max-width:100%}
   border-radius:7px;
   transition:.25s;
 }
-
 .bank-logo-card:hover{
   border-color:var(--blue);
   transform:translateY(-4px);
   box-shadow:0 12px 28px rgba(18,59,112,.10);
 }
-
 .bank-logo-card img{
   width:145px;
   height:48px;
   object-fit:contain;
+}
+
+/* INCREASED LOGO SIZE: ONLY THESE FOUR BANKS */
+
+.bank-logo-card img.large-bank-logo{
+  width:190px;
+  height:68px;
 }
 
 .bank-logo-card h3{
@@ -251,7 +197,6 @@ img{display:block;max-width:100%}
   font-size:13px;
   line-height:1.4;
 }
-
 .bank-note{
   margin-top:25px;
   padding:20px 23px;
@@ -269,7 +214,6 @@ img{display:block;max-width:100%}
   grid-template-columns:repeat(3,1fr);
   gap:23px;
 }
-
 .service-card{
   background:var(--white);
   border:1px solid var(--silver);
@@ -277,45 +221,30 @@ img{display:block;max-width:100%}
   overflow:hidden;
   transition:.25s;
 }
-
 .service-card:hover{
   transform:translateY(-5px);
   box-shadow:0 14px 32px rgba(18,59,112,.10);
   border-color:var(--sea);
 }
-
 .service-card img{
   width:100%;
   height:220px;
   object-fit:cover;
 }
-
 .service-content{padding:24px}
-
 .service-number{
   color:var(--blue);
   font-size:11px;
   font-weight:800;
   letter-spacing:1px;
 }
-
 .service-content h3{
   color:var(--royal);
   font-size:20px;
   margin:10px 0;
 }
-
-.service-content p{
-  color:var(--royal);
-  opacity:.78;
-  font-size:14px;
-}
-
-.service-content ul{
-  padding-left:18px;
-  margin-top:14px;
-}
-
+.service-content p{color:var(--royal);opacity:.78;font-size:14px}
+.service-content ul{padding-left:18px;margin-top:14px}
 .service-content li{
   color:var(--royal);
   opacity:.85;
@@ -331,35 +260,30 @@ img{display:block;max-width:100%}
   gap:55px;
   align-items:center;
 }
-
 .detail-image img{
   width:100%;
   height:420px;
   object-fit:cover;
   border-radius:7px;
 }
-
 .detail-copy h2{
   color:var(--royal);
   font-size:clamp(28px,3.5vw,38px);
   line-height:1.2;
   margin:12px 0 18px;
 }
-
 .detail-copy p{
   color:var(--royal);
   opacity:.8;
   margin-bottom:17px;
   font-size:14px;
 }
-
 .detail-list{
   margin:20px 0;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
 }
-
 .detail-list div{
   background:var(--light);
   padding:13px;
@@ -375,33 +299,24 @@ img{display:block;max-width:100%}
   grid-template-columns:1fr 1fr;
   gap:24px;
 }
-
 .finance-card{
   background:var(--white);
   border:1px solid var(--silver);
   border-radius:7px;
   overflow:hidden;
 }
-
 .finance-card img{
   width:100%;
   height:270px;
   object-fit:cover;
 }
-
 .finance-content{padding:27px}
-
 .finance-content h3{
   color:var(--royal);
   font-size:23px;
   margin:8px 0 12px;
 }
-
-.finance-content p{
-  color:var(--royal);
-  opacity:.8;
-  font-size:14px;
-}
+.finance-content p{color:var(--royal);opacity:.8;font-size:14px}
 
 /* PAYMENT SOLUTIONS */
 
@@ -410,73 +325,42 @@ img{display:block;max-width:100%}
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
-
 .payment-item{
   padding:26px;
   background:var(--white);
   border:1px solid var(--silver);
   border-top:3px solid var(--sea);
 }
-
 .payment-item h3{
   color:var(--royal);
   font-size:18px;
   margin-bottom:10px;
 }
-
-.payment-item p{
-  color:var(--royal);
-  opacity:.8;
-  font-size:13px;
-}
+.payment-item p{color:var(--royal);opacity:.8;font-size:13px}
 
 /* PROCESS */
 
-.process-section{
-  background:var(--royal);
-  color:var(--white);
-}
-
+.process-section{background:var(--royal);color:var(--white)}
 .process-section .section-heading h2{color:var(--white)}
 .process-section .section-heading p{color:var(--white)}
 .process-section .eyebrow{color:var(--sea)}
-
 .process-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
 }
-
-.process-step{
-  border-top:2px solid var(--sea);
-  padding-top:20px;
-}
-
-.process-step span{
-  color:var(--gold);
-  font-size:29px;
-  font-weight:800;
-}
-
+.process-step{border-top:2px solid var(--sea);padding-top:20px}
+.process-step span{color:var(--gold);font-size:29px;font-weight:800}
 .process-step h3{
   color:var(--white);
   font-size:17px;
   margin:10px 0;
 }
-
-.process-step p{
-  color:var(--white);
-  opacity:.85;
-  font-size:13px;
-}
+.process-step p{color:var(--white);opacity:.85;font-size:13px}
 
 /* FAQ */
 
-.faq-list{
-  max-width:900px;
-  margin:auto;
-}
-
+.faq-list{max-width:900px;margin:auto}
 .faq-list details{
   background:var(--white);
   border:1px solid var(--silver);
@@ -484,14 +368,12 @@ img{display:block;max-width:100%}
   padding:19px 22px;
   margin-bottom:12px;
 }
-
 .faq-list summary{
   color:var(--royal);
   font-size:15px;
   font-weight:700;
   cursor:pointer;
 }
-
 .faq-list details p{
   color:var(--royal);
   opacity:.8;
@@ -507,26 +389,18 @@ img{display:block;max-width:100%}
   padding:65px 0;
   color:var(--white);
 }
-
 .cta-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:30px;
 }
-
 .banking-cta h2{
   color:var(--white);
   font-size:clamp(27px,4vw,38px);
   margin:10px 0;
 }
-
-.banking-cta p{
-  color:var(--white);
-  opacity:.9;
-  max-width:650px;
-}
-
+.banking-cta p{color:var(--white);opacity:.9;max-width:650px}
 .banking-cta .eyebrow{color:var(--sea)}
 
 /* FOOTER */
@@ -537,20 +411,13 @@ img{display:block;max-width:100%}
   border-top:1px solid rgba(255,255,255,.2);
   padding:48px 0 20px;
 }
-
 .footer-grid{
   display:grid;
   grid-template-columns:1.5fr 1fr 1fr 1fr;
   gap:30px;
   padding-bottom:30px;
 }
-
-.footer h3{
-  color:var(--gold);
-  font-size:15px;
-  margin-bottom:15px;
-}
-
+.footer h3{color:var(--gold);font-size:15px;margin-bottom:15px}
 .footer-brand{
   color:var(--white);
   font-size:23px;
@@ -558,20 +425,9 @@ img{display:block;max-width:100%}
   letter-spacing:1px;
   margin-bottom:12px;
 }
-
-.footer p,.footer a{
-  color:var(--white);
-  font-size:13px;
-  opacity:.9;
-}
-
-.footer a{
-  display:block;
-  margin:9px 0;
-}
-
+.footer p,.footer a{color:var(--white);font-size:13px;opacity:.9}
+.footer a{display:block;margin:9px 0}
 .footer a:hover{color:var(--sea)}
-
 .footer-bottom{
   border-top:1px solid rgba(255,255,255,.2);
   padding-top:18px;
@@ -608,12 +464,7 @@ img{display:block;max-width:100%}
   .header-inner{min-height:72px}
   .brand img{width:145px}
   .nav{display:none}
-
-  .mobile-nav{
-    display:block;
-    position:relative;
-  }
-
+  .mobile-nav{display:block;position:relative}
   .mobile-nav summary{
     cursor:pointer;
     list-style:none;
@@ -624,9 +475,7 @@ img{display:block;max-width:100%}
     font-weight:700;
     font-size:13px;
   }
-
   .mobile-nav summary::-webkit-details-marker{display:none}
-
   .mobile-menu{
     position:absolute;
     right:0;
@@ -639,7 +488,6 @@ img{display:block;max-width:100%}
     max-height:75vh;
     overflow:auto;
   }
-
   .mobile-menu a{
     display:block;
     padding:11px;
@@ -647,7 +495,6 @@ img{display:block;max-width:100%}
     font-size:13px;
     font-weight:700;
   }
-
   .section{padding:60px 0}
   .bank-logo-grid{grid-template-columns:repeat(3,1fr)}
   .service-grid{grid-template-columns:repeat(2,1fr)}
@@ -667,6 +514,13 @@ img{display:block;max-width:100%}
   .bank-logo-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .bank-logo-card{min-height:115px;padding:14px 8px}
   .bank-logo-card img{width:120px;height:42px}
+
+  /* Larger requested bank logos on mobile */
+  .bank-logo-card img.large-bank-logo{
+    width:155px;
+    height:58px;
+  }
+
   .service-grid{grid-template-columns:1fr}
   .payment-grid{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr 1fr}
@@ -750,15 +604,12 @@ img{display:block;max-width:100%}
  <div class="container">
   <div class="hero-content">
    <div class="eyebrow">Banking & Financial Consultancy</div>
-
    <h1>Banking & Finance Solutions for Businesses in the UAE</h1>
-
    <p>
     Explore business banking, financing and payment solutions.
     DUCES helps entrepreneurs and established companies understand
     banking requirements and prepare for their financial journey.
    </p>
-
    <div class="hero-actions">
     <a href="#uae-banking" class="btn btn-primary">Explore Banking Options</a>
     <a href="https://wa.me/971505356966" class="btn btn-outline">Speak to a Consultant</a>
@@ -810,22 +661,22 @@ img{display:block;max-width:100%}
    </a>
 
    <a class="bank-logo-card" href="https://www.adib.ae/" target="_blank" rel="noopener">
-    <img src="assets/adib.png" alt="ADIB logo">
+    <img class="large-bank-logo" src="assets/adib.png" alt="ADIB logo">
     <h3>Abu Dhabi Islamic Bank</h3>
    </a>
 
    <a class="bank-logo-card" href="https://rakbank.ae/" target="_blank" rel="noopener">
-    <img src="assets/rakbank.png" alt="RAKBANK logo">
+    <img class="large-bank-logo" src="assets/rakbank.png" alt="RAKBANK logo">
     <h3>RAKBANK</h3>
    </a>
 
    <a class="bank-logo-card" href="https://www.cbd.ae/" target="_blank" rel="noopener">
-    <img src="assets/cbd.png" alt="CBD logo">
+    <img class="large-bank-logo" src="assets/cbd.png" alt="CBD logo">
     <h3>Commercial Bank of Dubai</h3>
    </a>
 
    <a class="bank-logo-card" href="https://www.emiratesislamic.ae/" target="_blank" rel="noopener">
-    <img src="assets/emirates-islamic.png" alt="Emirates Islamic logo">
+    <img class="large-bank-logo" src="assets/emirates-islamic.png" alt="Emirates Islamic logo">
     <h3>Emirates Islamic</h3>
    </a>
 
@@ -874,8 +725,6 @@ img{display:block;max-width:100%}
 
   <div class="service-grid">
 
-   <!-- IMAGE 1: BUSINESS DEBIT CARD AND LAPTOP -->
-
    <article class="service-card">
     <img
      src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=85"
@@ -896,8 +745,6 @@ img{display:block;max-width:100%}
     </div>
    </article>
 
-   <!-- IMAGE 2: WAREHOUSE -->
-
    <article class="service-card">
     <img
      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85"
@@ -917,8 +764,6 @@ img{display:block;max-width:100%}
      </ul>
     </div>
    </article>
-
-   <!-- IMAGE 3: VILLA -->
 
    <article class="service-card">
     <img
@@ -950,7 +795,6 @@ img{display:block;max-width:100%}
  <div class="container detail-grid">
 
   <div class="detail-image">
-   <!-- OPTION D: PERSON USING LAPTOP FOR ONLINE ACCOUNT OPENING -->
    <img
     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
     alt="Business owner using a laptop for an online business bank account application">
@@ -1005,8 +849,6 @@ img{display:block;max-width:100%}
 
   <div class="finance-grid">
 
-   <!-- IMAGE 1: KEEP EXISTING LAPTOP AND BUSINESS GRAPH IMAGE -->
-
    <article class="finance-card">
     <img
      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=85"
@@ -1021,8 +863,6 @@ img{display:block;max-width:100%}
      </p>
     </div>
    </article>
-
-   <!-- IMAGE 2: MANUFACTURING FACTORY -->
 
    <article class="finance-card">
     <img
@@ -1075,7 +915,6 @@ img{display:block;max-width:100%}
   </div>
 
   <div class="detail-image">
-   <!-- KEEP EXISTING MORTGAGE IMAGE -->
    <img
     src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85"
     alt="Modern luxury residential villa">
