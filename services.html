@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore DUCES Consultancy Services for UAE business banking, business finance, mortgage consultancy, company formation and business support.">
+  <title>Our Services | DUCES Consultancy Services</title>
+
+  <style>
+    :root {
+      --royal-blue: #123B70;
+      --corporate-blue: #1976B9;
+      --emerald-green: #008F6B;
+      --gold: #D9AD55;
+      --white: #FFFFFF;
+      --background: #F5F7FA;
+      --silver: #E5EBF1;
+      --text: #344256;
+      --muted: #64748B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--royal-blue);
+      color: var(--white);
+      padding: 9px 6%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .topbar a {
+      color: var(--white);
+    }
+
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(18,59,112,.08);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 82px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo img {
+      width: 175px;
+      max-height: 62px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: var(--royal-blue);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--emerald-green);
+    }
+
+    .nav-cta {
+      background: var(--royal-blue);
+      color: var(--white) !important;
+      padding: 11px 19px;
+      border-radius: 4px;
+    }
+
+    .nav-cta:hover {
+      background: var(--corporate-blue);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--royal-blue);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .page-hero {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      padding: 65px 7%;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(18,59,112,.95), rgba(18,59,112,.75)),
+        url("assets/difc-business-district.jpg") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(36px, 5vw, 54px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      max-width: 680px;
+      color: #F1F5F9;
+      font-size: 17px;
+    }
+
+    .breadcrumb {
+      background: var(--background);
+      padding: 13px 7%;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--corporate-blue);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    .section-label {
+      color: var(--emerald-green);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 700;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      color: var(--royal-blue);
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.25;
+      margin-bottom: 17px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      border: 1px solid var(--silver);
+      border-radius: 7px;
+      padding: 28px;
+      background: var(--white);
+      transition: .2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--corporate-blue);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(18,59,112,.07);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: rgba(0,143,107,.10);
+      color: var(--emerald-green);
+      font-size: 24px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: var(--royal-blue);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .service-card a {
+      color: var(--corporate-blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service-detail {
+      scroll-margin-top: 110px;
+      border-top: 1px solid var(--silver);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .detail-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .detail-panel {
+      background: var(--background);
+      border: 1px solid var(--silver);
+      border-radius: 7px;
+      padding: 30px;
+    }
+
+    .detail-panel h3 {
+      color: var(--royal-blue);
+      font-size: 19px;
+      margin-bottom: 16px;
+    }
+
+    .detail-panel ul {
+      list-style: none;
+    }
+
+    .detail-panel li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--silver);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .detail-panel li:last-child {
+      border-bottom: 0;
+    }
+
+    .detail-panel li::before {
+      content: "✓";
+      color: var(--emerald-green);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .soft-section {
+      background: var(--background);
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 17px 20px;
+      border-left: 4px solid var(--gold);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta-section {
+      background: var(--royal-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 65px 24px;
+    }
+
+    .cta-section h2 {
+      color: var(--white);
+      margin-bottom: 15px;
+    }
+
+    .cta-section p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #E5EDF6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin: 5px;
+      transition: .2s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--royal-blue);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--royal-blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: var(--royal-blue);
+      color: var(--white);
+      padding: 55px 7% 20px;
+    }
+
+    .footer-grid {
+      max-width: 1160px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      width: 165px;
+      max-height: 65px;
+      object-fit: contain;
+      background: var(--white);
+      padding: 5px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      font-size: 17px;
+      margin-bottom: 17px;
+    }
+
+    footer p,
+    footer li {
+      color: #E5EDF6;
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 35px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.2);
+      text-align: center;
+      color: #DCE6F1;
+      font-size: 12px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      background: var(--emerald-green);
+      color: var(--white);
+      padding: 13px 19px;
+      border-radius: 30px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0,0,0,.18);
+    }
+
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 24px 20px;
+        box-shadow: 0 8px 15px rgba(18,59,112,.10);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--silver);
+      }
+
+      .nav-cta {
+        display: inline-block;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .navbar {
+        min-height: 72px;
+      }
+
+      .logo img {
+        width: 145px;
+      }
+
+      .page-hero {
+        min-height: 290px;
+        padding: 50px 24px;
+      }
+
+      .page-hero p {
+        font-size: 15px;
+      }
+
+      .container {
+        padding: 52px 22px;
+      }
+
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 24px;
+      }
+
+      .whatsapp {
+        right: 14px;
+        bottom: 14px;
+        padding: 11px 15px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>Business Consultancy Services | Dubai, UAE</span>
+    <span>
+      <a href="tel:+971505356966">+971 50 535 6966</a>
+      &nbsp; | &nbsp;
+      <a href="mailto:chetanpatil.2798@gmail.com">Email Us</a>
+    </span>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/duces-logo.jpg" alt="DUCES Consultancy Services">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html" class="active">Our Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="hero-content">
+        <div class="eyebrow">Our Services</div>
+        <h1>Business Solutions. Clear Guidance. Professional Support.</h1>
+        <p>
+          Explore consultancy and business support services designed
+          to help you navigate important business requirements in the UAE.
+        </p>
+      </div>
+    </section>
+
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &nbsp; / &nbsp; Our Services
+    </div>
+
+    <!-- SERVICE OVERVIEW -->
+
+    <section class="container">
+      <div class="section-label">What We Offer</div>
+      <h2>Our Consultancy Services</h2>
+      <p class="section-intro">
+        Every business has different requirements. We help you understand
+        relevant options and coordinate suitable support based on your
+        business profile and objectives.
+      </p>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>Business Bank Account</h3>
+          <p>
+            Guidance on business banking options, documentation
+            requirements and application preparation.
+          </p>
+          <a href="#business-banking">Explore Service →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">↗</div>
+          <h3>Business Finance</h3>
+          <p>
+            Consultancy support for businesses exploring financing
+            options based on their profile and eligibility.
+          </p>
+          <a href="#business-finance">Explore Service →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⌂</div>
+          <h3>Mortgage Consultancy</h3>
+          <p>
+            Guidance for individuals and property buyers exploring
+            mortgage finance options.
+          </p>
+          <a href="#mortgage">Explore Service →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">▤</div>
+          <h3>Company Formation</h3>
+          <p>
+            Assistance in understanding company formation routes,
+            licence options and setup requirements.
+          </p>
+          <a href="#company-formation">Explore Service →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">◎</div>
+          <h3>Business Setup Consultancy</h3>
+          <p>
+            Support in evaluating free zone and mainland setup
+            options for your proposed business activity.
+          </p>
+          <a href="#business-setup">Explore Service →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">◈</div>
+          <h3>Business Support Services</h3>
+          <p>
+            Documentation coordination, PRO-related support,
+            bookkeeping and tax-related consultancy.
+          </p>
+          <a href="#business-support">Explore Service →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BUSINESS BANKING -->
+
+    <section class="service-detail soft-section" id="business-banking">
+      <div class="container">
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <div class="section-label">01 / Banking</div>
+            <h2>Business Bank Account Consultancy</h2>
+
+            <p>
+              Choosing a suitable business banking option is an important
+              step for any UAE company. We help business owners understand
+              available banking options and prepare for the application
+              process.
+            </p>
+
+            <p>
+              Our support includes reviewing general business information,
+              explaining documentation requirements and helping identify
+              potentially suitable banking routes.
+            </p>
+          </div>
+
+          <div class="detail-panel">
+            <h3>How We Can Assist</h3>
+            <ul>
+              <li>Business banking option guidance</li>
+              <li>Initial documentation checklist</li>
+              <li>Trade licence and company document review</li>
+              <li>Business activity and profile discussion</li>
+              <li>Application preparation support</li>
+              <li>Follow-up and process coordination</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS FINANCE -->
+
+    <section class="service-detail" id="business-finance">
+      <div class="container">
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <div class="section-label">02 / Finance</div>
+            <h2>Business Loan and Finance Consultancy</h2>
+
+            <p>
+              Businesses may require finance for expansion, working
+              capital, equipment or other operational needs. We help
+              business owners understand potential finance options
+              and common assessment requirements.
+            </p>
+
+            <p>
+              Initial discussions may cover business turnover,
+              banking history, financial statements and other
+              information that financial institutions may consider.
+            </p>
+          </div>
+
+          <div class="detail-panel">
+            <h3>Consultancy Support</h3>
+            <ul>
+              <li>Initial business profile discussion</li>
+              <li>General finance option guidance</li>
+              <li>Bank statement and turnover review</li>
+              <li>Financial document checklist</li>
+              <li>Application preparation coordination</li>
+              <li>Process guidance and follow-up</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORTGAGE -->
+
+    <section class="service-detail soft-section" id="mortgage">
+      <div class="container">
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <div class="section-label">03 / Property Finance</div>
+            <h2>Mortgage Loan Consultancy</h2>
+
+            <p>
+              Whether you are considering purchasing a property or
+              exploring mortgage finance, understanding the available
+              options and documentation is an important first step.
+            </p>
+
+            <p>
+              We help clients understand general mortgage requirements
+              and prepare for discussions with relevant financial
+              institutions and service providers.
+            </p>
+          </div>
+
+          <div class="detail-panel">
+            <h3>Areas of Support</h3>
+            <ul>
+              <li>Initial requirement assessment</li>
+              <li>General mortgage option guidance</li>
+              <li>Income and document checklist</li>
+              <li>Property-related information coordination</li>
+              <li>Application preparation guidance</li>
+              <li>Follow-up coordination</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANY FORMATION -->
+
+    <section class="service-detail" id="company-formation">
+      <div class="container">
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <div class="section-label">04 / Company Formation</div>
+            <h2>Company Formation Services</h2>
+
+            <p>
+              Establishing a company in the UAE involves choosing an
+              appropriate jurisdiction, business activity and licence
+              structure. We help entrepreneurs understand the
+              considerations involved.
+            </p>
+
+            <p>
+              We can assist with understanding setup routes and
+              coordinating requirements with the relevant licensing
+              authority or authorised service provider.
+            </p>
+          </div>
+
+          <div class="detail-panel">
+            <h3>Company Formation Support</h3>
+            <ul>
+              <li>Free zone and mainland option guidance</li>
+              <li>Business activity discussion</li>
+              <li>Licence package comparison guidance</li>
+              <li>Initial document checklist</li>
+              <li>Application coordination</li>
+              <li>Post-formation requirement guidance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS SETUP -->
+
+    <section class="service-detail soft-section" id="business-setup">
+      <div class="container">
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <div class="section-label">05 / Business Setup</div>
+            <h2>UAE Business Setup Consultancy</h2>
+
+            <p>
+              Selecting a suitable business setup structure requires
+              consideration of the proposed activity, ownership,
+              visa requirements, operating model and budget.
+            </p>
+
+            <p>
+              We help clients compare relevant setup routes and
+              understand the practical requirements before proceeding
+              with a chosen provider or authority.
+            </p>
+          </div>
+
+          <div class="detail-panel">
+            <h3>Setup Guidance</h3>
+            <ul>
+              <li>Business requirement assessment</li>
+              <li>Free zone and mainland guidance</li>
+              <li>Licence activity discussion</li>
+              <li>Visa package requirement guidance</li>
+              <li>Office and facility requirement discussion</li>
+              <li>Setup process coordination</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS SUPPORT -->
+
+    <section class="service-detail" id="business-support">
+      <div class="container">
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <div class="section-label">06 / Business Support</div>
+            <h2>Documentation, PRO and Business Support</h2>
+
+            <p>
+              Businesses often need support with documentation,
+              administrative coordination and ongoing compliance-related
+              requirements. We help clients understand the processes
+              and coordinate relevant services.
+            </p>
+
+            <p>
+              Depending on the requirement and applicable authorisations,
+              support may include documentation assistance, PRO-related
+              coordination, bookkeeping and tax-related consultancy.
+            </p>
+          </div>
+
+          <div class="detail-panel">
+            <h3>Business Support Areas</h3>
+            <ul>
+              <li>Document clearing coordination</li>
+              <li>PRO and visa process guidance</li>
+              <li>Emirates ID process coordination</li>
+              <li>Bookkeeping and accounting support</li>
+              <li>VAT and corporate tax consultancy</li>
+              <li>General business administration support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="note">
+        <strong>Important:</strong> DUCES provides consultancy,
+        guidance and coordination support within the scope of its
+        applicable licence and authorisations. Banking, finance,
+        mortgage, licensing and other regulated services are subject
+        to the relevant institution's or authority's eligibility
+        criteria, approval and terms. No approval or outcome is
+        guaranteed.
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Looking for the Right Business Support?</h2>
+      <p>
+        Tell us about your requirement. Our team can discuss the
+        available options and guide you through the next steps.
+      </p>
+      <a href="contact.html" class="btn btn-gold">Discuss Your Requirement</a>
+      <a href="https://wa.me/971505356966"
+        target="_blank" rel="noopener"
+        class="btn btn-white">WhatsApp Us</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="assets/duces-logo.jpg"
+          alt="DUCES Consultancy Services"
+          class="footer-logo">
+        <p>
+          Business consultancy and support services in the UAE.
+          Clear guidance for your business journey.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact Information</h3>
+        <p>Dubai, United Arab Emirates</p>
+        <p><a href="tel:+971505356966">+971 50 535 6966</a></p>
+        <p>
+          <a href="mailto:chetanpatil.2798@gmail.com">
+            chetanpatil.2798@gmail.com
+          </a>
+        </p>
+        <p>
+          <a href="https://wa.me/971505356966"
+            target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> DUCES Consultancy Services.
+      All Rights Reserved.
+    </div>
+  </footer>
+
+  <a class="whatsapp"
+    href="https://wa.me/971505356966"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact DUCES on WhatsApp">
+    WhatsApp Us
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("show");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
