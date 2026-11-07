@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Page Not Found | DUCES Consultancy Services</title>
+  <style>
+    :root {
+      --royal-blue: #123B70;
+      --corporate-blue: #1976B9;
+      --emerald-green: #008F6B;
+      --gold: #D9AD55;
+      --white: #FFFFFF;
+      --background: #F5F7FA;
+      --silver: #E5EBF1;
+      --text: #344256;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--silver);
+      padding: 16px 6%;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo img {
+      width: 155px;
+      max-height: 65px;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    nav a {
+      color: var(--royal-blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--corporate-blue);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 20px;
+    }
+
+    .error-card {
+      width: 100%;
+      max-width: 760px;
+      background: var(--white);
+      border: 1px solid var(--silver);
+      border-radius: 18px;
+      padding: 65px 35px;
+      text-align: center;
+      box-shadow: 0 15px 45px rgba(18, 59, 112, 0.07);
+    }
+
+    .error-number {
+      color: var(--royal-blue);
+      font-size: clamp(85px, 18vw, 150px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -7px;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 5px;
+      margin: 25px auto;
+    }
+
+    h1 {
+      color: var(--royal-blue);
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      max-width: 510px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #64748B;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--royal-blue);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--corporate-blue);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--royal-blue);
+      border: 1px solid var(--silver);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--corporate-blue);
+      color: var(--corporate-blue);
+    }
+
+    .whatsapp {
+      background: var(--emerald-green);
+      color: var(--white);
+    }
+
+    .whatsapp:hover {
+      opacity: 0.9;
+    }
+
+    .quick-links {
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid var(--silver);
+      font-size: 14px;
+      color: #64748B;
+    }
+
+    .quick-links a {
+      color: var(--corporate-blue);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 7px;
+    }
+
+    footer {
+      background: var(--royal-blue);
+      color: var(--white);
+      padding: 22px 6%;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 14px 5%;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        gap: 13px;
+      }
+
+      nav {
+        gap: 17px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      main {
+        padding: 35px 15px;
+      }
+
+      .error-card {
+        padding: 45px 20px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .quick-links a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html" aria-label="DUCES Home">
+        <img src="assets/duces-logo.jpg"
+             alt="DUCES Consultancy Services">
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="error-card">
+      <div class="error-number">404</div>
+      <div class="gold-line"></div>
+
+      <h1>Page Not Found</h1>
+
+      <p class="description">
+        The page you are looking for may have been moved,
+        renamed, or is temporarily unavailable.
+        Please visit our homepage or explore our consultancy
+        services to find the information you need.
+      </p>
+
+      <div class="actions">
+        <a href="index.html" class="btn btn-primary">
+          Back to Homepage
+        </a>
+
+        <a href="services.html" class="btn btn-secondary">
+          Explore Our Services
+        </a>
+
+        <a href="https://wa.me/971505356966"
+           class="btn whatsapp"
+           target="_blank"
+           rel="noopener noreferrer">
+          Contact Us on WhatsApp
+        </a>
+      </div>
+
+      <div class="quick-links">
+        Looking for something specific?
+        <br>
+        <a href="about.html">About DUCES</a>
+        <a href="services.html">Our Services</a>
+        <a href="contact.html">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © <span id="year"></span> DUCES Consultancy Services.
+      All Rights Reserved.
+    </p>
+    <p>Professional Business Consultancy Services in the UAE</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
